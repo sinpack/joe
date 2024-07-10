@@ -1,0 +1,10 @@
+@layer components {
+    .sideDrawer {
+        @apply h-full bg-input fixed top-0 right-0 w-[1120px] z-[200] rounded-tl-[24px] translate-x-full;
+        transition: transform 0.3s ease-out;
+    }
+
+    .open {
+        @apply translate-x-0;
+    }
+}
