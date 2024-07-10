@@ -16,7 +16,7 @@ const AboutPage = () => {
     <section className="py-10 md:py-16">
       <div className="flex flex-col space-y-5 items-center container max-w-screen-xl mx-auto px-4">
         <Image
-          src="/images/profile-joe.png"
+          src="./images/profile-joe.png"
           alt="profile"
           className="rounded-full shadow-xl dark:shadow-gray-800"
           priority
