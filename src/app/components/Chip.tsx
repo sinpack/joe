@@ -31,7 +31,7 @@ export default function Chip({
           onClick={() => onClick()}
         >
           <Image
-            src="/ClearInstrument.svg"
+            src="./ClearInstrument.svg"
             alt="Clear"
             height={18}
             width={18}

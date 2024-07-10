@@ -49,7 +49,7 @@ const Navbar = ({ linkItems, toggleSideBar }: NavBarProps) => {
             }`}
           >
             <Image
-              src="/logo.svg"
+              src="./logo.svg"
               alt="logo"
               height={40}
               width={40}

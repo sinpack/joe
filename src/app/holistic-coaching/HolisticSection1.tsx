@@ -7,7 +7,7 @@ const HolisticSection1 = () => {
     <section className="flex flex-col md:flex-row h-screen">
       <div className="relative w-full md:w-1/2 h-1/2 md:h-full">
         <Image
-          src="/images/mental2.jpg"
+          src="./images/mental2.jpg"
           alt="Abstract Mental Health 2"
           layout="fill"
           objectFit="cover"

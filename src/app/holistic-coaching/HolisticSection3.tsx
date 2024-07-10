@@ -7,7 +7,7 @@ const HolisticSection3 = () => {
     <section className="bg-gray-100">
       <div className="relative w-full h-96">
         <Image
-          src="/images/mental8.png"
+          src="./images/mental8.png"
           alt="Abstract Mental Health 8"
           layout="fill"
           objectFit="cover"
@@ -25,7 +25,7 @@ const HolisticSection3 = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative w-full h-64">
             <Image
-              src="/images/mental9.png"
+              src="./images/mental9.png"
               alt="Abstract Mental Health 9"
               layout="fill"
               objectFit="cover"
@@ -61,7 +61,7 @@ const HolisticSection3 = () => {
 
         <div className="relative w-full h-96 my-10">
           <Image
-            src="/images/mental10.png"
+            src="./images/mental10.png"
             alt="Abstract Mental Health"
             layout="fill"
             objectFit="cover"
