@@ -19,7 +19,7 @@ const HolisticSection4 = () => {
           <div className="flex flex-col space-y-6">
             <div className="relative w-full h-64">
               <Image
-                src="./images/mental7.png"
+                src="/images/mental7.png"
                 alt="Abstract Mental Health 7"
                 layout="fill"
                 objectFit="cover"
@@ -28,7 +28,7 @@ const HolisticSection4 = () => {
             </div>
             <div className="relative w-full h-64 md:h-80 lg:h-96">
               <Image
-                src="./images/mental6.png"
+                src="/images/mental6.png"
                 alt="Abstract Mental Health 3"
                 layout="fill"
                 objectFit="cover"

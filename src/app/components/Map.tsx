@@ -9,6 +9,7 @@ import L, { LatLngExpression } from 'leaflet';
 import { useState, useRef } from 'react';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 import Search from './Search Input';
+import { PrimarySolidButton } from './Buttons';
 
 const SearchLocation = ({
   onSearch,
@@ -68,7 +69,10 @@ const GetMyLocation = ({
 
   return (
     <div className="get-my-location">
-      <button onClick={getMyLocation}>Βρες τη τοποθεσία μου</button>
+      <PrimarySolidButton
+        text="Βρες τη τοποθεσία μου"
+        onClick={getMyLocation}
+      />
     </div>
   );
 };
@@ -82,7 +86,7 @@ const Map = () => {
   const handleLocationFound = (latlng: LatLngExpression) => {
     setCoord(latlng);
     if (mapRef.current) {
-      mapRef.current.setView(latlng, 13);
+      mapRef.current.setView(latlng, 20);
     }
   };
 
@@ -99,7 +103,7 @@ const Map = () => {
           width: '100vw',
         }}
         center={coord}
-        zoom={13}
+        zoom={20}
         scrollWheelZoom={false}
       >
         <TileLayer
@@ -121,7 +125,9 @@ const Map = () => {
           }
         >
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            ΓΡΑΦΕΙΟ ΨΥΧΟΘΕΡΑΠΕΙΑΣ
+            <br />
+            ΓΙΩΡΓΟΥ ΑΝΤΩΝΟΠΟΥΛΟΥ
           </Popup>
         </Marker>
       </MapContainer>

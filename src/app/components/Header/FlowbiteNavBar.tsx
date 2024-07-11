@@ -8,12 +8,12 @@ export function FlowbiteNavBar() {
     <Navbar>
       <Navbar.Brand as={Link} href="https://flowbite-react.com">
         <img
-          src="./logo.svg"
+          src="/logo.svg"
           className="mr-3 h-6 sm:h-9"
           alt="Flowbite React Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Mental Health Joe
+          Mental Health asdfasdf
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />

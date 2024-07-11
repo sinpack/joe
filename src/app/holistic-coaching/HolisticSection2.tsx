@@ -7,7 +7,7 @@ const HolisticSection2 = () => {
     <section className="flex flex-col space-y-10 py-10 md:py-16 bg-gray-100">
       <div className="relative w-full h-80">
         <Image
-          src="./images/mental3.png"
+          src="/images/mental3.png"
           alt="Abstract Mental Health 3"
           layout="fill"
           objectFit="cover"
@@ -63,7 +63,7 @@ const HolisticSection2 = () => {
           <div className="flex flex-col space-y-6">
             <div className="relative w-full h-64">
               <Image
-                src="./images/mental4.png"
+                src="/images/mental4.png"
                 alt="Abstract Mental Health 4"
                 layout="fill"
                 objectFit="cover"
@@ -72,7 +72,7 @@ const HolisticSection2 = () => {
             </div>
             <div className="relative w-full h-64 md:h-80 lg:h-96">
               <Image
-                src="./images/mental5.png"
+                src="/images/mental5.png"
                 alt="Abstract Mental Health 5"
                 layout="fill"
                 objectFit="cover"

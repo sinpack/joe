@@ -19,22 +19,30 @@ export default function ActiveLink({ name, href, icon }: ActiveLinkProps) {
     router.push(href);
   };
 
-  const isActive = pathName.startsWith(href);
+  const isActive = href === '/' ? pathName === href : pathName.startsWith(href);
 
   return (
     <Link href={href} passHref legacyBehavior>
-      <div
-        className={clsx({
-          'hover:bg-blackWhite-200 default-transition': !isActive,
-          'bg-cornflower': isActive,
-        })}
-      >
+      <div>
         <a
-          className="flex px-2.5 default-transition w-full cursor-default"
+          className="flex default-transition w-full cursor-pointer"
           onClick={handleClick}
         >
-          <div className="flex items-center space-x-2.5 h-[42px]">
-            <p className="body1 text-blackWhite-400">{name}</p>
+          <div
+            className={clsx({
+              'flex items-center space-x-2.5 h-10': true,
+              'hover:text-orange-500 default-transition': !isActive,
+              'text-[#b8a2c6]': isActive,
+            })}
+          >
+            <p
+              className={clsx({
+                'hover:text-orange-500 default-transition': !isActive,
+                'text-[#b8a2c6]': isActive,
+              })}
+            >
+              {name}
+            </p>
           </div>
         </a>
       </div>

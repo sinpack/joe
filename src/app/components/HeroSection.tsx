@@ -1,26 +1,19 @@
 import Image from 'next/image';
 import React from 'react';
-import { Advent_Pro } from 'next/font/google';
-import { inter } from '@/utils/fonts';
 import Link from 'next/link';
 
-const adventPro = Advent_Pro({
-  subsets: ['latin', 'greek'],
-  weight: '400',
-  variable: '--font-advent-pro',
-});
 const HeroSection = () => {
   return (
-    <section className="bg-[#142E29] dark:bg-gray-900">
+    <section className="bg-sky-50">
       <div className="grid space-y-5 max-w-screen-xl px-4 py-8 mx-auto lg:space-y-0 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="flex flex-col w-full items-center mr-auto lg:col-span-8">
           <h1
-            className={`inline-flex items-center justify-center w-full text-[#FBF4E6] max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white`}
+            className={`inline-flex items-center justify-center w-full text-gray-600 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white`}
           >
             Φροντίστε την Ψυχική Υγεία σας
           </h1>
           <p
-            className={`inline-flex items-center justify-center text-[#FBF4E6] max-w-2xl mb-6 font-light  lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400`}
+            className={`inline-flex items-center justify-center text-gray-600 max-w-2xl mb-6 font-light  lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400`}
           >
             Ανακαλύψτε τη δύναμη της ψυχικής υγείας με την [Όνομα της Εταιρείας
             σας]. Προσφέρουμε εξατομικευμένη υποστήριξη για τη διαχείριση του
@@ -54,9 +47,9 @@ const HeroSection = () => {
         </div>
         <div className="w-full h-full relative lg:mt-0 lg:flex lg:col-span-4 lg:px-10 py-5 ">
           <Image
-            src="./images/mental1.jpg"
+            src="/images/mental1.jpg"
             alt="mental-photo-1"
-            className="flex items-center justify-center relative rounded-full sm:rounded-3xl md:rounded-lg lg:rounded-full shadow-xl dark:shadow-gray-800"
+            className="flex items-center justify-center relative rounded-full sm:rounded-3xl md:rounded-lg lg:rounded-full shadow-xl"
             priority
             layout="fixed"
             width={400}

@@ -16,7 +16,7 @@ const AboutPage = () => {
     <section className="py-10 md:py-16">
       <div className="flex flex-col space-y-5 items-center container max-w-screen-xl mx-auto px-4">
         <Image
-          src="../images/profile-joe.png"
+          src="./images/profile-joe.png"
           alt="profile"
           className="rounded-full shadow-xl dark:shadow-gray-800"
           priority
@@ -47,7 +47,7 @@ const AboutPage = () => {
                 <div className="bg-gray-50 px-8 py-10 rounded-md space-y-5">
                   <div className="w-20 py-6 flex justify-center bg-gray-100 rounded-md mb-4">
                     <Image
-                      src="./images/meditate.jpg"
+                      src="/images/meditate.jpg"
                       alt="meditate"
                       className="shadow-xl dark:shadow-gray-800"
                       height={200}
@@ -163,7 +163,7 @@ const AboutPage = () => {
               </article>
               <div className="relative w-1/2 lg:w-1/2 h-64 lg:h-auto lg:flex-1">
                 <Image
-                  src="./images/self-accept.jpg"
+                  src="/images/self-accept.jpg"
                   alt="Background"
                   layout="fill"
                   objectFit="cover"

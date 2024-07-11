@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import useClickOutside from '@/utils/useClickOutside'; // Custom hook to handle click outside
 import BackdropTransition from '../BackdropTransition';
 import Sidebar from './Sidebar';
-import linkItems from './LinkItems';
+import linkItems from '../../../utils/LinkItems';
 import Navbar from './Navbar';
 import { FlowbiteNavBar } from './FlowbiteNavBar';
 

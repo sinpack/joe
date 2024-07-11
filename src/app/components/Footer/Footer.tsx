@@ -22,7 +22,7 @@ const CustomFooter = () => {
     //       <div>
     //         <Footer.Brand
     //           href="https://flowbite.com"
-    //           src=".https://flowbite.com/docs/images/logo.svg"
+    //           src="https://flowbite.com/docs/images/logo.svg"
     //           alt="Flowbite Logo"
     //           name="Flowbite"
     //         />

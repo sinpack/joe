@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import Navlink from './Navlink';
+import ActiveLink from './ActiveLink';
 
 type LinkItem = {
   name: string;
@@ -15,72 +15,37 @@ interface NavBarProps {
 }
 
 const Navbar = ({ linkItems, toggleSideBar }: NavBarProps) => {
-  const [isMd, setIsMd] = useState(false);
-  const [prevIsMd, setPrevIsMd] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const md = window.innerWidth >= 768;
-      setIsMd(md);
-      setPrevIsMd(md); // Update prevIsMd immediately when isMd changes
-    };
-
-    handleResize(); // Call once to set initial state
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    // Only update prevIsMd if isMd has changed
-    if (isMd !== prevIsMd) {
-      setPrevIsMd(isMd);
-    }
-    // Reset prevIsMd to initial state when navigating to a new page
-    setPrevIsMd(isMd);
-  }, [isMd]);
-
   return (
-    <header className="items-center h-full bg-[#A0937D] shadow-md sticky top-0 z-50">
-      <div className="w-full mx-auto py-4 px-2.5 flex justify-between items-center gap-2.5">
-        <div className="flex items-center gap-5 w-full text-nowrap min-w-fit">
-          <div
-            className={`flex w-fit items-center transform transition-transform duration-500 ${
-              prevIsMd ? 'translate-x-0' : 'translate-x-full'
-            }`}
-          >
+    <header className="items-center h-full bg-sky-50 sticky top-0 z-50">
+      <div className="w-full py-12 lg:px-60 md:px-30 sm:px-20 px-14 justify-between flex items-center gap-10 min-w-fit">
+        <div className="flex flex-row gap-5 w-full whitespace-nowrap items-center justify-end md:justify-between min-w-fit">
+          <div className="flex flex-row w-full items-center justify-end md:justify-start">
             <Image
-              src="./logo.svg"
+              src="/logo.svg"
               alt="logo"
               height={40}
               width={40}
               priority
               quality={100}
             />
-            <h1 className="flex text-xl font-semibold text-[#973131] ml-2">
+            <h1 className="flex items-center text-xl font-bold text-gray-600 ml-2 whitespace-nowrap tracking-tight">
               Mental Health Joe
             </h1>
           </div>
         </div>
-        <nav className="flex items-center w-full justify-end default-transition min-w-fit">
-          <ul
-            className={`items-center text-nowrap hidden md:flex gap-x-5 text-white opacity-0 transition-opacity duration-500 ${
-              prevIsMd ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
+        <nav className="hidden md:flex items-center w-full justify-end default-transition min-w-fit">
+          <ul className="flex items-center text-nowrap gap-x-5  font-bold tracking-normal text-sm">
             {linkItems.map((item) => (
-              <li key={item.name}>
-                <Link href={item.href} className="text-lg">
-                  {item.name}
-                </Link>
+              <li
+                key={item.name}
+                className="relative default-transition before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-orange-500 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-orange-500 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]"
+              >
+                <ActiveLink name={item.name} href={item.href}></ActiveLink>
               </li>
             ))}
           </ul>
         </nav>
-        <div
-          className={`flex items-center md:hidden opacity-0 transition-opacity duration-500 ${
-            prevIsMd ? 'opacity-0' : 'opacity-100'
-          }`}
-        >
+        <div className={`flex items-center md:hidden`}>
           <button
             type="button"
             className="inline-flex items-center"
