@@ -1,8 +1,7 @@
 'use client';
-import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 import ActiveLink from './ActiveLink';
+import { BurgerButton } from './BurgerButton';
 
 type LinkItem = {
   name: string;
@@ -12,9 +11,19 @@ type LinkItem = {
 interface NavBarProps {
   linkItems: LinkItem[];
   toggleSideBar: () => void;
+  isOpen: boolean;
 }
 
-const Navbar = ({ linkItems, toggleSideBar }: NavBarProps) => {
+const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
+  const canvasStyle = {
+    display: 'flex',
+    width: '100vw',
+    height: '100vh',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
+  const menuButtonStyle = {};
   return (
     <header className="items-center h-full bg-sky-50 sticky top-0 z-50">
       <div className="w-full py-12 lg:px-60 md:px-30 sm:px-20 px-14 justify-between flex items-center gap-10 min-w-fit">
@@ -42,24 +51,23 @@ const Navbar = ({ linkItems, toggleSideBar }: NavBarProps) => {
             ))}
           </ul>
         </nav>
-        <div className={`flex items-center md:hidden`}>
-          <button
-            type="button"
-            className="inline-flex items-center"
+        <div
+          className={`flex items-center md:hidden default-transition ${
+            isOpen ? 'hidden' : 'visible'
+          }`}
+        >
+          <BurgerButton
+            isOpen={isOpen}
             onClick={toggleSideBar}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={40}
-              height={40}
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#AF8F6F"
-                d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"
-              />
-            </svg>
-          </button>
+            style={menuButtonStyle}
+            strokeWidth="2"
+            color="#4b5563"
+            lineProps={{ strokeLinecap: 'round' }}
+            transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+            width={24}
+            height={24}
+            className="text-gray-600 cursor-pointer"
+          />
         </div>
       </div>
     </header>

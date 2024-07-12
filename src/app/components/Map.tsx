@@ -7,71 +7,20 @@ import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerShadow from 'leaflet/dist/images/marker-shadow.png';
 import L, { LatLngExpression } from 'leaflet';
 import { useState, useRef } from 'react';
-import { OpenStreetMapProvider } from 'leaflet-geosearch';
-import Search from './Search Input';
 import { PrimarySolidButton } from './Buttons';
 
-const SearchLocation = ({
-  onSearch,
-}: {
-  onSearch: (latlng: LatLngExpression) => void;
-}) => {
-  const [value, setValue] = useState<string>('');
-  const provider = new OpenStreetMapProvider();
+const initialCoord: LatLngExpression = [38.26099285730545, 21.742655583197468];
 
-  const handleChange = (value: string) => {
-    setValue(value);
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const query = value;
-    console.log(value);
-
-    if (query.trim()) {
-      provider.search({ query }).then((result) => {
-        if (result.length > 0) {
-          const { x, y } = result[0];
-          onSearch([y, x]);
-        } else {
-          console.log('Location not found');
-        }
-      });
-    }
-  };
-
-  return (
-    <div className="flex w-fit">
-      <Search
-        placeholder="Εύρεση τοποθεσίας"
-        value={value}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      />
-    </div>
-  );
-};
-
-const GetMyLocation = ({
+const GetOfficeLocation = ({
   onLocation,
 }: {
   onLocation: (latlng: LatLngExpression) => void;
 }) => {
-  const getMyLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        onLocation([position.coords.latitude, position.coords.longitude]);
-      });
-    } else {
-      console.log('Geolocation is not supported by this browser.');
-    }
-  };
-
   return (
-    <div className="get-my-location">
+    <div className="flex justify-center items-center w-full">
       <PrimarySolidButton
         text="ΘΕΡΑΠΕΥΤΗΡΙΟ"
-        onClick={getMyLocation}
+        onClick={() => onLocation(initialCoord)}
         width={200}
       />
     </div>
@@ -79,9 +28,7 @@ const GetMyLocation = ({
 };
 
 const Map = () => {
-  const [coord, setCoord] = useState<LatLngExpression>([
-    38.26099285730545, 21.742655583197468,
-  ]);
+  const [coord, setCoord] = useState<LatLngExpression>(initialCoord);
   const mapRef = useRef<L.Map | null>(null);
 
   const handleLocationFound = (latlng: LatLngExpression) => {
@@ -94,8 +41,7 @@ const Map = () => {
   return (
     <div className="flex flex-col space-y-10 bg-sky-50">
       <div className="flex flex-col space-y-10 items-center px-40 justify-center lg:justify-between lg:flex-row sm:space-y-10 sm:items-center md:space-y-5 lg:space-y-0">
-        <SearchLocation onSearch={handleLocationFound} />
-        <GetMyLocation onLocation={handleLocationFound} />
+        <GetOfficeLocation onLocation={handleLocationFound} />
       </div>
       <MapContainer
         ref={mapRef}

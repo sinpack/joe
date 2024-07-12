@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .sideNav {
-  @apply h-full bg-red-500 fixed top-0 left-0 w-[320px] z-[200] -translate-x-full;
+  @apply h-full fixed top-0 left-0 w-[320px] z-[2000] -translate-x-full;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -133,11 +133,11 @@
     }
 
     .btn-gray {
-        @apply bg-gray-200 hover:bg-gray-300 text-gray-700 active:bg-gray-400 rounded-lg;
+        @apply shadow-xl bg-gray-200 hover:bg-gray-300 text-gray-700 active:bg-gray-400 rounded-lg;
     }
 
     .btn-gray:not(.btn-disabled):hover {
-        @apply text-orange-500 active:text-stone-100;
+        @apply  active:text-gray-200;
     }
 
     .btn-primary-ghost {

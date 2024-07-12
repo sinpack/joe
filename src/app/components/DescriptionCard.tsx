@@ -1,20 +1,19 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { motion, useAnimation } from 'framer-motion';
 
 interface DescriptionCardProps {
-  as?: React.ElementType;
+  description?: string;
   className?: string;
-  children: React.ReactNode;
   vertical: boolean;
+  bulletPoints?: string[];
 }
 
 const DescriptionCard: React.FC<DescriptionCardProps> = ({
-  as: Component = 'p',
+  description,
   className,
-  children,
   vertical,
+  bulletPoints,
 }) => {
   const controls = useAnimation();
   const cardRef = useRef<HTMLParagraphElement>(null);
@@ -66,14 +65,41 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
       variants={variants}
       className={clsx(
         className,
-        'text-sm text-start justify-center leading-tight w-full p-5 border-[1px] border-[#758694]',
+        'text-sm text-start justify-center leading-tight w-full p-5 border-[1px] space-y-5 border-[#758694]',
         {
           'rounded-b-xl': vertical,
           'rounded-r-xl': !vertical,
         }
       )}
     >
-      <Component>{children}</Component>
+      {description && <p>{description}</p>}
+      {bulletPoints && (
+        <ul className="space-y-4 text-left text-gray-500">
+          {bulletPoints.map((point, index) => (
+            <li
+              key={index}
+              className="flex items-center space-x-3 rtl:space-x-reverse"
+            >
+              <svg
+                className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 16 12"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M1 5.917 5.724 10.5 15 1.5"
+                />
+              </svg>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </motion.div>
   );
 };

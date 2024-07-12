@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import Divider from '../Divider';
-import ActiveLink from './ActiveLink';
+import SideActiveLink from './SideActiveLink';
 
 type LinkItem = {
   name: string;
@@ -23,8 +23,8 @@ const Sidebar = ({
   sidebarRef,
 }: SideBarProps): JSX.Element => {
   const renderSideBarItem = (item: LinkItem) => (
-    <div className="mt-[10px]" onClick={toggleSidebar} key={item.name}>
-      <ActiveLink name={item.name} href={item.href} />
+    <div className="mt-2.5" onClick={toggleSidebar} key={item.name}>
+      <SideActiveLink name={item.name} href={item.href} />
     </div>
   );
 
@@ -37,9 +37,9 @@ const Sidebar = ({
           sideNavOpen: isOpen,
         })}
       >
-        <div className="flex-start top-0 left-0 px-2.5 w-[320px] h-screen bg-white shadow-[1px_4px_11px_3px_rgba(1, 9, 24, 0.12)]">
+        <div className="flex-start top-0 left-0 px-2.5 w-[320px] bg-neutral-100 shadow-xl drop-shadow-xl z-60">
           <div className="flex items-center px-2.5 w-full h-[50px] justify-between">
-            <p className="text-2xl font-bold text-black">Mental Health Joe</p>
+            <h2 className="tracking-tight leading-tight">Mental Health Joe</h2>
             <div
               className="flex items-center h-full cursor-pointer"
               onClick={toggleSidebar}
@@ -51,6 +51,7 @@ const Sidebar = ({
                 width={24}
                 priority
                 quality={100}
+                className="filter-grey-bold"
               />
             </div>
           </div>

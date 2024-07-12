@@ -58,7 +58,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <div className="md:col-span-1">
+      <div className="md:col-span-1 z-10">
         <DynamicMap />
       </div>
     </div>
