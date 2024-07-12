@@ -3,12 +3,14 @@ import React from 'react';
 import Button from '../components/Buttons/Button';
 import { useRouter } from 'next/navigation';
 import { TertiaryButton } from '../components/Buttons';
+import TitleCard from '../components/TitleCard';
+import DescriptionCard from '../components/DescriptionCard';
 
 interface TherapyToolCardProps {
   title: string;
   description: string;
   link?: string;
-  backgroundColor?: string;
+  backgroundColor: string;
 }
 
 const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
@@ -24,22 +26,10 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
 
   return (
     <div className="py-4 px-6 flex flex-col justify-between space-y-5">
-      <h3
-        className="text-start justify-center text-xl font-bold leading-tight h-52 w-full p-5"
-        style={{
-          backgroundColor: backgroundColor || 'transparent',
-          WebkitMask:
-            'radial-gradient(circle at center bottom, transparent 10%, black 10%)',
-          WebkitMaskComposite: 'xor',
-          mask: 'radial-gradient(circle at center bottom, transparent 10%, black 10%)',
-          maskComposite: 'xor',
-        }}
-      >
+      <TitleCard backgroundColor={backgroundColor} vertical as={'h1'}>
         {title}
-      </h3>
-      <p className="text-sm text-start justify-center leading-tight h-fit min-h-40 w-full p-5 border-[1px] border-[#758694] rounded-b-xl">
-        {description}
-      </p>
+      </TitleCard>
+      <DescriptionCard vertical>{description}</DescriptionCard>
       <TertiaryButton
         onClick={handleNavigate}
         extraClass="text-blue-500 place-self-end"

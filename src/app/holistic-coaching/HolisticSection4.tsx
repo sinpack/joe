@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const HolisticSection4 = () => {
   return (
-    <section className="py-10 md:py-16 bg-gray-100">
+    <section className="py-10 md:py-16 bg-sky-50">
       <div className="container max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">

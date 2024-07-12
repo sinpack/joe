@@ -167,4 +167,12 @@
     .btn-secondary-pressed {
         @apply bg-blackWhite-250 hover:bg-blackWhite-250;
     }
+
+    .fade-slide-in {
+     opacity: 0;
+    }
+
+   .fade-slide-in.visible {
+      opacity: 1;
+    }
 }

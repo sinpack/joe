@@ -12,6 +12,8 @@ import {
   Roboto_Condensed,
   Open_Sans,
 } from 'next/font/google';
+import PageAnimatePresence from './components/PageAnimatePresence';
+import PageAnimation from './components/PageAnimation';
 
 const font = Open_Sans({
   subsets: ['latin', 'greek'],
@@ -22,9 +24,14 @@ const font = Open_Sans({
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={`${font.variable}`}>
+      <body className={`${font.variable} bg-sky-50`}>
         <Header />
-        {children}
+        <PageAnimatePresence>
+          {' '}
+          <PageAnimation transitionClass="easeInOut" duration={0.3}>
+            {children}
+          </PageAnimation>
+        </PageAnimatePresence>
         <CustomFooter />
       </body>
     </html>

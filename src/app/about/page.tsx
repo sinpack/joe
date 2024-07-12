@@ -13,12 +13,12 @@ const adventPro = Advent_Pro({
 
 const AboutPage = () => {
   return (
-    <section className="py-10 md:py-16">
+    <section className="py-10 md:py-16 bg-sky-50">
       <div className="flex flex-col space-y-5 items-center container max-w-screen-xl mx-auto px-4">
         <Image
-          src="./images/profile-joe.png"
+          src="/images/profile-joe.png"
           alt="profile"
-          className="rounded-full shadow-xl dark:shadow-gray-800"
+          className="rounded-full shadow-xl"
           priority
           width={200}
           height={100}

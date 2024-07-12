@@ -70,8 +70,9 @@ const GetMyLocation = ({
   return (
     <div className="get-my-location">
       <PrimarySolidButton
-        text="Βρες τη τοποθεσία μου"
+        text="ΘΕΡΑΠΕΥΤΗΡΙΟ"
         onClick={getMyLocation}
+        width={200}
       />
     </div>
   );

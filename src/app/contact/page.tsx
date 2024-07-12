@@ -1,8 +1,8 @@
 // pages/contact.js
 
 import dynamic from 'next/dynamic';
-import Divider2 from '../components/Divider2';
 import contactDetails from './ContactDetails';
+import BlueDivider from '../components/BlueDivider';
 
 export default function Contact() {
   const DynamicMap = dynamic(() => import('../components/Map'), {
@@ -10,8 +10,8 @@ export default function Contact() {
   });
 
   return (
-    <>
-      <section className="flex flex-col items-center bg-sky-50 py-12 px-20 lg:px-60 md:px-40 sm:px-30">
+    <div className="bg-sky-50">
+      <section className="flex flex-col items-center py-12 px-20 lg:px-60 md:px-40 sm:px-30">
         <main className="flex flex-col w-full max-w-3xl">
           <div className="flex flex-col items-center py-10 bg-sky-50 space-y-10">
             <h1 className="flex w-fit justify-center items-center text-4xl tracking-widest font-bold whitespace-normal">
@@ -36,8 +36,8 @@ export default function Contact() {
           </div>
         </main>
       </section>
-      <Divider2 />
-      <section className="bg-sky-50 px-40">
+      <BlueDivider polygon={false} />
+      <section className=" px-40">
         <div className="items-center w-full py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactDetails.map((detail, index) => (
@@ -61,6 +61,6 @@ export default function Contact() {
       <div className="md:col-span-1">
         <DynamicMap />
       </div>
-    </>
+    </div>
   );
 }
