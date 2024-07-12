@@ -23,9 +23,11 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
       >
         {title}
       </TitleCard>
-      <DescriptionCard vertical={false} className="bg-gray-300 min-h-52 flex">
-        {description}
-      </DescriptionCard>
+      <DescriptionCard
+        vertical={false}
+        className="bg-gray-300 min-h-52 flex"
+        description={description}
+      />
     </div>
   );
 };
