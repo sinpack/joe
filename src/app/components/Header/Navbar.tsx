@@ -25,7 +25,7 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
 
   const menuButtonStyle = {};
   return (
-    <header className="items-center h-full bg-sky-50 sticky top-0 z-50">
+    <header className="items-center h-full bg-sky-100 sticky top-0 z-50">
       <div className="w-full py-12 lg:px-60 md:px-30 sm:px-20 px-14 justify-between flex items-center gap-10 min-w-fit">
         <div className="flex flex-row gap-5 w-full whitespace-nowrap items-center justify-end md:justify-between min-w-fit">
           <div className="flex flex-row w-full items-center justify-end md:justify-start">
@@ -38,7 +38,7 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
               quality={100}
             />
             <h1 className="flex items-center text-xl font-bold text-gray-600 ml-2 whitespace-nowrap tracking-tight">
-              Mental Health Joe
+              ΓΙΩΡΓΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ
             </h1>
           </div>
         </div>

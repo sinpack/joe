@@ -11,27 +11,16 @@ export default function Contact() {
 
   return (
     <div className="bg-sky-50">
-      <section className="flex flex-col items-center py-12 px-20 lg:px-60 md:px-40 sm:px-30">
+      <section className="flex flex-col items-center py-20 px-20 lg:px-60 md:px-40 sm:px-30">
         <main className="flex flex-col w-full max-w-3xl">
-          <div className="flex flex-col items-center py-10 bg-sky-50 space-y-10">
+          <div className="flex flex-col items-center py-10 bg-sky-50 space-y-20">
             <h1 className="flex w-fit justify-center items-center text-4xl tracking-widest font-bold whitespace-normal">
               Επικοινωνία
             </h1>
             <p className="text-center text-lg whitespace-normal">
-              Για να κλείσετε ραντεβού ή για περαιτέρω πληροφορίες, σαν πρώτο
-              βήμα μπορείτε να παρακαλώ επικοινωνήστε μαζί μου μέσω τηλεφώνου
-              στο +3069000000 ή μέσω email στο info@psychologyantonopoulos.gr
-            </p>
-
-            <p className="text-center text-lg whitespace-normal">
-              Ο χρόνος είναι ένας πολύτιμος πόρος και είμαι διαθέσιμος να σας
-              συναντήσω για μια προσωπική συνεδρία. Παρακαλώ επικοινωνήστε μαζί
-              μου για να συνεννοηθούμε σχετικά με τον κατάλληλο χρόνο και τον
-              τρόπο συνάντησης.
-            </p>
-            <p className="text-center text-lg whitespace-normal ">
-              Οι συνεδρίες διαρκούν 50 λεπτά (στην υπνοθεραπεία, 1 ώρα) και
-              πραγματοποιούνται είτε δια ζώσης είτε online.{' '}
+              Για να κλείσετε ραντεβού ή για περαιτέρω πληροφορίες, μπορείτε να
+              επικοινωνήστε μαζί μου μέσω τηλεφώνου στο +6976629913 ή μέσω
+              e-mail στο georgios_antonopoulos@hotmail.com
             </p>
           </div>
         </main>

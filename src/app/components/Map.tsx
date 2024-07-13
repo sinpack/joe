@@ -9,7 +9,7 @@ import L, { LatLngExpression } from 'leaflet';
 import { useState, useRef } from 'react';
 import { PrimarySolidButton } from './Buttons';
 
-const initialCoord: LatLngExpression = [38.26099285730545, 21.742655583197468];
+const initialCoord: LatLngExpression = [38.26011974054132, 21.745283432442744];
 
 const GetOfficeLocation = ({
   onLocation,
@@ -19,7 +19,7 @@ const GetOfficeLocation = ({
   return (
     <div className="flex justify-center items-center w-full">
       <PrimarySolidButton
-        text="ΘΕΡΑΠΕΥΤΗΡΙΟ"
+        text="ΔΙΕΥΘΥΝΣΗ ΓΡΑΦΕΙΟΥ"
         onClick={() => onLocation(initialCoord)}
         width={200}
       />
@@ -71,11 +71,7 @@ const Map = () => {
             })
           }
         >
-          <Popup>
-            ΓΡΑΦΕΙΟ ΨΥΧΟΘΕΡΑΠΕΙΑΣ
-            <br />
-            ΓΙΩΡΓΟΥ ΑΝΤΩΝΟΠΟΥΛΟΥ
-          </Popup>
+          <Popup>ΓΡΑΦΕΙΟ</Popup>
         </Marker>
       </MapContainer>
     </div>

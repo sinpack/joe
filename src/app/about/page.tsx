@@ -8,8 +8,8 @@ const AboutPage = () => {
     <div className="bg-sky-50">
       <section className="py-10">
         <div className="flex flex-col items-center container max-w-screen-xl mx-auto px-4">
-          <h1 className="text-center text-3xl font-bold text-gray-800 mb-8">
-            ΒΙΟΓΡΑΦΙΚΟ
+          <h1 className="text-center text-3xl font-bold text-gray-800 mb-8 tracking-widest">
+            ΠΡΟΦΙΛ
           </h1>
           <div className="flex justify-center mb-8">
             <Image

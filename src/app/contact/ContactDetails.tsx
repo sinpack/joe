@@ -18,7 +18,7 @@ const contactDetails: ContactDetail[] = [
   {
     icon: <Icon src="/icons/email.png" alt="Email Icon" />,
     title: 'Email',
-    description: 'random@example.com',
+    description: 'georgios_antonopoulos@hotmail.com',
   },
   {
     icon: <Icon src="/icons/phone.png" alt="Phone Icon" />,
