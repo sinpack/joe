@@ -30,7 +30,7 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
         <div className="flex flex-row gap-5 w-full whitespace-nowrap items-center justify-end md:justify-between min-w-fit">
           <div className="flex flex-row w-full items-center justify-end md:justify-start">
             <Image
-              src="/logo.svg"
+              src="./logo.svg"
               alt="logo"
               height={40}
               width={40}
