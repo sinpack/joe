@@ -32,14 +32,16 @@ export default function Contact() {
             {contactDetails.map((detail, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center lg:items-center text-left"
+                className="flex flex-col items-center lg:items-center text-left text-wrap"
               >
                 <div className="mb-4">{detail.icon}</div>
                 <span className="font-semibold text-lg mb-2">
                   {detail.title}
                 </span>
                 {detail.description && (
-                  <p className="text-gray-600">{detail.description}</p>
+                  <p className="text-gray-600 text-center w-full break-words whitespace-normal">
+                    {detail.description}
+                  </p>
                 )}
                 {detail.icons && detail.icons}
               </div>
@@ -47,7 +49,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <div className="md:col-span-1 z-10">
+      <div className="flex flex-col w-full z-10 container mx-auto py-20 px-20">
         <DynamicMap />
       </div>
     </div>

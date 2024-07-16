@@ -8,24 +8,26 @@ import DescriptionCard from '../components/DescriptionCard';
 
 interface TherapyToolCardProps {
   title: string;
-  description?: string;
+  descriptions?: string[];
   link?: string;
   backgroundColor: string;
   button?: boolean;
   titleCardClassName?: string;
   descriptionCardClassName?: string;
   bulletPoints?: string[];
+  index?: number;
 }
 
 const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
   title,
-  description,
+  descriptions,
   link,
   backgroundColor,
   button = true,
   titleCardClassName,
   descriptionCardClassName,
   bulletPoints,
+  index,
 }) => {
   const router = useRouter();
   const handleNavigate = () => {
@@ -33,7 +35,7 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
   };
 
   return (
-    <div className="py-4 px-6 flex flex-col justify-between space-y-5">
+    <div className="py-4 px-6 flex flex-col justify-between space-y-5 h-fit">
       <TitleCard
         backgroundColor={backgroundColor}
         vertical
@@ -42,12 +44,27 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
       >
         {title}
       </TitleCard>
-      <DescriptionCard
-        vertical
-        className={descriptionCardClassName}
-        bulletPoints={bulletPoints}
-        description={description}
-      />
+      {descriptions ? (
+        descriptions.map((description, index) => (
+          <DescriptionCard
+            key={`description-${index}`} // Add unique key
+            index={index}
+            vertical={true}
+            className={descriptionCardClassName}
+            description={description}
+            bulletPoints={bulletPoints}
+          />
+        ))
+      ) : (
+        <DescriptionCard
+          key={`description-${index}`} // Add unique key
+          index={index}
+          vertical={true}
+          className={descriptionCardClassName}
+          description={descriptions}
+          bulletPoints={bulletPoints}
+        />
+      )}
       {button && (
         <TertiaryButton
           onClick={handleNavigate}

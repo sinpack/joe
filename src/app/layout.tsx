@@ -26,12 +26,11 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={`${font.variable} bg-sky-50`}>
         <Header />
-        <PageAnimatePresence>
-          {' '}
-          <PageAnimation transitionClass="easeInOut" duration={0.3}>
-            {children}
-          </PageAnimation>
-        </PageAnimatePresence>
+        {/* <PageAnimatePresence> */}{' '}
+        {/* <PageAnimation transitionClass="easeInOut" duration={0.3}> */}
+        {children}
+        {/* </PageAnimation> */}
+        {/* </PageAnimatePresence> */}
         <CustomFooter />
       </body>
     </html>

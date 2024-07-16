@@ -1,7 +1,11 @@
 import React from 'react';
 
-export default function Divider() {
-    return (
-        <div className="w-full border-t-[1px] border-solid border-[#DEE0E6]" />
-    );
+interface DividerProps {
+  className?: string;
+}
+
+export default function Divider({
+  className = 'border-solid border-[#DEE0E6]',
+}: DividerProps) {
+  return <div className={`w-full border-t-[1px] ${className}`} />;
 }

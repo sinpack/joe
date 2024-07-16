@@ -6,11 +6,13 @@ const AttributesSection = () => {
     <>
       <section className="flex flex-col items-center justify-start bg-sky-50 py-10 px-20 relative w-full box-border">
         <div
-          className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 w-full border border-gray-300 bg-sky-50 relative box-border"
+          className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5 w-full border border-gray-300 bg-sky-50 relative box-border"
           style={{ gridAutoFlow: 'dense' }}
         >
-          <div className="absolute left-1/2 -top-10 transform -translate-x-1/2 flex flex-col items-center justify-center bg-sky-50 p-6 z-10 box-border">
-            <h1 className="uppercase whitespace-nowrap">Μοντελα Coaching</h1>
+          <div className="absolute left-1/2 -top-10 transform -translate-x-1/2 flex flex-col items-center justify-center bg-sky-50 p-5 z-10 box-border">
+            <h2 className="font-medium uppercase whitespace-nowrap">
+              Μοντελα Coaching
+            </h2>
           </div>
           {[
             {
@@ -41,7 +43,7 @@ const AttributesSection = () => {
                 'border-x': index === 2,
               })}
             >
-              <article className="flex flex-col items-center justify-start bg-sky-50 p-12 gap-4">
+              <article className="flex flex-col items-center justify-start bg-sky-50 p-10 gap-5">
                 <h3 className="text-center">{attribute.title}</h3>
                 <p className="text-center min-w-[200px]">{attribute.content}</p>
               </article>

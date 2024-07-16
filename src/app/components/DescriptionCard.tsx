@@ -8,6 +8,7 @@ interface DescriptionCardProps {
   className?: string;
   vertical: boolean;
   bulletPoints?: string[];
+  index?: number;
 }
 
 const DescriptionCard: React.FC<DescriptionCardProps> = ({
@@ -15,6 +16,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
   className,
   vertical,
   bulletPoints,
+  index,
 }) => {
   const controls = useAnimation();
   const cardRef = useRef<HTMLParagraphElement>(null);
@@ -47,7 +49,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
   const variants = {
     hidden: {
       opacity: 0,
-      y: vertical ? '-100%' : 0,
+      y: vertical ? '-20%' : 0,
       x: vertical ? 0 : '-100%',
     },
     visible: {
@@ -60,13 +62,14 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
 
   return (
     <motion.div
+      key={index}
       ref={cardRef}
       initial="hidden"
       animate={controls}
       variants={variants}
       className={clsx(
         className,
-        'text-sm text-start justify-center leading-tight w-full p-5 border-[1px] space-y-5 border-[#758694]',
+        'text-sm text-start justify-center leading-tight p-5 border-[1px] space-y-5 border-[#758694]',
         {
           'rounded-b-xl': vertical,
           'rounded-r-xl': !vertical,
@@ -75,11 +78,11 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
     >
       {description && <p>{description}</p>}
       {bulletPoints && (
-        <ul className="space-y-4 text-left text-gray-500">
+        <ul className="space-y-5 text-left text-gray-500">
           {bulletPoints.map((point, index) => (
             <li
               key={index}
-              className="flex items-center space-x-3 rtl:space-x-reverse"
+              className="flex items-center space-x-2.5 rtl:space-x-reverse"
             >
               <svg
                 className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"

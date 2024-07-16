@@ -4,30 +4,51 @@ import DescriptionCard from '../components/DescriptionCard';
 
 interface HolisticCardProps {
   title: string;
-  description: string;
+  descriptions?: string[];
   link?: string;
   backgroundColor: string;
+  bulletPoints?: string[];
+  className?: string;
 }
 
 const HolisticCard: React.FC<HolisticCardProps> = ({
   title,
-  description,
+  descriptions,
   backgroundColor,
+  bulletPoints,
+  className,
 }) => {
   return (
-    <div className="py-4 px-6 flex flex-row justify-between items-start space-x-5">
-      <TitleCard
-        backgroundColor={backgroundColor}
-        vertical={false}
-        className="content-center"
-      >
-        {title}
-      </TitleCard>
-      <DescriptionCard
-        vertical={false}
-        className="bg-gray-300 min-h-52 flex"
-        description={description}
-      />
+    <div className="flex flex-row py-4 px-6 space-x-5">
+      <div className="w-1/3 flex-shrink-0">
+        <TitleCard
+          backgroundColor={backgroundColor}
+          vertical={false}
+          className="content-center"
+        >
+          {title}
+        </TitleCard>
+      </div>
+      <div className="w-2/3 flex-grow flex flex-col space-y-10">
+        {descriptions ? (
+          descriptions.map((description, index) => (
+            <DescriptionCard
+              key={index}
+              index={index}
+              vertical={false}
+              className={className}
+              description={description}
+              bulletPoints={bulletPoints}
+            />
+          ))
+        ) : (
+          <DescriptionCard
+            vertical={false}
+            className={className}
+            bulletPoints={bulletPoints}
+          />
+        )}
+      </div>
     </div>
   );
 };

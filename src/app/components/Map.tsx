@@ -9,7 +9,7 @@ import L, { LatLngExpression } from 'leaflet';
 import { useState, useRef } from 'react';
 import { PrimarySolidButton } from './Buttons';
 
-const initialCoord: LatLngExpression = [38.26011974054132, 21.745283432442744];
+const initialCoord: LatLngExpression = [38.26002812552977, 21.745253928081667];
 
 const GetOfficeLocation = ({
   onLocation,
@@ -39,19 +39,16 @@ const Map = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-10 bg-sky-50">
+    <div className="flex flex-col space-y-10 bg-sky-50 items-center w-full">
       <div className="flex flex-col space-y-10 items-center px-40 justify-center lg:justify-between lg:flex-row sm:space-y-10 sm:items-center md:space-y-5 lg:space-y-0">
         <GetOfficeLocation onLocation={handleLocationFound} />
       </div>
       <MapContainer
         ref={mapRef}
-        style={{
-          height: '100vh',
-          width: '100vw',
-        }}
         center={coord}
         zoom={20}
         scrollWheelZoom={false}
+        className="w-[700px] h-[700px] shadow-xl rounded-xl"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
