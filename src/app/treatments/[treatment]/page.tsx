@@ -1,17 +1,25 @@
+// pages/treatments/[treatment].tsx
+
 import Link from 'next/link';
-import therapyToolsAnalysis from '@/utils/TherapyToolsAnalysis';
 import Image from 'next/image';
 import Divider from '@/app/components/Divider';
+import therapyToolsAnalysis from '@/utils/TherapyToolsAnalysis';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-const TherapyToolPage: React.FC<{ params: { treatment: string } }> = ({
-  params,
-}: {
-  params: { treatment: string };
-}) => {
-  const therapyTool = therapyToolsAnalysis.find(
-    (tool) => tool.nameId === params.treatment
-  );
+interface TherapyToolPageProps {
+  therapyTool: {
+    nameId: string;
+    mainTitle: string;
+    startingParagraph: string;
+    image: string;
+    sections: {
+      title: string;
+      paragraph: string;
+    }[];
+  };
+}
 
+const TherapyToolPage: React.FC<TherapyToolPageProps> = ({ therapyTool }) => {
   if (!therapyTool) {
     return <div>Therapy tool not found.</div>;
   }
@@ -79,6 +87,28 @@ const TherapyToolPage: React.FC<{ params: { treatment: string } }> = ({
       </div>
     </div>
   );
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = therapyToolsAnalysis.map((tool) => ({
+    params: { treatment: tool.nameId },
+  }));
+
+  return { paths, fallback: true };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const therapyTool = therapyToolsAnalysis.find(
+    (tool) => tool.nameId === params?.treatment
+  );
+
+  if (!therapyTool) {
+    return { notFound: true };
+  }
+
+  return {
+    props: { therapyTool },
+  };
 };
 
 export default TherapyToolPage;
