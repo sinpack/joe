@@ -1,25 +1,38 @@
-// pages/treatments/[treatment].tsx
+// src/app/treatments/[treatment]/page.tsx
 
-import Link from 'next/link';
+import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Divider from '@/app/components/Divider';
 import therapyToolsAnalysis from '@/utils/TherapyToolsAnalysis';
-import { GetStaticPaths, GetStaticProps } from 'next';
 
-interface TherapyToolPageProps {
-  therapyTool: {
-    nameId: string;
-    mainTitle: string;
-    startingParagraph: string;
-    image: string;
-    sections: {
-      title: string;
-      paragraph: string;
-    }[];
-  };
+interface TherapyTool {
+  nameId: string;
+  mainTitle: string;
+  startingParagraph: string;
+  image: string;
+  sections: {
+    title: string;
+    paragraph: string;
+  }[];
+  linkTitle: string;
 }
 
-const TherapyToolPage: React.FC<TherapyToolPageProps> = ({ therapyTool }) => {
+interface TherapyToolPageProps {
+  params: { treatment: string };
+}
+
+export async function generateStaticParams() {
+  return therapyToolsAnalysis.map((tool: TherapyTool) => ({
+    treatment: tool.nameId,
+  }));
+}
+
+const TherapyToolPage: React.FC<TherapyToolPageProps> = ({ params }) => {
+  const therapyTool = therapyToolsAnalysis.find(
+    (tool: TherapyTool) => tool.nameId === params.treatment
+  );
+
   if (!therapyTool) {
     return <div>Therapy tool not found.</div>;
   }
@@ -58,7 +71,7 @@ const TherapyToolPage: React.FC<TherapyToolPageProps> = ({ therapyTool }) => {
             <h4 className="flex items-center h-10 font-bold justify-center lg:justify-start">
               ΑΛΛΕΣ ΥΠΗΡΕΣΙΕΣ
             </h4>
-            {therapyToolsAnalysis.map((tool) => (
+            {therapyToolsAnalysis.map((tool: TherapyTool) => (
               <div
                 key={tool.nameId}
                 className="mt-2.5 flex flex-col items-center md:items-start"
@@ -87,28 +100,6 @@ const TherapyToolPage: React.FC<TherapyToolPageProps> = ({ therapyTool }) => {
       </div>
     </div>
   );
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = therapyToolsAnalysis.map((tool) => ({
-    params: { treatment: tool.nameId },
-  }));
-
-  return { paths, fallback: true };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const therapyTool = therapyToolsAnalysis.find(
-    (tool) => tool.nameId === params?.treatment
-  );
-
-  if (!therapyTool) {
-    return { notFound: true };
-  }
-
-  return {
-    props: { therapyTool },
-  };
 };
 
 export default TherapyToolPage;
