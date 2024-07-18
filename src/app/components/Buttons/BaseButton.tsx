@@ -70,7 +70,7 @@ export default function BaseButton({
                     <div className="flex absolute translate-x-[16px] z-20">
                       {!disabled ? (
                         <Image
-                          src="/badge-icon.svg"
+                          src="./badge-icon.svg"
                           alt="badge"
                           height={12}
                           width={12}
@@ -78,7 +78,7 @@ export default function BaseButton({
                         />
                       ) : (
                         <Image
-                          src="/badge-disabled-icon.svg"
+                          src="./badge-disabled-icon.svg"
                           alt="badge"
                           height={12}
                           width={12}

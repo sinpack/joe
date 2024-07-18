@@ -47,7 +47,7 @@ const HeroSection = () => {
         </div>
         <div className="w-full h-full relative lg:mt-0 lg:flex lg:col-span-4 lg:px-10 py-5 ">
           <Image
-            src="/images/mental1.jpg"
+            src="./images/mental1.jpg"
             alt="mental-photo-1"
             className="flex items-center justify-center relative rounded-full sm:rounded-3xl md:rounded-lg lg:rounded-full shadow-xl"
             priority

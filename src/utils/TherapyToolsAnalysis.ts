@@ -17,7 +17,7 @@ export interface TherapyToolAnalysis {
 const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 1,
-    imageUrl: '/treatments/art-therapy2.jpg',
+    imageUrl: './treatments/art-therapy2.jpg',
     generalTitle: 'Γενικές Πληροφορίες για την Τέχνη',
     nameId: 'art-therapy',
     mainTitle: 'ART THERAPY / ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
@@ -40,7 +40,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 2,
     nameId: 'hypnotherapy',
-    imageUrl: '/treatments/hypnotherapy.jpg',
+    imageUrl: './treatments/hypnotherapy.jpg',
     generalTitle: 'Γενικές Πληροφορίες για την Υπνοθεραπεία',
     mainTitle: 'ΥΠΝΟΘΕΡΑΠΕΙΑ',
     linkTitle: 'Υπνοθεραπεία',
@@ -62,7 +62,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 3,
     nameId: 'transpersonal-coaching',
-    imageUrl: '/treatments/transpersonal-coaching.jpg',
+    imageUrl: './treatments/transpersonal-coaching.jpg',
     generalTitle: 'Γενικές Πληροφορίες για το Υπερπροσωπικό Coaching',
     mainTitle: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
     linkTitle: 'Transpersonal coaching',
@@ -84,7 +84,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 4,
     nameId: 'positive-psychology',
-    imageUrl: '/treatments/positive-psychology.jpg',
+    imageUrl: './treatments/positive-psychology.jpg',
     generalTitle: 'Γενικές Πληροφορίες για τη Θετική Ψυχολογία',
     mainTitle: 'ΘΕΤΙΚΗ ΨΥΧΟΛΟΓΙΑ',
     linkTitle: 'Θετική ψυχολογία',
@@ -106,7 +106,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 5,
     nameId: 'relaxation-techniques-cbt',
-    imageUrl: '/treatments/cbt.jpg',
+    imageUrl: './treatments/cbt.jpg',
     generalTitle: 'Γενικές Πληροφορίες για τις Τεχνικές Χαλάρωσης και CBT',
     mainTitle: 'ΤΕΧΝΙΚΕΣ ΧΑΛΑΡΩΣΗΣ + CBT',
     linkTitle: 'Τεχνικές χαλάρωσης',
@@ -128,7 +128,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 6,
     nameId: 'mindfulness',
-    imageUrl: '/treatments/mindfulness.jpg',
+    imageUrl: './treatments/mindfulness.jpg',
     generalTitle: 'Γενικές Πληροφορίες για τον Διαλογισμό Mindfulness',
     mainTitle: 'MINDFULNESS ΔΙΑΛΟΓΙΣΜΟΣ',
     linkTitle: 'Mindfulness διαλογισμός',
@@ -150,7 +150,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 7,
     nameId: 'guided-imagery',
-    imageUrl: '/treatments/guided-imagery.jpg',
+    imageUrl: './treatments/guided-imagery.jpg',
     generalTitle:
       'Γενικές Πληροφορίες για τις Καθοδηγούμενες Εικόνες και Οραματισμούς',
     mainTitle: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
