@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface CardProps {
@@ -30,7 +31,7 @@ const CardWithImage: React.FC<CardProps> = ({
           <p className="text-gray-700 text-base">{content}</p>
         </div>
         <div className="flex items-center">
-          <img
+          <Image
             className="w-10 h-10 rounded-full mr-4"
             src={authorAvatarUrl}
             alt={`Avatar of ${authorName}`}
