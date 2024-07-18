@@ -9,6 +9,7 @@ interface HolisticCardProps {
   backgroundColor: string;
   bulletPoints?: string[];
   className?: string;
+  shape?: 'circle' | 'triangle';
 }
 
 const HolisticCard: React.FC<HolisticCardProps> = ({
@@ -17,6 +18,7 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
   backgroundColor,
   bulletPoints,
   className,
+  shape,
 }) => {
   return (
     <div className="flex flex-row py-4 px-6 space-x-5">
@@ -25,6 +27,7 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
           backgroundColor={backgroundColor}
           vertical={false}
           className="content-center"
+          shape={shape}
         >
           {title}
         </TitleCard>

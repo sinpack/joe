@@ -29,6 +29,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
           className="object-cover rounded-full shadow-xl"
           priority
           fill
+          sizes="(max-width: 640px) 100vw, 50vw" // Example with responsive sizes
           quality={100}
         />
       </div>

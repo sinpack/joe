@@ -7,6 +7,7 @@ interface TitleCardProps {
   children: React.ReactNode;
   backgroundColor: string;
   vertical: boolean;
+  shape?: 'circle' | 'triangle'; // New prop for shape choice
 }
 
 const TitleCard: React.FC<TitleCardProps> = ({
@@ -15,17 +16,32 @@ const TitleCard: React.FC<TitleCardProps> = ({
   children,
   backgroundColor,
   vertical,
+  shape = 'circle', // Default to circle if shape prop is not provided
 }) => {
+  const circularClipPath = `radial-gradient(circle at ${
+    vertical ? 'center bottom' : 'center right'
+  }, transparent 10%, black 10%)`;
+
+  const triangularClipPath = vertical
+    ? 'polygon(50% 0%, 100% 0, 100% 100%, 70% 100%, 50% 90%, 30% 100%, 0 100%, 0% 43%, 0 0)'
+    : 'polygon(50% 0%, 100% 0, 100% 30%, 90% 50%, 100% 70%, 100% 100%, 0 100%, 0% 43%, 0 0)';
+
+  const clipPathStyle =
+    shape === 'circle'
+      ? {
+          WebkitMask: circularClipPath,
+          WebkitMaskComposite: 'xor' as const,
+          mask: circularClipPath,
+          maskComposite: 'xor' as const,
+        }
+      : {
+          WebkitClipPath: triangularClipPath,
+          clipPath: triangularClipPath,
+        };
+
   const style = {
     backgroundColor: backgroundColor || 'transparent',
-    WebkitMask: vertical
-      ? 'radial-gradient(circle at center bottom, transparent 10%, black 10%)'
-      : 'radial-gradient(circle at center right, transparent 10%, black 10%)',
-    WebkitMaskComposite: 'xor' as const,
-    mask: vertical
-      ? 'radial-gradient(circle at center bottom, transparent 10%, black 10%)'
-      : 'radial-gradient(circle at center right, transparent 10%, black 10%)',
-    maskComposite: 'xor' as const,
+    ...clipPathStyle,
   };
 
   return (

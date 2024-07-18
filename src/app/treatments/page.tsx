@@ -5,29 +5,6 @@ import TreatmentCard from './TreatmentCard';
 import Divider from '../components/Divider';
 import clsx from 'clsx';
 
-const getBorderClasses = (index: number) => {
-  const baseBorderClasses = 'border-gray-500';
-  const bottomBorderClass = 'border-b-2';
-  const rightBorderClass = 'border-r-2';
-  const leftRightBorderClass = 'border-l-2 border-r-2 -ml-0.5';
-
-  switch (index) {
-    case 0:
-    case 1:
-      return `${baseBorderClasses} ${bottomBorderClass} ${rightBorderClass}`;
-    case 2:
-      return `${baseBorderClasses} ${bottomBorderClass}`;
-    case 3:
-    case 4:
-      return `${baseBorderClasses} ${bottomBorderClass} ${rightBorderClass}`;
-    case 5:
-      return `${baseBorderClasses} ${bottomBorderClass}`;
-    case 6:
-      return `${baseBorderClasses} ${leftRightBorderClass}`;
-    default:
-      return '';
-  }
-};
 const Treatments = () => {
   return (
     <>
@@ -49,34 +26,35 @@ const Treatments = () => {
       </section>
       <AttributesSection />
 
-      <section className="py-10 bg-sky-50">
-        <div className="flex flex-row items-center justify-center space-x-5 py-20">
-          <Divider />
-          <h1 className="text-center">ΘΕΡΑΠΕΙΕΣ</h1>
-          <Divider />
+      <section className="container mx-auto px-5 lg:px-20 py-10 bg-sky-50">
+        <div className="flex flex-row items-center justify-center space-x-5">
+          <Divider className="border-gray-400 border" />
+          <h1 className="text-center py-10">ΘΕΡΑΠΕΙΕΣ</h1>
+          <Divider className="border-gray-400 border" />
         </div>
-        <div className="container mx-auto px-5 lg:px-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-gray-300">
-            {therapyTools.map((treatment, index) => {
-              return (
-                <div
-                  key={index}
-                  className={clsx(getBorderClasses(index), {
-                    'col-span-full lg:col-start-2 lg:col-end-3 flex justify-center':
-                      index === 6,
-                  })}
-                >
-                  <TreatmentCard
-                    title={treatment.title}
-                    imgUrl={treatment.image}
-                    descriptions={treatment.descriptions}
-                    link={`/treatments/${treatment.nameId}`}
-                    borderClasses=""
-                  />
-                </div>
-              );
-            })}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {therapyTools.map((treatment, index) => {
+            return (
+              <div
+                key={index}
+                className={clsx({
+                  'col-span-full lg:col-span-1 lg:px-0 lg:mx-0 lg:col-start-2 lg:-ml-0.5 sm:col-[1_/_span_2] sm:px-40 sm:mx-40 flex justify-center':
+                    index === 6,
+                  ' lg:first:border-gray-400 lg:first:border-r-2 lg:first:border-b-2 lg:[&:nth-child(2)]:border-gray-400 lg:[&:nth-child(2)]:border-b-2 lg:[&:nth-child(2)]:border-r-2 lg:[&:nth-child(3)]:border-gray-400 lg:[&:nth-child(3)]:border-b-2 lg:[&:nth-child(3)]:border-r-0 lg:[&:nth-child(4)]:border-gray-400 lg:[&:nth-child(4)]:border-b-2 lg:[&:nth-child(4)]:border-r-2 lg:[&:nth-child(5)]:border-gray-400 lg:[&:nth-child(5)]:border-b-2 lg:[&:nth-child(5)]:border-r-2 lg:[&:nth-child(6)]:border-gray-400 lg:[&:nth-child(6)]:border-b-2 lg:[&:nth-child(7)]:border-gray-400 lg:[&:nth-child(7)]:border-l-2 lg:[&:nth-child(7)]:border-r-2':
+                    true,
+                  'sm:first:border-gray-400 sm:first:border-r-2 sm:first:border-b-2 sm:[&:nth-child(2)]:border-gray-400 sm:[&:nth-child(2)]:border-b-2 sm:[&:nth-child(3)]:border-gray-400 sm:[&:nth-child(3)]:border-b-2 sm:[&:nth-child(3)]:border-r-2 sm:[&:nth-child(4)]:border-gray-400 sm:[&:nth-child(4)]:border-b-2 sm:[&:nth-child(5)]:border-gray-400 sm:[&:nth-child(5)]:border-b-2 sm:[&:nth-child(5)]:border-r-2 sm:[&:nth-child(6)]:border-gray-400 sm:[&:nth-child(6)]:border-b-2 sm:[&:nth-child(7)]:border-gray-400 sm:[&:nth-child(7)]:border-l-2 sm:[&:nth-child(7)]:border-r-2':
+                    true,
+                })}
+              >
+                <TreatmentCard
+                  title={treatment.title}
+                  imgUrl={treatment.image}
+                  descriptions={treatment.descriptions}
+                  link={`/treatments/${treatment.nameId}`}
+                />
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

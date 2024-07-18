@@ -25,6 +25,7 @@ const HolisticPage = () => {
               descriptions={item.descriptions}
               backgroundColor={item.color}
               className="bg-gray-300"
+              shape="triangle"
             />
           ))}
         </div>
