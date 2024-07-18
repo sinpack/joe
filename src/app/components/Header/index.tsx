@@ -1,11 +1,9 @@
-// src/app/components/Header.tsx
 'use client';
 import { useState, useRef } from 'react';
-import useClickOutside from '@/utils/useClickOutside'; // Custom hook to handle click outside
-import BackdropTransition from '../BackdropTransition';
 import Sidebar from './Sidebar';
 import linkItems from '../../../utils/LinkItems';
 import Navbar from './Navbar';
+import useClickOutside from '../../../utils/useClickOutside';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +17,11 @@ const Header = () => {
 
   return (
     <>
-      <Navbar linkItems={linkItems} toggleSideBar={toggleSidebar} isOpen={isOpen} />
+      <Navbar
+        linkItems={linkItems}
+        toggleSideBar={toggleSidebar}
+        isOpen={isOpen}
+      />
       <Sidebar
         isOpen={isOpen}
         sidebarRef={clickRef}

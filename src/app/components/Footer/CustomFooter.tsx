@@ -1,16 +1,13 @@
-// components/Footer.tsx
 'use client';
 
 import { format } from 'date-fns';
 import Link from 'next/link';
 import Logo from '../Logo';
 import linkItems from '../../../utils/LinkItems';
-import { useRouter } from 'next/navigation';
 import ActiveLink from '../Header/ActiveLink';
 
-const Footer2 = () => {
+const CustomFooter = () => {
   const currentYear = format(new Date(), 'yyyy');
-  const router = useRouter;
 
   return (
     <footer className="w-full bg-sky-50 py-16">
@@ -91,7 +88,7 @@ const Footer2 = () => {
           <div className="text-center">
             <span className="text-sm tracking-wide">
               Copyright © AfterhoursDev <span id="year">{currentYear}</span> |
-              All right reserved
+              All rights reserved
             </span>
           </div>
         </div>
@@ -100,4 +97,4 @@ const Footer2 = () => {
   );
 };
 
-export default Footer2;
+export default CustomFooter;

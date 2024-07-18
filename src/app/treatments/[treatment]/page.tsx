@@ -3,14 +3,14 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Divider from '@/app/components/Divider';
-import therapyToolsAnalysis from '@/utils/TherapyToolsAnalysis';
+import therapyToolsAnalysis from '../../../utils/TherapyToolsAnalysis';
+import Divider from '../../components/Divider';
 
 interface TherapyTool {
   nameId: string;
   mainTitle: string;
   startingParagraph: string;
-  image: string;
+  imageUrl: string;
   sections: {
     title: string;
     paragraph: string;
@@ -41,7 +41,7 @@ const TherapyToolPage: React.FC<TherapyToolPageProps> = ({ params }) => {
     <div className="py-20 bg-sky-50 container mx-auto px-10 sm:px-28 header:px-60">
       <div className="flex flex-col gap-5 lg:flex-row">
         <Image
-          src={therapyTool.image}
+          src={therapyTool.imageUrl}
           alt={therapyTool.mainTitle}
           className="place-self-center shadow-xl drop-shadow-2xl rounded-lg lg:place-self-start"
           priority

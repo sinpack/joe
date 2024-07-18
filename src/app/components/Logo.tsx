@@ -8,7 +8,7 @@ export default function Logo() {
   return (
     <div onClick={() => router.push('/')} className="flex cursor-pointer">
       <Image
-        src="./images/logo2.png"
+        src="/images/logo2.png"
         alt="logo"
         height={80}
         width={80}

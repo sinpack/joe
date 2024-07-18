@@ -36,11 +36,11 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
         isScrolled ? 'shadow-xl' : 'shadow-none'
       }`}
     >
-      <div className="w-full py-12 container mx-auto px-10 justify-center flex flex-row sm:px-28 header:flex-row header:px-60 items-center gap-10 min-w-fit">
+      <div className="w-full py-5 container mx-auto px-10 justify-center flex flex-row sm:px-28 header:flex-row header:px-60 items-center gap-10 min-w-fit">
         <div className="flex flex-row gap-5 w-full items-center justify-end md:justify-between">
           <div className="flex flex-row w-full items-center justify-center sm:justify-end lg:justify-start">
             <Image
-              src="./logo.svg"
+              src="/logo.svg"
               alt="logo"
               height={40}
               width={40}

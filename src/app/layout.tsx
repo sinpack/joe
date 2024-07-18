@@ -2,7 +2,7 @@
 
 import './globals.css';
 import Header from './components/Header';
-import CustomFooter from './components/Footer/Footer';
+import CustomFooter from './components/Footer';
 import {
   Inter,
   Advent_Pro,

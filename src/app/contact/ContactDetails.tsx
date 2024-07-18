@@ -11,22 +11,22 @@ interface ContactDetail {
 
 const contactDetails: ContactDetail[] = [
   {
-    icon: <Icon src="./icons/address.png" alt="Address Icon" />,
+    icon: <Icon src="/icons/address.png" alt="Address Icon" />,
     title: 'Address',
     description: 'Λευκωσίας 41, Πάτρα, Ελλάδα',
   },
   {
-    icon: <Icon src="./icons/email.png" alt="Email Icon" />,
+    icon: <Icon src="/icons/email.png" alt="Email Icon" />,
     title: 'Email',
     description: 'georgios_antonopoulos@hotmail.com',
   },
   {
-    icon: <Icon src="./icons/phone.png" alt="Phone Icon" />,
+    icon: <Icon src="/icons/phone.png" alt="Phone Icon" />,
     title: 'Phone',
     description: '+30 6976629913',
   },
   {
-    icon: <Icon src="./icons/thumb.png" alt="Facebook Thumbs up Icon" />,
+    icon: <Icon src="/icons/thumb.png" alt="Facebook Thumbs up Icon" />,
     title: 'Social Media',
     icons: (
       <div className="m-auto flex w-max items-center justify-between space-x-4">

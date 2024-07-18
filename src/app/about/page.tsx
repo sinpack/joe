@@ -14,7 +14,7 @@ const AboutPage = () => {
           </h1>
           <div className="flex justify-center mb-8">
             <Image
-              src="./images/profile-joe.png"
+              src="/images/profile-joe.png"
               alt="profile"
               className="rounded-3xl shadow-xl"
               width={300}

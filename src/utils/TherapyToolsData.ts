@@ -3,11 +3,13 @@ export interface therapyTool {
   nameId: string;
   descriptions?: string[];
   color: string;
+  image: string;
 }
 const therapyTools: therapyTool[] = [
   {
     title: 'ART THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     nameId: 'art-therapy',
+    image: '/treatments/art-therapy2.jpg',
     descriptions: [
       'Μέθοδος θεραπείας που χρησιμοποιεί την τέχνη ως μέσο για την επίτευξη εσωτερικής αλλαγής και αυτογνωσίας.',
     ],
@@ -16,7 +18,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΥΠΝΟΘΕΡΑΠΕΙΑ',
     nameId: 'hypnotherapy',
-
+    image: '/treatments/hypnotherapy.jpg',
     descriptions: [
       'Θεραπευτική τεχνική που χρησιμοποιεί τον ύπνο για την αντιμετώπιση και την ανάλυση ψυχολογικών προβλημάτων.',
     ],
@@ -25,7 +27,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
     nameId: 'transpersonal-coaching',
-
+    image: '/treatments/transpersonal-coaching.jpg',
     descriptions: [
       'Σύγχρονη μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της προσωπικής αυτογνωσίας και της διανόησης.',
     ],
@@ -34,7 +36,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΘΕΤΙΚΗ ΨΥΧΟΛΟΓΙΑ',
     nameId: 'positive-psychology',
-
+    image: '/treatments/positive-psychology.jpg',
     descriptions: [
       'Ψυχολογική προσέγγιση που επικεντρώνεται στην ανάπτυξη των θετικών ψυχικών διαδικασιών και της ευημερίας.',
     ],
@@ -43,7 +45,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΤΕΧΝΙΚΕΣ ΧΑΛΑΡΩΣΗΣ + CBT',
     nameId: 'relaxation-techniques-cbt',
-
+    image: '/treatments/cbt.jpg',
     descriptions: [
       'Συνδυασμός τεχνικών αποκατάστασης και Συμπεριφορικής Θεραπείας για την αντιμετώπιση της άγχους και των καταστάσεων άγχους.',
     ],
@@ -52,7 +54,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'MINDFULNESS ΔΙΑΛΟΓΙΣΜΟΣ',
     nameId: 'mindfulness',
-
+    image: '/treatments/mindfulness.jpg',
     descriptions: [
       'Ψυχολογική τεχνική που επικεντρώνεται στην ανάπτυξη της προσεκτικότητας και της επίγνωσης στην καθημερινότητα.',
     ],
@@ -61,6 +63,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
     nameId: 'guided-imagery',
+    image: '/treatments/guided-imagery.jpg',
     descriptions: [
       'Ψυχολογική μέθοδος που χρησιμοποιεί την οπτική φαντασία για την αυτογνωσία και την ενίσχυση της θεραπευτικής διαδικασίας.',
     ],
