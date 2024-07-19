@@ -1,8 +1,10 @@
 // Navbar.tsx
 'use client';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import ActiveLink from './ActiveLink';
 import { BurgerButton } from './BurgerButton';
+import logo from '../public/logo.jpg';
+import Image from 'next/image';
 
 type LinkItem = {
   name: string;
@@ -29,16 +31,6 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
     };
   }, []);
 
-  // Dynamically import the logo image
-  const logoSrc = useMemo(() => {
-    try {
-      return require('../public/logo.jpg');
-    } catch (error) {
-      console.error('Error loading logo image:', error);
-      return '/default-logo.jpg'; // Fallback image
-    }
-  }, []);
-
   return (
     <header
       className={`items-center h-full bg-sky-100 sticky top-0 z-[1990] transition-shadow duration-200 ${
@@ -48,13 +40,20 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
       <div className="w-full py-5 container mx-auto px-10 justify-center flex flex-row sm:px-28 header:flex-row header:px-60 items-center gap-10 min-w-fit">
         <div className="flex flex-row gap-5 w-full items-center justify-end md:justify-between">
           <div className="flex flex-row w-full items-center justify-center sm:justify-end lg:justify-start">
-            <img src={logoSrc} alt="logo" className="rounded-xl" />
+            <Image
+              src={logo}
+              alt="logo"
+              className="rounded-xl"
+              width={100} // Adjust the width and height as needed
+              height={100}
+            />
             <div className="flex flex-col ml-2">
               <h4 className="flex items-center font-bold text-gray-600 tracking-tight whitespace-break-spaces">
                 ΓΙΩΡΓΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ
               </h4>
               <p className="flex items-center tracking-tight text-xs">
-                Ολιστικός Coach - Ψυχολογίας Dip HC
+                {' '}
+                Ολιστικός Coach - Ψυχολογίας Dip HC{' '}
               </p>
             </div>
           </div>
