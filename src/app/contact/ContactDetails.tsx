@@ -13,7 +13,7 @@ const contactDetails: ContactDetail[] = [
   {
     icon: (
       <Icon
-        src="/icons/address.png"
+        src="./icons/address.png"
         alt="Address Icon"
         className="filter-grey"
       />
@@ -23,14 +23,14 @@ const contactDetails: ContactDetail[] = [
   },
   {
     icon: (
-      <Icon src="/icons/email.png" alt="Email Icon" className="filter-grey" />
+      <Icon src="./icons/email.png" alt="Email Icon" className="filter-grey" />
     ),
     title: 'E-mail',
     description: 'georgios_antonopoulos@hotmail.com',
   },
   {
     icon: (
-      <Icon src="/icons/phone.png" alt="Phone Icon" className="filter-grey" />
+      <Icon src="./icons/phone.png" alt="Phone Icon" className="filter-grey" />
     ),
     title: 'Τηλέφωνο',
     description: '+30 6976629913',
@@ -38,7 +38,7 @@ const contactDetails: ContactDetail[] = [
   {
     icon: (
       <Icon
-        src="/icons/thumb.png"
+        src="./icons/thumb.png"
         alt="Facebook Thumbs up Icon"
         className="filter-grey"
       />
