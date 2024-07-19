@@ -1,7 +1,16 @@
+import { StaticImageData } from 'next/image';
+import artTherapy from '../../public/images/art-therapy.jpg';
+import sleepTherapy from '../../public/images/sleep-therapy.jpg';
+import transpersonalCoaching from '../../public/images/transpersonal-coaching.jpg';
+import positivePsychology from '../../public/images/positive-psychology.jpg';
+import cbt from '../../public/images/cbt.jpg';
+import mindfulness from '../../public/images/mindfulness.jpg';
+import guidedImagery from '../../public/images/guided-imagery.jpg';
+
 export interface TherapyToolAnalysis {
   id: number;
   nameId: string;
-  imageUrl: string;
+  imageUrl: StaticImageData;
   generalTitle: string;
   mainTitle: string;
   startingParagraph?: string;
@@ -15,7 +24,7 @@ export interface TherapyToolAnalysis {
 const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 1,
-    imageUrl: './images/art-therapy.jpg',
+    imageUrl: artTherapy,
     generalTitle: 'Γενικές Πληροφορίες για την Τέχνη',
     nameId: 'art-therapy',
     mainTitle: 'ART THERAPY / ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
@@ -38,7 +47,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 2,
     nameId: 'hypnotherapy',
-    imageUrl: './images/sleep-therapy.jpg',
+    imageUrl: sleepTherapy,
     generalTitle: 'Γενικές Πληροφορίες για την Υπνοθεραπεία',
     mainTitle: 'ΥΠΝΟΘΕΡΑΠΕΙΑ',
     linkTitle: 'Υπνοθεραπεία',
@@ -60,7 +69,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 3,
     nameId: 'transpersonal-coaching',
-    imageUrl: './images/transpersonal-coaching.jpg',
+    imageUrl: transpersonalCoaching,
     generalTitle: 'Γενικές Πληροφορίες για το Υπερπροσωπικό Coaching',
     mainTitle: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
     linkTitle: 'Transpersonal coaching',
@@ -82,7 +91,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 4,
     nameId: 'positive-psychology',
-    imageUrl: './images/positive-psychology.jpg',
+    imageUrl: positivePsychology,
     generalTitle: 'Γενικές Πληροφορίες για τη Θετική Ψυχολογία',
     mainTitle: 'ΘΕΤΙΚΗ ΨΥΧΟΛΟΓΙΑ',
     linkTitle: 'Θετική ψυχολογία',
@@ -104,7 +113,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 5,
     nameId: 'relaxation-techniques-cbt',
-    imageUrl: './images/cbt.jpg',
+    imageUrl: cbt,
     generalTitle: 'Γενικές Πληροφορίες για τις Τεχνικές Χαλάρωσης και CBT',
     mainTitle: 'ΤΕΧΝΙΚΕΣ ΧΑΛΑΡΩΣΗΣ + CBT',
     linkTitle: 'Τεχνικές χαλάρωσης',
@@ -126,7 +135,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 6,
     nameId: 'mindfulness',
-    imageUrl: './images/mindfulness.jpg',
+    imageUrl: mindfulness,
     generalTitle: 'Γενικές Πληροφορίες για τον Διαλογισμό Mindfulness',
     mainTitle: 'MINDFULNESS ΔΙΑΛΟΓΙΣΜΟΣ',
     linkTitle: 'Mindfulness διαλογισμός',
@@ -148,7 +157,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 7,
     nameId: 'guided-imagery',
-    imageUrl: './images/guided-imagery.jpg',
+    imageUrl: guidedImagery,
     generalTitle:
       'Γενικές Πληροφορίες για τις Καθοδηγούμενες Εικόνες και Οραματισμούς',
     mainTitle: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',

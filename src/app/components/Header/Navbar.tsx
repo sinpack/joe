@@ -44,8 +44,8 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
               src={logo}
               alt="logo"
               className="rounded-xl"
-              width={100} // Adjust the width and height as needed
-              height={100}
+              width={40} 
+              height={40}
             />
             <div className="flex flex-col ml-2">
               <h4 className="flex items-center font-bold text-gray-600 tracking-tight whitespace-break-spaces">

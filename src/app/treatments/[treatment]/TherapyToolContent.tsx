@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import Divider from '../../components/Divider';
 import PrimarySolidButton from '../../components/Buttons/PrimarySolidButton';
@@ -11,7 +11,7 @@ interface TherapyTool {
   nameId: string;
   mainTitle: string;
   startingParagraph?: string;
-  imageUrl: string;
+  imageUrl: StaticImageData;
   sections: {
     title: string;
     paragraph: string;
