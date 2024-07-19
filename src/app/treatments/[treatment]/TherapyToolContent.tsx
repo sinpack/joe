@@ -4,13 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Divider from '../../components/Divider';
 import PrimarySolidButton from '../../components/Buttons/PrimarySolidButton';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import therapyToolsAnalysis from '../../../utils/TherapyToolsAnalysis';
 
 interface TherapyTool {
   nameId: string;
   mainTitle: string;
-  startingParagraph: string;
+  startingParagraph?: string;
   imageUrl: string;
   sections: {
     title: string;
@@ -27,18 +27,21 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
   therapyTool,
 }) => {
   const router = useRouter();
+  const pathname = usePathname(); // Use this to get the current path
 
   return (
     <div className="py-20 bg-sky-50 container mx-auto px-10 sm:px-28 header:px-60 items-center flex flex-col space-y-10">
       <div className="flex flex-col gap-5 lg:flex-row">
-        <div className="place-self-center shadow-xl drop-shadow-2xl rounded-lg lg:place-self-start">
+        <div className="flex place-self-center lg:place-self-start">
           <Image
             src={therapyTool.imageUrl}
             alt={therapyTool.mainTitle}
-            width={300}
-            height={300}
+            sizes="100vw"
+            width={500}
+            height={500}
             quality={100}
             priority
+            className="shadow-2xl drop-shadow-2xl rounded-lg"
           />
         </div>
         <div className="flex flex-col justify-end space-y-5">
@@ -50,9 +53,11 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
             <h3 className="font-bold whitespace-normal tracking-normal leading-normal text-center lg:text-start">
               {therapyTool.mainTitle}
             </h3>
-            <p className="text-center lg:text-start">
-              {therapyTool.startingParagraph}
-            </p>
+            {therapyTool.startingParagraph && (
+              <p className="text-center lg:text-start">
+                {therapyTool.startingParagraph}
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -62,20 +67,27 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
             <h4 className="flex items-center h-10 font-bold justify-center lg:justify-start">
               ΑΛΛΕΣ ΥΠΗΡΕΣΙΕΣ
             </h4>
-            {therapyToolsAnalysis.map((tool: TherapyTool) => (
-              <div
-                key={tool.nameId}
-                className="mt-2.5 flex flex-col items-center md:items-start"
-              >
-                <Link
-                  href={`/treatments/${tool.nameId}`}
-                  className="flex flex-col text-gray-500 whitespace-break-spaces items-center w-fit py-2.5 text-sm font-bold text-start rounded-lg hover:bg-primary-800 hover:underline"
+            {therapyToolsAnalysis.map((tool: TherapyTool) => {
+              const isActive = pathname === `/treatments/${tool.nameId}`;
+              return (
+                <div
+                  key={tool.nameId}
+                  className="mt-2.5 flex flex-col items-center md:items-start"
                 >
-                  {tool.linkTitle}
-                </Link>
-                <Divider className="filter-grey-bold" />
-              </div>
-            ))}
+                  <Link
+                    href={`/treatments/${tool.nameId}`}
+                    className={`flex flex-col text-gray-500 whitespace-break-spaces items-center w-fit py-2.5 text-sm font-bold text-start rounded-lg ${
+                      isActive
+                        ? '!text-blue-500 cursor-default'
+                        : 'hover:bg-primary-800 hover:underline'
+                    }`}
+                  >
+                    {tool.linkTitle}
+                  </Link>
+                  <Divider className="filter-grey-bold" />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="md:w-5/6 space-y-5">
@@ -91,7 +103,6 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
       </div>
       <div className="flex flex-col w-full space-y-20">
         <div className="flex place-self-start">
-          {' '}
           <PrimarySolidButton
             text="ΠΙΣΩ ΣΤΙΣ ΥΠΗΡΕΣΙΕΣ-ΘΕΡΑΠΕΙΕΣ"
             onClick={() => router.push('/treatments')}
@@ -99,7 +110,6 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
           />
         </div>
         <div className="flex place-self-center">
-          {' '}
           <PrimarySolidButton
             text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ"
             onClick={() => router.push('/contact')}

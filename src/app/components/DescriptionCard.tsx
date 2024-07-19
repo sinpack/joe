@@ -2,6 +2,16 @@
 import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { motion, useAnimation } from 'framer-motion';
+import Link from 'next/link';
+
+const SkypeLink = () => (
+  <Link
+    href="https://join.skype.com/invite/FdWE9FzCm23Q"
+    className="text-blue-500 cursor-pointer"
+  >
+    Skype
+  </Link>
+);
 
 interface DescriptionCardProps {
   description?: string;
@@ -19,7 +29,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
   index,
 }) => {
   const controls = useAnimation();
-  const cardRef = useRef<HTMLParagraphElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,6 +71,15 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
     },
   };
 
+  const renderDescription = (desc: string) => {
+    return desc.split('{SKYPE_LINK}').map((part, index) => (
+      <React.Fragment key={index}>
+        {part}
+        {index < desc.split('{SKYPE_LINK}').length - 1 && <SkypeLink />}
+      </React.Fragment>
+    ));
+  };
+
   return (
     <motion.div
       key={index}
@@ -77,9 +96,9 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
         }
       )}
     >
-      {description && <p>{description}</p>}
+      {description && <p>{renderDescription(description)}</p>}
       {bulletPoints && (
-        <ul className="space-y-5 text-left text-gray-500">
+        <ul className="space-y-2.5 text-left text-gray-500">
           {bulletPoints.map((point, index) => (
             <li
               key={index}
@@ -100,7 +119,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
                   d="M1 5.917 5.724 10.5 15 1.5"
                 />
               </svg>
-              <span>{point}</span>
+              <p>{point}</p>
             </li>
           ))}
         </ul>

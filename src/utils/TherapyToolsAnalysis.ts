@@ -1,12 +1,10 @@
-// data.ts
-
 export interface TherapyToolAnalysis {
   id: number;
   nameId: string;
   imageUrl: string;
   generalTitle: string;
   mainTitle: string;
-  startingParagraph: string;
+  startingParagraph?: string;
   linkTitle: string;
   sections: {
     title: string;
@@ -17,35 +15,35 @@ export interface TherapyToolAnalysis {
 const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 1,
-    imageUrl: './treatments/art-therapy2.jpg',
+    imageUrl: '/images/art-therapy.jpg',
     generalTitle: 'Γενικές Πληροφορίες για την Τέχνη',
     nameId: 'art-therapy',
     mainTitle: 'ART THERAPY / ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     startingParagraph:
-      'Η Θεραπεία Μέσω Τέχνης είναι μια μέθοδος που χρησιμοποιεί τη δημιουργική διαδικασία της τέχνης για την επίτευξη εσωτερικής αλλαγής και αυτογνωσίας.',
+      'Μέθοδος θεραπείας που χρησιμοποιεί την τέχνη ως μέσο για την επίτευξη εσωτερικής αλλαγής και αυτογνωσίας.',
     linkTitle: 'Art-therapy',
     sections: [
       {
         title: 'Τι είναι η Θεραπεία Μέσω Τέχνης;',
         paragraph:
-          'Η Θεραπεία Μέσω Τέχνης αξιοποιεί την τέχνη για να βοηθήσει τα άτομα να εκφράσουν συναισθήματα και σκέψεις που μπορεί να είναι δύσκολο να εκφραστούν με λέξεις.',
+          'Η θεραπεία μέσω τέχνης είναι μια μορφή θεραπείας που αξιοποιεί τη δημιουργική διαδικασία της καλλιτεχνικής έκφρασης για τη βελτίωση της ψυχικής, συναισθηματικής και σωματικής ευεξίας ενός ατόμου. Συνδυάζει παραδοσιακές ψυχοθεραπευτικές τεχνικές με τη δημιουργική διαδικασία για να βοηθήσει τους πελάτες να εξερευνήσουν τα συναισθήματά τους, να συμβιβάσουν συναισθηματικές συγκρούσεις, να ενισχύσουν την αυτογνωσία και να διαχειριστούν τη συμπεριφορά και τις εξαρτήσεις',
       },
       {
         title: 'Οφέλη της Θεραπείας Μέσω Τέχνης',
         paragraph:
-          'Μπορεί να βοηθήσει στην ανακούφιση από το άγχος, τη βελτίωση της ψυχικής υγείας και την ενίσχυση της αυτογνωσίας και της αυτοεκτίμησης.',
+          'Η θεραπεία μέσω τέχνης μπορεί να είναι ευεργετική για άτομα όλων των ηλικιών και κοινωνικών προελεύσεων, και δεν απαιτείται καμία καλλιτεχνική δεξιότητα ή ταλέντο για να συμμετάσχει κανείς. Μπορεί να χρησιμοποιηθεί για την αντιμετώπιση μιας ευρείας γκάμας ζητημάτων, όπως το άγχος, η κατάθλιψη, το τραύμα, το πένθος και τα προβλήματα σχέσεων.',
       },
     ],
   },
   {
     id: 2,
     nameId: 'hypnotherapy',
-    imageUrl: './treatments/hypnotherapy.jpg',
+    imageUrl: '/images/sleep-therapy.jpg',
     generalTitle: 'Γενικές Πληροφορίες για την Υπνοθεραπεία',
     mainTitle: 'ΥΠΝΟΘΕΡΑΠΕΙΑ',
     linkTitle: 'Υπνοθεραπεία',
     startingParagraph:
-      'Η Υπνοθεραπεία είναι μια θεραπευτική τεχνική που χρησιμοποιεί τον ύπνο για την ανάλυση και την αντιμετώπιση ψυχολογικών προβλημάτων.',
+      'Θεραπευτική τεχνική που χρησιμοποιεί τον ύπνο για την αντιμετώπιση και την ανάλυση ψυχολογικών προβλημάτων.',
     sections: [
       {
         title: 'Τι είναι η Υπνοθεραπεία;',
@@ -62,12 +60,12 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 3,
     nameId: 'transpersonal-coaching',
-    imageUrl: './treatments/transpersonal-coaching.jpg',
+    imageUrl: '/images/transpersonal-coaching.jpg',
     generalTitle: 'Γενικές Πληροφορίες για το Υπερπροσωπικό Coaching',
     mainTitle: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
     linkTitle: 'Transpersonal coaching',
     startingParagraph:
-      'Το Υπερπροσωπικό Coaching επικεντρώνεται στην ανάπτυξη της προσωπικής αυτογνωσίας και της διανόησης.',
+      'Σύγχρονη μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της προσωπικής αυτογνωσίας και της διανόησης.',
     sections: [
       {
         title: 'Τι είναι το Υπερπροσωπικό Coaching;',
@@ -84,12 +82,12 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 4,
     nameId: 'positive-psychology',
-    imageUrl: './treatments/positive-psychology.jpg',
+    imageUrl: '/images/positive-psychology.jpg',
     generalTitle: 'Γενικές Πληροφορίες για τη Θετική Ψυχολογία',
     mainTitle: 'ΘΕΤΙΚΗ ΨΥΧΟΛΟΓΙΑ',
     linkTitle: 'Θετική ψυχολογία',
     startingParagraph:
-      'Η Θετική Ψυχολογία επικεντρώνεται στην ανάπτυξη των θετικών ψυχικών διαδικασιών και της ευημερίας.',
+      'Ψυχολογική προσέγγιση που επικεντρώνεται στην ανάπτυξη των θετικών ψυχικών διαδικασιών και της ευημερίας.',
     sections: [
       {
         title: 'Τι είναι η Θετική Ψυχολογία;',
@@ -106,12 +104,12 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 5,
     nameId: 'relaxation-techniques-cbt',
-    imageUrl: './treatments/cbt.jpg',
+    imageUrl: '/images/cbt.jpg',
     generalTitle: 'Γενικές Πληροφορίες για τις Τεχνικές Χαλάρωσης και CBT',
     mainTitle: 'ΤΕΧΝΙΚΕΣ ΧΑΛΑΡΩΣΗΣ + CBT',
     linkTitle: 'Τεχνικές χαλάρωσης',
     startingParagraph:
-      'Συνδυασμός τεχνικών χαλάρωσης και Συμπεριφορικής Θεραπείας για την αντιμετώπιση του άγχους και των καταστάσεων άγχους.',
+      'Συνδυασμός τεχνικών αποκατάστασης και Συμπεριφορικής Θεραπείας για την αντιμετώπιση της άγχους και των καταστάσεων άγχους.',
     sections: [
       {
         title: 'Τι είναι οι Τεχνικές Χαλάρωσης και CBT;',
@@ -128,12 +126,12 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 6,
     nameId: 'mindfulness',
-    imageUrl: './treatments/mindfulness.jpg',
+    imageUrl: '/images/mindfulness.jpg',
     generalTitle: 'Γενικές Πληροφορίες για τον Διαλογισμό Mindfulness',
     mainTitle: 'MINDFULNESS ΔΙΑΛΟΓΙΣΜΟΣ',
     linkTitle: 'Mindfulness διαλογισμός',
     startingParagraph:
-      'Ο Διαλογισμός Mindfulness επικεντρώνεται στην ανάπτυξη της προσεκτικότητας και της επίγνωσης στην καθημερινότητα.',
+      'Ψυχολογική τεχνική που επικεντρώνεται στην ανάπτυξη της προσεκτικότητας και της επίγνωσης στην καθημερινότητα.',
     sections: [
       {
         title: 'Τι είναι ο Διαλογισμός Mindfulness;',
@@ -150,13 +148,13 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 7,
     nameId: 'guided-imagery',
-    imageUrl: './treatments/guided-imagery.jpg',
+    imageUrl: '/images/guided-imagery.jpg',
     generalTitle:
       'Γενικές Πληροφορίες για τις Καθοδηγούμενες Εικόνες και Οραματισμούς',
     mainTitle: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
     linkTitle: 'Καθοδηγούμενες εικόνες',
     startingParagraph:
-      'Οι Καθοδηγούμενες Εικόνες και Οραματισμοί χρησιμοποιούν την οπτική φαντασία για την αυτογνωσία και την ενίσχυση της θεραπευτικής διαδικασίας.',
+      'Ψυχολογική μέθοδος που χρησιμοποιεί την οπτική φαντασία για την αυτογνωσία και την ενίσχυση της θεραπευτικής διαδικασίας.',
     sections: [
       {
         title: 'Τι είναι οι Καθοδηγούμενες Εικόνες και Οραματισμοί;',

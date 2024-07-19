@@ -11,23 +11,39 @@ interface ContactDetail {
 
 const contactDetails: ContactDetail[] = [
   {
-    icon: <Icon src="./icons/address.png" alt="Address Icon" />,
-    title: 'Address',
+    icon: (
+      <Icon
+        src="/icons/address.png"
+        alt="Address Icon"
+        className="filter-grey"
+      />
+    ),
+    title: 'Διεύθυνση',
     description: 'Λευκωσίας 41, Πάτρα, Ελλάδα',
   },
   {
-    icon: <Icon src="./icons/email.png" alt="Email Icon" />,
-    title: 'Email',
+    icon: (
+      <Icon src="/icons/email.png" alt="Email Icon" className="filter-grey" />
+    ),
+    title: 'E-mail',
     description: 'georgios_antonopoulos@hotmail.com',
   },
   {
-    icon: <Icon src="./icons/phone.png" alt="Phone Icon" />,
-    title: 'Phone',
+    icon: (
+      <Icon src="/icons/phone.png" alt="Phone Icon" className="filter-grey" />
+    ),
+    title: 'Τηλέφωνο',
     description: '+30 6976629913',
   },
   {
-    icon: <Icon src="./icons/thumb.png" alt="Facebook Thumbs up Icon" />,
-    title: 'Social Media',
+    icon: (
+      <Icon
+        src="/icons/thumb.png"
+        alt="Facebook Thumbs up Icon"
+        className="filter-grey"
+      />
+    ),
+    title: 'Μέσα Κοινωνικής Δικτύωσης',
     icons: (
       <div className="m-auto flex w-max items-center justify-between space-x-4">
         <Link href="#" title="facebook" target="_blank" aria-label="facebook">

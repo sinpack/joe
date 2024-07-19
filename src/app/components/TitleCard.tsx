@@ -7,7 +7,7 @@ interface TitleCardProps {
   children: React.ReactNode;
   backgroundColor: string;
   vertical: boolean;
-  shape?: 'circle' | 'triangle'; // New prop for shape choice
+  shape?: 'circle' | 'triangle';
 }
 
 const TitleCard: React.FC<TitleCardProps> = ({
@@ -16,15 +16,15 @@ const TitleCard: React.FC<TitleCardProps> = ({
   children,
   backgroundColor,
   vertical,
-  shape = 'circle', // Default to circle if shape prop is not provided
+  shape = 'circle',
 }) => {
   const circularClipPath = `radial-gradient(circle at ${
     vertical ? 'center bottom' : 'center right'
   }, transparent 10%, black 10%)`;
 
   const triangularClipPath = vertical
-    ? 'polygon(50% 0%, 100% 0, 100% 100%, 70% 100%, 50% 90%, 30% 100%, 0 100%, 0% 43%, 0 0)'
-    : 'polygon(50% 0%, 100% 0, 100% 30%, 90% 50%, 100% 70%, 100% 100%, 0 100%, 0% 43%, 0 0)';
+    ? 'polygon(50% 0%, 100% 0, 100% 100%, 70% 100%, 50% 95%, 30% 100%, 0 100%, 0% 43%, 0 0)'
+    : 'polygon(50% 0%, 100% 0, 100% 30%, 95% 50%, 100% 70%, 100% 100%, 0 100%, 0% 43%, 0 0)';
 
   const clipPathStyle =
     shape === 'circle'

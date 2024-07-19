@@ -5,7 +5,7 @@ import TherapyToolContent from './TherapyToolContent';
 interface TherapyTool {
   nameId: string;
   mainTitle: string;
-  startingParagraph: string;
+  startingParagraph?: string;
   imageUrl: string;
   sections: {
     title: string;

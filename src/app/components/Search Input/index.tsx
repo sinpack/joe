@@ -100,7 +100,7 @@ export default function Search({
       >
         {value !== '' && (
           <Image
-            src="./Clear.svg"
+            src="/Clear.svg"
             alt="Clear"
             height={22}
             width={22}

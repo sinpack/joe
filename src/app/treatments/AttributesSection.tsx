@@ -10,7 +10,7 @@ const AttributesSection = () => {
           style={{ gridAutoFlow: 'dense' }}
         >
           <div className="absolute left-1/2 -top-10 transform -translate-x-1/2 flex flex-col items-center justify-center bg-sky-50 p-5 z-10 box-border">
-            <h2 className="font-medium uppercase whitespace-nowrap">
+            <h2 className="font-normal uppercase whitespace-nowrap">
               Μοντελα Coaching
             </h2>
           </div>
@@ -23,7 +23,7 @@ const AttributesSection = () => {
             {
               title: 'PRACTICE',
               content:
-                'Οκτάβημα μοντέλο που ενισχύει την αποτελεσματικότητα μέσω καθορισμού σκοπού, ανάλυσης, ενέργειων, επιλογών, χρονοδιαγράμματος, ακεραιότητας, δέσμευσης και αριστείας.',
+                'Μοντέλο οκτώ βημάτων που ενισχύει την αποτελεσματικότητα μέσω καθορισμού σκοπού, ανάλυσης, ενέργειων, επιλογών, χρονοδιαγράμματος, ακεραιότητας, δέσμευσης και αριστείας.',
             },
             {
               title: 'SMART',

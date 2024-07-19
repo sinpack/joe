@@ -36,14 +36,12 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({
   };
 
   return (
-    <div
-      onClick={handleNavigate}
-      className="py-4 px-6 flex flex-col justify-between space-y-5 h-full min-h-[30rem]"
-    >
+    <div className="py-4 px-6 flex flex-col justify-between space-y-5 h-full min-h-[30rem]">
       <PhotoCard
         title={title}
         imageUrl={imgUrl}
         borderClasses={borderClasses}
+        onClick={handleNavigate}
       />
       <div className="flex flex-col justify-between grow">
         {descriptions ? (

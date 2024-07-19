@@ -6,7 +6,8 @@ interface PhotoCardProps {
   title: string;
   className?: string;
   imageUrl: string;
-  borderClasses?: string; // New prop for border styles
+  borderClasses?: string;
+  onClick?: () => void;
 }
 
 const PhotoCard: React.FC<PhotoCardProps> = ({
@@ -14,22 +15,22 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
   className,
   imageUrl,
   borderClasses,
+  onClick,
 }) => {
   return (
     <div
       className={clsx(
-        'flex flex-col items-center space-y-10 cursor-pointer',
+        'flex flex-col items-center space-y-5 cursor-default',
         borderClasses
       )}
     >
-      <div className="w-64 h-64 relative hover:scale-105 transition-transform duration-300">
+      <div className="w-64 h-64 relative mt-10">
         <Image
           src={imageUrl}
           alt={title}
-          className="object-cover rounded-full shadow-xl"
-          priority
+          className="object-cover shadow-xl rounded-full hover:scale-110 transition-transform duration-300"
           fill
-          sizes="(max-width: 640px) 100vw, 50vw" // Example with responsive sizes
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
           quality={100}
         />
       </div>
@@ -38,7 +39,8 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
         style={{ height: '4rem' }}
       >
         <h3
-          className={`text-center font-medium leading-tight tracking-tight p-2.5 grow ${className}`}
+          className={`text-center font-medium leading-tight tracking-tight p-2.5 grow ${className} hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-110 cursor-pointer`}
+          onClick={onClick}
         >
           {title}
         </h3>

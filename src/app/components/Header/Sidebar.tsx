@@ -45,7 +45,7 @@ const Sidebar = ({
               onClick={toggleSidebar}
             >
               <Image
-                src="./clear.svg"
+                src="/clear.svg"
                 alt="close"
                 height={24}
                 width={24}
