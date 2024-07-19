@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import ActiveLink from './ActiveLink';
 import { BurgerButton } from './BurgerButton';
-import logo from '../public/logo.jpg';
+import logo from '../../../../public/logo.jpg';
 import Image from 'next/image';
 
 type LinkItem = {
