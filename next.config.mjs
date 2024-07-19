@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: 'default', // Use default loader or 'imgix', 'cloudinary', etc.
-    path: '/', // Adjust path based on basePath and where your images are located
+    path: './', // Adjust path based on basePath and where your images are located
   },
 };
 
