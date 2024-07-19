@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: '/joe',
-  output: 'export', // <=== enables static exports
+  output: 'export', // enables static exports
   reactStrictMode: true,
   images: {
-    loader: 'akamai',
-    path: './', // <----- THIS IS THE ISSUE
+    loader: 'default', // Use default loader or 'imgix', 'cloudinary', etc.
+    path: '/joe/', // Adjust path based on basePath and where your images are located
   },
 };
 

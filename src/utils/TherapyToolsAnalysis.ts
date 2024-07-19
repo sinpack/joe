@@ -15,7 +15,7 @@ export interface TherapyToolAnalysis {
 const therapyToolsAnalysis: TherapyToolAnalysis[] = [
   {
     id: 1,
-    imageUrl: './art-therapy.jpg',
+    imageUrl: './images/art-therapy.jpg',
     generalTitle: 'Γενικές Πληροφορίες για την Τέχνη',
     nameId: 'art-therapy',
     mainTitle: 'ART THERAPY / ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',

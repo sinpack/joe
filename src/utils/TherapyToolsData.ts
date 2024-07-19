@@ -9,7 +9,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ART THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     nameId: 'art-therapy',
-    image: './art-therapy.jpg',
+    image: './images/art-therapy.jpg',
     descriptions: [
       'Μέθοδος θεραπείας που χρησιμοποιεί την τέχνη ως μέσο για την επίτευξη εσωτερικής αλλαγής και αυτογνωσίας.',
     ],
