@@ -1,12 +1,13 @@
 import React from 'react';
 import therapyToolsAnalysis from '../../../utils/TherapyToolsAnalysis';
 import TherapyToolContent from './TherapyToolContent';
+import { StaticImageData } from 'next/image';
 
 interface TherapyTool {
   nameId: string;
   mainTitle: string;
   startingParagraph?: string;
-  imageUrl: string;
+  imageUrl: StaticImageData;
   sections: {
     title: string;
     paragraph: string;
