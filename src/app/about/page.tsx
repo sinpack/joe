@@ -3,6 +3,7 @@ import Image from 'next/image';
 import bioData from '@/utils/BioData';
 import TherapyToolCard from '../treatments/TherapyToolCard';
 import HolisticCard from '../holistic-coaching/HolisticCard';
+import profilePic from '../../../public/images/profile-joe.png';
 
 const AboutPage = () => {
   return (
@@ -14,7 +15,7 @@ const AboutPage = () => {
           </h1>
           <div className="flex justify-center mb-8">
             <Image
-              src="./images/profile-joe.png"
+              src={profilePic}
               alt="profile"
               className="rounded-3xl shadow-xl"
               width={300}

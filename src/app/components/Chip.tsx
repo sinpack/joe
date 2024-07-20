@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
+import Clear from '../../../public/clear.svg';
 
 interface ChipProps {
   label: ReactNode;
@@ -30,13 +31,7 @@ export default function Chip({
           className="ml-2.5 mt-[9px] w-[18px] cursor-pointer"
           onClick={() => onClick()}
         >
-          <Image
-            src="./ClearInstrument.svg"
-            alt="Clear"
-            height={18}
-            width={18}
-            quality={100}
-          />
+          <Image src={Clear} alt="Clear" height={18} width={18} quality={100} />
         </div>
       )}
     </div>

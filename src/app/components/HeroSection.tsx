@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import mental1 from '../../../public/images/mental1.jpg';
 
 const HeroSection = () => {
   return (
@@ -47,7 +48,7 @@ const HeroSection = () => {
         </div>
         <div className="w-full h-full relative lg:mt-0 lg:flex lg:col-span-4 lg:px-10 py-5 ">
           <Image
-            src="./images/mental1.jpg"
+            src={mental1}
             alt="mental-photo-1"
             className="flex items-center justify-center relative rounded-full sm:rounded-3xl md:rounded-lg lg:rounded-full shadow-xl"
             priority

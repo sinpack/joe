@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { MouseEvent } from 'react';
-
+import badgeIcon from '../../../../public/icons/badge-icon.svg';
+import badgeDisabledIcon from '../../../../public/icons/badge-disabled-icon.svg';
 import DefaultMotionDiv from '../DefaultMotionDiv';
 import Spinner from '../Spinner';
 
@@ -70,7 +71,7 @@ export default function BaseButton({
                     <div className="flex absolute translate-x-[16px] z-20">
                       {!disabled ? (
                         <Image
-                          src="./badge-icon.svg"
+                          src={badgeIcon}
                           alt="badge"
                           height={12}
                           width={12}
@@ -78,7 +79,7 @@ export default function BaseButton({
                         />
                       ) : (
                         <Image
-                          src="./badge-disabled-icon.svg"
+                          src={badgeDisabledIcon}
                           alt="badge"
                           height={12}
                           width={12}

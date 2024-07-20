@@ -1,6 +1,10 @@
 import React from 'react';
 import Icon from '../components/Icon';
 import Link from 'next/link';
+import addressIcon from '../../../public/icons/address.png';
+import emailIcon from '../../../public/icons/email.png';
+import phoneIcon from '../../../public/icons/phone.png';
+import thumbIcon from '../../../public/icons/thumb.png';
 
 interface ContactDetail {
   icon: React.ReactNode;
@@ -11,34 +15,24 @@ interface ContactDetail {
 
 const contactDetails: ContactDetail[] = [
   {
-    icon: (
-      <Icon
-        src="./icons/address.png"
-        alt="Address Icon"
-        className="filter-grey"
-      />
-    ),
+    icon: <Icon src={addressIcon} alt="Address Icon" className="filter-grey" />,
     title: 'Διεύθυνση',
     description: 'Λευκωσίας 41, Πάτρα, Ελλάδα',
   },
   {
-    icon: (
-      <Icon src="./icons/email.png" alt="Email Icon" className="filter-grey" />
-    ),
+    icon: <Icon src={emailIcon} alt="Email Icon" className="filter-grey" />,
     title: 'E-mail',
     description: 'georgios_antonopoulos@hotmail.com',
   },
   {
-    icon: (
-      <Icon src="./icons/phone.png" alt="Phone Icon" className="filter-grey" />
-    ),
+    icon: <Icon src={phoneIcon} alt="Phone Icon" className="filter-grey" />,
     title: 'Τηλέφωνο',
     description: '+30 6976629913',
   },
   {
     icon: (
       <Icon
-        src="./icons/thumb.png"
+        src={thumbIcon}
         alt="Facebook Thumbs up Icon"
         className="filter-grey"
       />

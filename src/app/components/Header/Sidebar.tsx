@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import Divider from '../Divider';
 import SideActiveLink from './SideActiveLink';
+import clear from '../../../../public/clear.svg';
 
 type LinkItem = {
   name: string;
@@ -45,7 +45,7 @@ const Sidebar = ({
               onClick={toggleSidebar}
             >
               <Image
-                src="./clear.svg"
+                src={clear}
                 alt="close"
                 height={24}
                 width={24}
