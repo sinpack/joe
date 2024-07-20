@@ -27,7 +27,6 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  className,
   disabled,
   isLoading,
   fixedWidth,

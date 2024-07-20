@@ -19,6 +19,7 @@ interface DescriptionCardProps {
   vertical: boolean;
   bulletPoints?: string[];
   index?: number;
+  footer?: string;
 }
 
 const DescriptionCard: React.FC<DescriptionCardProps> = ({
@@ -27,6 +28,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
   vertical,
   bulletPoints,
   index,
+  footer,
 }) => {
   const controls = useAnimation();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -124,6 +126,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
           ))}
         </ul>
       )}
+      {footer && <p className="mt-4 pt-4 border-t text-sm">{footer}</p>}
     </motion.div>
   );
 };

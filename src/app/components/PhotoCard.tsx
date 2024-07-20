@@ -1,11 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import clsx from 'clsx';
 
 interface PhotoCardProps {
   title: string;
   className?: string;
-  imageUrl: string;
+  imageUrl: string | StaticImageData;
   borderClasses?: string;
   onClick?: () => void;
 }

@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { TertiaryButton } from '../components/Buttons';
 import DescriptionCard from '../components/DescriptionCard';
 import PhotoCard from '../components/PhotoCard';
+import { StaticImageData } from 'next/image';
 
 interface TreatmentCardProps {
   title: string;
@@ -13,7 +14,7 @@ interface TreatmentCardProps {
   descriptionCardClassName?: string;
   bulletPoints?: string[];
   index?: number;
-  imgUrl: string;
+  imgUrl: string | StaticImageData;
   borderClasses?: string;
 }
 

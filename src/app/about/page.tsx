@@ -4,6 +4,7 @@ import bioData from '@/utils/BioData';
 import TherapyToolCard from '../treatments/TherapyToolCard';
 import HolisticCard from '../holistic-coaching/HolisticCard';
 import profilePic from '../../../public/images/profile-joe.png';
+import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 
 const AboutPage = () => {
   return (
@@ -50,7 +51,8 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>{' '}
+      <ScrollToTopButton />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import HolisticCard from './HolisticCard';
 import BlueDivider from '../components/BlueDivider';
 import holisticData from '../../utils/holisticData';
+import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 
 const HolisticPage = () => {
   return (
@@ -26,10 +27,12 @@ const HolisticPage = () => {
               backgroundColor={item.color}
               className="bg-gray-300"
               shape="triangle"
+              footer={item.footer}
             />
           ))}
         </div>
       </div>
+      <ScrollToTopButton />
     </section>
   );
 };

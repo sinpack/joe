@@ -1,15 +1,24 @@
+import artTherapy from '../../public/images/art-therapy.jpg';
+import sleepTherapy from '../../public/images/sleep-therapy.jpg';
+import transpersonalCoaching from '../../public/images/transpersonal-coaching.jpg';
+import positivePsychology from '../../public/images/positive-psychology.jpg';
+import cbt from '../../public/images/cbt.jpg';
+import mindfulness from '../../public/images/mindfulness.jpg';
+import guidedImagery from '../../public/images/guided-imagery.jpg';
+import { StaticImageData } from 'next/image';
+
 export interface therapyTool {
   title: string;
   nameId: string;
   descriptions?: string[];
   color: string;
-  image: string;
+  image: string | StaticImageData;
 }
 const therapyTools: therapyTool[] = [
   {
     title: 'ART THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     nameId: 'art-therapy',
-    image: './images/art-therapy.jpg',
+    image: artTherapy,
     descriptions: [
       'Μέθοδος θεραπείας που χρησιμοποιεί την τέχνη ως μέσο για την επίτευξη εσωτερικής αλλαγής και αυτογνωσίας.',
     ],
@@ -18,7 +27,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΥΠΝΟΘΕΡΑΠΕΙΑ',
     nameId: 'hypnotherapy',
-    image: './images/sleep-therapy.jpg',
+    image: sleepTherapy,
     descriptions: [
       'Θεραπευτική τεχνική που χρησιμοποιεί τον ύπνο για την αντιμετώπιση και την ανάλυση ψυχολογικών προβλημάτων.',
     ],
@@ -27,7 +36,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
     nameId: 'transpersonal-coaching',
-    image: './images/transpersonal-coaching.jpg',
+    image: transpersonalCoaching,
     descriptions: [
       'Σύγχρονη μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της προσωπικής αυτογνωσίας και της διανόησης.',
     ],
@@ -36,7 +45,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΘΕΤΙΚΗ ΨΥΧΟΛΟΓΙΑ',
     nameId: 'positive-psychology',
-    image: './images/positive-psychology.jpg',
+    image: positivePsychology,
     descriptions: [
       'Ψυχολογική προσέγγιση που επικεντρώνεται στην ανάπτυξη των θετικών ψυχικών διαδικασιών και της ευημερίας.',
     ],
@@ -45,7 +54,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΤΕΧΝΙΚΕΣ ΧΑΛΑΡΩΣΗΣ + CBT',
     nameId: 'relaxation-techniques-cbt',
-    image: './images/cbt.jpg',
+    image: cbt,
     descriptions: [
       'Συνδυασμός τεχνικών αποκατάστασης και Συμπεριφορικής Θεραπείας για την αντιμετώπιση της άγχους και των καταστάσεων άγχους.',
     ],
@@ -54,7 +63,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'MINDFULNESS ΔΙΑΛΟΓΙΣΜΟΣ',
     nameId: 'mindfulness',
-    image: './images/mindfulness.jpg',
+    image: mindfulness,
     descriptions: [
       'Ψυχολογική τεχνική που επικεντρώνεται στην ανάπτυξη της προσεκτικότητας και της επίγνωσης στην καθημερινότητα.',
     ],
@@ -63,7 +72,7 @@ const therapyTools: therapyTool[] = [
   {
     title: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
     nameId: 'guided-imagery',
-    image: './images/guided-imagery.jpg',
+    image: guidedImagery,
     descriptions: [
       'Ψυχολογική μέθοδος που χρησιμοποιεί την οπτική φαντασία για την αυτογνωσία και την ενίσχυση της θεραπευτικής διαδικασίας.',
     ],

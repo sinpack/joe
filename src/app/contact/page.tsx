@@ -1,8 +1,7 @@
-// pages/contact.js
-
 import dynamic from 'next/dynamic';
 import contactDetails from './ContactDetails';
 import BlueDivider from '../components/BlueDivider';
+import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 
 export default function Contact() {
   const DynamicMap = dynamic(() => import('../components/Map'), {
@@ -52,6 +51,8 @@ export default function Contact() {
       <div className="flex flex-col w-full z-10 container mx-auto py-20 px-20">
         <DynamicMap />
       </div>
+               <ScrollToTopButton />
+
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Divider from '../components/Divider';
 import clsx from 'clsx';
 import PrimarySolidButton from '../components/Buttons/PrimarySolidButton';
 import { useRouter } from 'next/navigation';
+import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 
 const Treatments = () => {
   const router = useRouter();
@@ -67,6 +68,7 @@ const Treatments = () => {
             width={300}
           />
         </div>
+         <ScrollToTopButton />
       </section>
     </>
   );
