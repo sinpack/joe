@@ -1,6 +1,6 @@
 'use client';
-import { useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
+import { useEffect, useRef } from 'react';
 
 interface GoogleMapProps {
   address: string;

@@ -5,6 +5,9 @@ interface BioDataItem {
   bulletPoints?: string[];
 }
 
+export const heroVideoUrl =
+  'https://www.dropbox.com/scl/fi/cpb06wf0tqhzaksxcatny/hero.mp4?rlkey=x4ihxj4jmyjf0p2if64pja1lb&dl=1';
+
 const bioData: BioDataItem[] = [
   {
     title: 'ΒΙΟΓΡΑΦΙΚΟ',

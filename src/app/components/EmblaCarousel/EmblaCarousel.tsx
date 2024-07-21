@@ -10,7 +10,7 @@ import {
   PrevButton,
   NextButton,
 } from './EmlaCarouselArrowButton';
-import { SliderDataType } from '@/utils/sliderData';
+import { SliderDataType } from '../../../utils/sliderData';
 
 type PropType = {
   slides: SliderDataType[];

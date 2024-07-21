@@ -4,7 +4,7 @@ import HeroSection from './components/HeroSection';
 import { useRouter } from 'next/navigation';
 import EmblaCarousel from './components/EmblaCarousel/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
-import sliderData from '@/utils/sliderData';
+import sliderData from '../utils/sliderData';
 import Image from 'next/image';
 import holistic from '../../public/holistic2.jpg';
 
@@ -45,8 +45,10 @@ export default function Home() {
           <Image
             src={holistic}
             alt="holistic"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
             quality={100}
           />
         </div>

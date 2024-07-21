@@ -3,17 +3,13 @@
 import './globals.css';
 import Header from './components/Header';
 import CustomFooter from './components/Footer';
-import {
-  Inter,
-  Advent_Pro,
-  Gentium_Plus,
-  Piazzolla,
-  Roboto_Mono,
-  Roboto_Condensed,
-  Open_Sans,
-} from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 import PageAnimatePresence from './components/PageAnimatePresence';
 import PageAnimation from './components/PageAnimation';
+import SkeletonWrapper from './components/SkeletonWrapper';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 const font = Open_Sans({
   subsets: ['latin', 'greek'],
@@ -28,7 +24,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <Header />
         {/* <PageAnimatePresence> */}{' '}
         {/* <PageAnimation transitionClass="easeInOut" duration={0.3}> */}
-        {children}
+        <SkeletonWrapper> {children}</SkeletonWrapper>
         {/* </PageAnimation> */}
         {/* </PageAnimatePresence> */}
         <CustomFooter />
