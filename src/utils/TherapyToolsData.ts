@@ -8,6 +8,7 @@ import guidedImagery from '../../public/images/guided-imagery.jpg';
 import { StaticImageData } from 'next/image';
 
 export interface therapyTool {
+  id: number;
   title: string;
   nameId: string;
   descriptions?: string[];
@@ -16,6 +17,7 @@ export interface therapyTool {
 }
 const therapyTools: therapyTool[] = [
   {
+    id: 1,
     title: 'ART THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     nameId: 'art-therapy',
     image: artTherapy,
@@ -25,6 +27,7 @@ const therapyTools: therapyTool[] = [
     color: '#A9D6E5',
   },
   {
+    id: 2,
     title: 'ΥΠΝΟΘΕΡΑΠΕΙΑ',
     nameId: 'hypnotherapy',
     image: sleepTherapy,
@@ -34,6 +37,7 @@ const therapyTools: therapyTool[] = [
     color: '#D4A5A5',
   },
   {
+    id: 3,
     title: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
     nameId: 'transpersonal-coaching',
     image: transpersonalCoaching,
@@ -43,6 +47,7 @@ const therapyTools: therapyTool[] = [
     color: '#A8C3A7',
   },
   {
+    id: 4,
     title: 'ΘΕΤΙΚΗ ΨΥΧΟΛΟΓΙΑ',
     nameId: 'positive-psychology',
     image: positivePsychology,
@@ -52,6 +57,7 @@ const therapyTools: therapyTool[] = [
     color: '#C4B7CB',
   },
   {
+    id: 5,
     title: 'ΤΕΧΝΙΚΕΣ ΧΑΛΑΡΩΣΗΣ + CBT',
     nameId: 'relaxation-techniques-cbt',
     image: cbt,
@@ -61,6 +67,7 @@ const therapyTools: therapyTool[] = [
     color: '#FFFACD',
   },
   {
+    id: 6,
     title: 'MINDFULNESS ΔΙΑΛΟΓΙΣΜΟΣ',
     nameId: 'mindfulness',
     image: mindfulness,
@@ -70,6 +77,7 @@ const therapyTools: therapyTool[] = [
     color: '#F7B2A3',
   },
   {
+    id: 7,
     title: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
     nameId: 'guided-imagery',
     image: guidedImagery,
