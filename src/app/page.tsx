@@ -1,12 +1,11 @@
-'use client';
-import PrimarySolidButton from './components/Buttons/PrimarySolidButton';
+"use client"
 import HeroSection from './components/HeroSection';
-import { useRouter } from 'next/navigation';
 import EmblaCarousel from './components/EmblaCarousel/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
 import sliderData from '../utils/sliderData';
 import Image from 'next/image';
 import holistic from '../../public/holistic2.jpg';
+import NavigationButton from './components/Buttons/NavigateButton';
 
 export default function Home() {
   const OPTIONS: EmblaOptionsType = {
@@ -14,8 +13,6 @@ export default function Home() {
     align: 'center',
     watchResize: true,
   };
-
-  const router = useRouter();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center w-full bg-sky-50">
@@ -31,11 +28,7 @@ export default function Home() {
             </a>
           </h2>
           <div className="flex place-self-center mt-20">
-            <PrimarySolidButton
-              text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ"
-              onClick={() => router.push('/contact')}
-              width={300}
-            />
+            <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
           </div>
         </div>
       </section>
@@ -50,6 +43,7 @@ export default function Home() {
               objectFit: 'cover',
             }}
             quality={100}
+            priority
           />
         </div>
 
@@ -78,17 +72,17 @@ export default function Home() {
             Θεραπείες και Μέθοδοι
           </h2>
           <p className="mb-10">
-            As a licensed psychologist, I offer a range of therapy options
-            tailored to your unique needs and goals. Together, we can work
-            towards your well-being through online counseling services.
+            Ως πιστοποιημένος ψυχολόγος, προσφέρω μια ποικιλία επιλογών
+            θεραπείας προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους.
+            Μαζί, μπορούμε να εργαστούμε για την ευημερία σας μέσω διαδικτυακών
+            συμβουλευτικών υπηρεσιών.
+            <a href="/treatments" className="text-blue-600 text-base ml-2.5">
+              Διαβάστε περισσότερα
+            </a>
           </p>
           <EmblaCarousel slides={sliderData} options={OPTIONS} />
           <div className="flex place-self-center pt-10">
-            <PrimarySolidButton
-              text="ΜΑΘΕ ΠΕΡΙΣΣΟΤΕΡΑ ΓΙΑ ΤΙΣ ΘΕΡΑΠΕΙΕΣ"
-              onClick={() => router.push('/treatments')}
-              width={400}
-            />
+            <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
           </div>
         </div>
       </section>

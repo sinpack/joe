@@ -34,13 +34,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   return (
     <div className="embla drop-shadow-2xl flex flex-col w-full">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container cursor-pointer ">
+        <div className="embla__container cursor-default ">
           {slides.map((sliderItem, index) => (
             <div
-              className="embla__slide embla__class-names cursor-pointer"
+              className="embla__slide embla__class-names cursor-default"
               key={index}
             >
-              <div className="flex flex-col items-center space-y-5 cursor-pointer">
+              <div className="flex flex-col items-center space-y-5 cursor-default">
                 <div className="w-64 h-64 relative mt-10">
                   <Image
                     src={sliderItem.url}

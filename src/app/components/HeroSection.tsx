@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-
+import Image from 'next/image';
 import LoadingComponent from './LoadingComponent';
 import { heroVideoUrl } from './../../utils/BioData';
+import introPhoto from '../../../public/intro5.jpg';
 
 // Define the type for the video data
 // type VideoData = {
@@ -23,23 +24,35 @@ const Hero: React.FC = () => {
   // }
 
   return (
-    <div className="relative w-full h-[40vh] overflow-hidden">
-      <video
+    <section className="relative w-full h-[70vh] overflow-hidden">
+      {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src={heroVideoUrl}
         autoPlay
         loop
         muted
-      />
-      <div className="relative z-10 flex items-end h-full justify-center">
-        <h1 className="text-white text-xl md:text-2xl lg:text-3xl font-bold text-center mb-10">
+      /> */}
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src={introPhoto}
+          alt="intro photo"
+          fill
+          className="object-cover object-left"
+          quality={100}
+          placeholder="blur"
+          priority
+        />
+      </div>
+      <div className="relative z-10 flex items-center h-full justify-center container mx-auto ">
+        <h1 className="text-gray-500 text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 tracking-tight">
           Η ισορροπία έρχεται όταν
           <br />
           συνδυάζουμε σώμα,
           <br /> νου και ψυχή.
         </h1>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,7 +5,12 @@ import TherapyToolCard from '../treatments/TherapyToolCard';
 import HolisticCard from '../holistic-coaching/HolisticCard';
 import profilePic from '../../../public/images/profile-joe.png';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title:
+    'Βιογραφικό Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+};
 const AboutPage = () => {
   return (
     <div className="bg-sky-50 container mx-auto px-10 sm:px-28 header:px-60">

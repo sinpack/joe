@@ -2,6 +2,12 @@ import dynamic from 'next/dynamic';
 import contactDetails from './ContactDetails';
 import BlueDivider from '../components/BlueDivider';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Επικοινωνία Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+};
 
 export default function Contact() {
   const DynamicMap = dynamic(() => import('../components/Map'), {
@@ -18,8 +24,8 @@ export default function Contact() {
             </h1>
             <p className="text-center text-lg whitespace-normal">
               Για να κλείσετε ραντεβού ή για περαιτέρω πληροφορίες, μπορείτε να
-              επικοινωνήστε μαζί μου μέσω τηλεφώνου στο +6976629913 ή μέσω
-              e-mail στο georgios_antonopoulos@hotmail.com
+              επικοινωνήστε μαζί μου μέσω τηλεφώνου στο 6976629913 ή μέσω e-mail
+              στο georgios_antonopoulos@hotmail.com
             </p>
           </div>
         </main>
@@ -51,8 +57,7 @@ export default function Contact() {
       <div className="flex flex-col w-full z-10 container mx-auto py-20 px-20">
         <DynamicMap />
       </div>
-               <ScrollToTopButton />
-
+      <ScrollToTopButton />
     </div>
   );
 }

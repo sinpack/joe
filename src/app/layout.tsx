@@ -8,6 +8,7 @@ import PageAnimatePresence from './components/PageAnimatePresence';
 import PageAnimation from './components/PageAnimation';
 import SkeletonWrapper from './components/SkeletonWrapper';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Metadata } from 'next';
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,19 @@ const font = Open_Sans({
   variable: '--font-webfont',
   weight: '400',
 });
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Γιώργος Αντωνόπουλος - Holistic Coach',
+    default: 'Γιώργος Αντωνόπουλος - Holistic Coach',
+  },
+  description: 'Η επίσημη ιστοσελίδα του ψυχολόγου Γιώργου Αντωνόπουλου',
+  metadataBase: new URL('https://sinpack.github.io/joe/'),
+  icons: {
+    icon: '/favicon.ico', // Ensure favicon.ico is placed in the public directory
+    apple: '/apple-touch-icon.png', // Optional: for Apple touch icon
+  },
+};
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (

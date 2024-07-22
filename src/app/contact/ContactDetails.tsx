@@ -37,7 +37,7 @@ const contactDetails: ContactDetail[] = [
         className="filter-grey"
       />
     ),
-    title: 'Μέσα Κοινωνικής Δικτύωσης',
+    title: 'Social Media',
     icons: (
       <div className="m-auto flex w-max items-center justify-between space-x-4">
         <Link href="#" title="facebook" target="_blank" aria-label="facebook">

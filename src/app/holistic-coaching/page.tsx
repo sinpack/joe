@@ -3,6 +3,12 @@ import HolisticCard from './HolisticCard';
 import BlueDivider from '../components/BlueDivider';
 import holisticData from '../../utils/holisticData';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Holistic Coaching Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+};
 
 const HolisticPage = () => {
   return (

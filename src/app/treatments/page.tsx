@@ -1,29 +1,32 @@
-"use client"
 import React from 'react';
 import AttributesSection from './AttributesSection';
 import therapyTools from '../../utils/TherapyToolsData';
 import TreatmentCard from './TreatmentCard';
 import Divider from '../components/Divider';
 import clsx from 'clsx';
-import PrimarySolidButton from '../components/Buttons/PrimarySolidButton';
-import { useRouter } from 'next/navigation';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
+import { Metadata } from 'next';
+import NavigationButton from '../components/Buttons/NavigateButton';
+
+export const metadata: Metadata = {
+  title:
+    'Υπηρεσίες-Θεραπείες Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+};
 
 const Treatments = () => {
-  const router = useRouter();
   return (
     <>
       <section>
         <div className="flex flex-col items-center justify-start bg-sky-50 py-20 px-20 lg:px-60 md:px-40 sm:px-30 w-full">
           <div className="flex flex-col items-center gap-5 h-auto max-w-xl w-full">
-            <div className="flex flex-col justify-start w-full">
+            {/* <div className="flex flex-col justify-start w-full">
               <h1 className="text-center">ΥΠΗΡΕΣΙΕΣ - ΘΕΡΑΠΕΙΕΣ</h1>
-            </div>
+            </div> */}
             <div className="flex flex-col justify-start w-full">
               <p className="text-center whitespace-normal">
-                Ως holistic - integrative coach, προσφέρω μια σειρά επιλογών
-                θεραπείας προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους.
-                Μαζί, μπορούμε να εργαστούμε για την ευημερία σας.
+                Ως holistic - integrative coach, προσφέρω μια σειρά υπηρεσιών
+                προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους. Μαζί,
+                μπορούμε να εργαστούμε για την ευημερία σας.
               </p>
             </div>
           </div>
@@ -34,7 +37,7 @@ const Treatments = () => {
       <section className="flex flex-col container mx-auto px-5 lg:px-20 py-10 bg-sky-50">
         <div className="flex flex-row items-center justify-center space-x-5">
           <Divider className="border-gray-400 border" />
-          <h1 className="text-center py-10">ΘΕΡΑΠΕΙΕΣ</h1>
+          <h1 className="text-center py-10 text-nowrap">ΥΠΗΡΕΣΙΕΣ-ΘΕΡΑΠΕΙΕΣ</h1>
           <Divider className="border-gray-400 border" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -62,13 +65,9 @@ const Treatments = () => {
           })}
         </div>
         <div className="flex place-self-center mt-20">
-          <PrimarySolidButton
-            text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ"
-            onClick={() => router.push('/contact')}
-            width={300}
-          />
+          <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
         </div>
-         <ScrollToTopButton />
+        <ScrollToTopButton />
       </section>
     </>
   );
