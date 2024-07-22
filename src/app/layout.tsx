@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     icon: '/favicon.ico', // Ensure favicon.ico is placed in the public directory
     apple: '/apple-touch-icon.png', // Optional: for Apple touch icon
   },
+  verification: {
+    google: 'NRLCkQAyXdUltIT0IL44-nl3xi9BQVaz1l_IiVUmCas',
+  },
+  keywords: [
+    'holistic coaching',
+    'giorgos antonopoulos',
+    'γιώργος αντωνόπουλος',
+    'psychology',
+  ],
 };
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
