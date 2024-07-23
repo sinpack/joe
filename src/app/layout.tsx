@@ -3,7 +3,7 @@
 import './globals.css';
 import Header from './components/Header';
 import CustomFooter from './components/Footer';
-import { Open_Sans, Alegreya } from 'next/font/google';
+import { Open_Sans, Alegreya, EB_Garamond } from 'next/font/google';
 import PageAnimatePresence from './components/PageAnimatePresence';
 import PageAnimation from './components/PageAnimation';
 import SkeletonWrapper from './components/SkeletonWrapper';
@@ -18,7 +18,7 @@ const font = Open_Sans({
   weight: '400',
 });
 
-export const handwritingFont = Alegreya({
+export const handwritingFont = EB_Garamond({
   subsets: ['latin', 'greek'],
   variable: '--font-webfont2',
   weight: '400',
