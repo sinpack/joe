@@ -5,18 +5,12 @@ import LoadingComponent from './LoadingComponent';
 // import { heroVideoUrl } from './../../utils/BioData';
 // import introVideoLoop from "../../../public/intro7.mp4"
 import introPhoto from '../../../public/intro5.jpg';
-import { Mynerve } from 'next/font/google';
+import { handwritingFont } from './../layout';
 
 // Define the type for the video data
 // type VideoData = {
 //   url: string;
 // };
-
-const handwrittingFont = Mynerve({
-  subsets: ['latin', 'greek'],
-  variable: '--font-webfont2',
-  weight: '400',
-});
 
 const Hero: React.FC = () => {
   // const { data, isLoading, error } = useVideo<VideoData>();
@@ -58,7 +52,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="relative z-10 flex items-center h-full justify-left container mx-auto ">
         <h1
-          className={`${!handwrittingFont.variable} italic text-gray-500 text-3xl md:text-4xl lg:text-4xl font-bold text-center -ml-20 tracking-tight`}
+          className={`${handwritingFont.className} italic text-gray-500 text-xl md:text-2xl lg:text-3xl font-bold text-center -ml-20 tracking-tight`}
         >
           Η αρμονία επέρχεται όταν εξισορροπήσουμε
           <br /> νου, σώμα, πνεύμα και συναίσθημα

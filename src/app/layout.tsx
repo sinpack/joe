@@ -3,13 +3,12 @@
 import './globals.css';
 import Header from './components/Header';
 import CustomFooter from './components/Footer';
-import { Open_Sans } from 'next/font/google';
+import { Open_Sans, Alegreya } from 'next/font/google';
 import PageAnimatePresence from './components/PageAnimatePresence';
 import PageAnimation from './components/PageAnimation';
 import SkeletonWrapper from './components/SkeletonWrapper';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Metadata } from 'next';
-import { Mynerve } from 'next/font/google';
+import { metadata } from '../utils/metadata';
 
 const queryClient = new QueryClient();
 
@@ -19,40 +18,24 @@ const font = Open_Sans({
   weight: '400',
 });
 
-const handwrittingFont = Mynerve({
+export const handwritingFont = Alegreya({
   subsets: ['latin', 'greek'],
   variable: '--font-webfont2',
   weight: '400',
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Γιώργος Αντωνόπουλος - Holistic Coach',
-    default: 'Γιώργος Αντωνόπουλος - Holistic Coach',
-  },
-  description: 'Η επίσημη ιστοσελίδα του ψυχολόγου Γιώργου Αντωνόπουλου',
-  metadataBase: new URL('https://sinpack.github.io/joe/'),
-  icons: {
-    icon: '/favicon.ico', // Ensure favicon.ico is placed in the public directory
-    apple: '/apple-touch-icon.png', // Optional: for Apple touch icon
-  },
-  verification: {
-    google: 'NRLCkQAyXdUltIT0IL44-nl3xi9BQVaz1l_IiVUmCas',
-  },
-  keywords: [
-    'holistic coaching',
-    'giorgos antonopoulos',
-    'γιώργος αντωνόπουλος',
-    'psychology',
-  ],
-};
-
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.cdnfonts.com/css/handwriting"
+          rel="stylesheet"
+        />
+      </head>
       <body className={`${font.variable} bg-sky-50`}>
         <Header />
-        {/* <PageAnimatePresence> */}{' '}
+        {/* <PageAnimatePresence> */}
         {/* <PageAnimation transitionClass="easeInOut" duration={0.3}> */}
         <SkeletonWrapper> {children}</SkeletonWrapper>
         {/* </PageAnimation> */}

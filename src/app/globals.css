@@ -1,5 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap'); */
-/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap');
+@import url('https://fonts.cdnfonts.com/css/handwriting');
+
 @import '~leaflet/dist/leaflet.css';
 
 @tailwind base;
@@ -47,6 +49,17 @@
     ;
     
   }
+
+ .lxgw {
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.handwriting {
+  font-family: 'Handwriting', sans-serif;
+}
+
 
  /* FONT COLORS */
 

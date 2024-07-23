@@ -81,7 +81,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Outfit', 'sans-serif'],
+        sans: ['Open Sans', 'sans-serif'],
       },
     },
   },
