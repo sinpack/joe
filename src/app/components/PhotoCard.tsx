@@ -8,6 +8,7 @@ interface PhotoCardProps {
   imageUrl: string | StaticImageData;
   borderClasses?: string;
   onClick?: () => void;
+  index?: number;
 }
 
 const PhotoCard: React.FC<PhotoCardProps> = ({
@@ -16,6 +17,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
   imageUrl,
   borderClasses,
   onClick,
+  index,
 }) => {
   return (
     <div
@@ -28,7 +30,11 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
         <Image
           src={imageUrl}
           alt={title}
-          className="object-cover shadow-xl rounded-full hover:scale-110 transition-transform duration-300"
+          className={clsx({
+            'object-cover shadow-xl rounded-full hover:scale-110 transition-transform duration-300':
+              true,
+            'object-left': index === 1 || index === 4,
+          })}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
           quality={100}

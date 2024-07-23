@@ -104,7 +104,7 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
       <div className="flex flex-col w-full space-y-20">
         <div className="flex place-self-start">
           <PrimarySolidButton
-            text="ΠΙΣΩ ΣΤΙΣ ΥΠΗΡΕΣΙΕΣ-ΘΕΡΑΠΕΙΕΣ"
+            text="ΠΙΣΩ ΣΤΙΣ ΥΠΗΡΕΣΙΕΣ - ΘΕΡΑΠΕΙΕΣ"
             onClick={() => router.push('/treatments')}
             width={300}
           />

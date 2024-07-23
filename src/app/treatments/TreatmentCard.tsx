@@ -43,6 +43,7 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({
         imageUrl={imgUrl}
         borderClasses={borderClasses}
         onClick={handleNavigate}
+        index={index}
       />
       <div className="flex flex-col justify-between grow">
         {descriptions ? (

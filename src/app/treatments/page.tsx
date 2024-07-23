@@ -59,6 +59,7 @@ const Treatments = () => {
                   imgUrl={treatment.image}
                   descriptions={treatment.descriptions}
                   link={`/treatments/${treatment.nameId}`}
+                  index={index}
                 />
               </div>
             );

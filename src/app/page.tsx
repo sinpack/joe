@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import HeroSection from './components/HeroSection';
 import EmblaCarousel from './components/EmblaCarousel/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
@@ -20,15 +20,14 @@ export default function Home() {
       <section className="container mx-auto py-40 px-4 bg-sky-50">
         <div className="flex flex-col justify-center text-center px-20 lg:px-60">
           <h2 className="mt-4">
-            Είμαι ο Γεώργιος Αντωνόπουλος, πιστοποιημένος Ολιστικός Coach με
-            πλούσιο υπόβαθρο στις Τέχνες και τις Επιστήμες. Εξειδικεύομαι στην
-            Ολιστική Προπονητική Ψυχολογία με διεθνείς πιστοποιήσεις.{' '}
+            Ονομάζομαι Γεώργιος Αντωνόπουλος και είμαι πιστοποιημένος Ολιστικός
+            Coach, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις Επιστήμες.
             <a href="/bio" className="text-blue-600 text-base ml-2.5">
               Διαβάστε περισσότερα
             </a>
           </h2>
           <div className="flex place-self-center mt-20">
-            <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
+            {/* <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" /> */}
           </div>
         </div>
       </section>
@@ -53,9 +52,10 @@ export default function Home() {
               Holistic Coaching{' '}
             </h2>
             <p className="mb-10 text-grey-600 font-bold">
-              Το holistic coaching προσεγγίζει την προσωπική ανάπτυξη με έναν
-              ολοκληρωμένο τρόπο, εστιάζοντας στην ισορροπία μεταξύ νου, σώματος
-              και πνεύματος για συνολική ευημερία και ανάπτυξη.
+              Το holistic coaching εστιάζει στην ισορροπία μεταξύ σώματος, νου,
+              συναισθήματος και πνεύματος, προσφέροντας μια σφαιρική προσέγγιση
+              για την αντιμετώπιση των προκλήσεων και την επίτευξη προσωπικών
+              στόχων.
               <a
                 href="/holistic-coaching"
                 className="text-blue-600 text-base ml-2.5"
@@ -68,14 +68,13 @@ export default function Home() {
       </section>
       <section className="container mx-auto py-40 px-4">
         <div className="flex flex-col justify-center text-center px-20 lg:px-60 space-y-5">
-          <h2 className="text-3xl font-bold text-center">
-            Θεραπείες και Μέθοδοι
+          <h2 className="text-3xl font-bold underline">
+            Υπηρεσίες - Θεραπείες{' '}
           </h2>
           <p className="mb-10">
-            Ως πιστοποιημένος ψυχολόγος, προσφέρω μια ποικιλία επιλογών
-            θεραπείας προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους.
-            Μαζί, μπορούμε να εργαστούμε για την ευημερία σας μέσω διαδικτυακών
-            συμβουλευτικών υπηρεσιών.
+            Ως holistic - integrative coach, προσφέρω μια σειρά υπηρεσιών
+            προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους. Μαζί,
+            μπορούμε να εργαστούμε για την ευημερία σας.
             <a href="/treatments" className="text-blue-600 text-base ml-2.5">
               Διαβάστε περισσότερα
             </a>

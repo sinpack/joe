@@ -9,12 +9,19 @@ import PageAnimation from './components/PageAnimation';
 import SkeletonWrapper from './components/SkeletonWrapper';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Metadata } from 'next';
+import { Mynerve } from 'next/font/google';
 
 const queryClient = new QueryClient();
 
 const font = Open_Sans({
   subsets: ['latin', 'greek'],
   variable: '--font-webfont',
+  weight: '400',
+});
+
+const handwrittingFont = Mynerve({
+  subsets: ['latin', 'greek'],
+  variable: '--font-webfont2',
   weight: '400',
 });
 

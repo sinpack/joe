@@ -2,13 +2,21 @@
 import React from 'react';
 import Image from 'next/image';
 import LoadingComponent from './LoadingComponent';
-import { heroVideoUrl } from './../../utils/BioData';
-import introPhoto from '../../../public/intro6.jpg';
+// import { heroVideoUrl } from './../../utils/BioData';
+// import introVideoLoop from "../../../public/intro7.mp4"
+import introPhoto from '../../../public/intro5.jpg';
+import { Mynerve } from 'next/font/google';
 
 // Define the type for the video data
 // type VideoData = {
 //   url: string;
 // };
+
+const handwrittingFont = Mynerve({
+  subsets: ['latin', 'greek'],
+  variable: '--font-webfont2',
+  weight: '400',
+});
 
 const Hero: React.FC = () => {
   // const { data, isLoading, error } = useVideo<VideoData>();
@@ -26,10 +34,11 @@ const Hero: React.FC = () => {
     'polygon(50% 0%, 100% 0, 100% 100%, 52% 100%, 50% 95%, 48% 100%, 0 100%, 0% 43%, 0 0)';
 
   return (
-    <section className="relative w-full h-[60vh] overflow-hidden">
+    <section className="relative w-full h-[70vh] overflow-hidden">
       {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src={heroVideoUrl}
+        style={{ clipPath: triangularClipPath }}
+        src="/intro7.mp4"
         autoPlay
         loop
         muted
@@ -44,15 +53,15 @@ const Hero: React.FC = () => {
           quality={100}
           placeholder="blur"
           priority
-          style={{ clipPath: triangularClipPath }}
+          // style={{ clipPath: triangularClipPath }}
         />
       </div>
-      <div className="relative z-10 flex items-end h-full justify-center container mx-auto ">
-        <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-32 tracking-tight">
-          Η ισορροπία έρχεται όταν
-          <br />
-          συνδυάζουμε σώμα,
-          <br /> νου και ψυχή.
+      <div className="relative z-10 flex items-center h-full justify-left container mx-auto ">
+        <h1
+          className={`${!handwrittingFont.variable} italic text-gray-500 text-3xl md:text-4xl lg:text-4xl font-bold text-center -ml-20 tracking-tight`}
+        >
+          Η αρμονία επέρχεται όταν εξισορροπήσουμε
+          <br /> νου, σώμα, πνεύμα και συναίσθημα
         </h1>
       </div>
     </section>

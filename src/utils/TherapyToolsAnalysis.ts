@@ -30,7 +30,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     mainTitle: 'ART THERAPY / ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     startingParagraph:
       'Μέθοδος θεραπείας που χρησιμοποιεί την τέχνη ως μέσο για την επίτευξη εσωτερικής αλλαγής και αυτογνωσίας.',
-    linkTitle: 'Art-therapy',
+    linkTitle: 'Art Therapy',
     sections: [
       {
         title: 'Τι είναι η Θεραπεία Μέσω Τέχνης;',
@@ -72,7 +72,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     imageUrl: transpersonalCoaching,
     generalTitle: 'Γενικές Πληροφορίες για το Υπερπροσωπικό Coaching',
     mainTitle: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
-    linkTitle: 'Transpersonal coaching',
+    linkTitle: 'Transpersonal Coaching',
     startingParagraph:
       'Σύγχρονη μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της προσωπικής αυτογνωσίας και της διανόησης.',
     sections: [
@@ -94,7 +94,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     imageUrl: positivePsychology,
     generalTitle: 'Γενικές Πληροφορίες για τη Θετική Ψυχολογία',
     mainTitle: 'ΘΕΤΙΚΗ ΨΥΧΟΛΟΓΙΑ',
-    linkTitle: 'Θετική ψυχολογία',
+    linkTitle: 'Θετική Ψυχολογία',
     startingParagraph:
       'Ψυχολογική προσέγγιση που επικεντρώνεται στην ανάπτυξη των θετικών ψυχικών διαδικασιών και της ευημερίας.',
     sections: [
@@ -116,7 +116,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     imageUrl: cbt,
     generalTitle: 'Γενικές Πληροφορίες για τις Τεχνικές Χαλάρωσης και CBT',
     mainTitle: 'ΤΕΧΝΙΚΕΣ ΧΑΛΑΡΩΣΗΣ + CBT',
-    linkTitle: 'Τεχνικές χαλάρωσης',
+    linkTitle: 'Τεχνικές Χαλάρωσης + CBT',
     startingParagraph:
       'Συνδυασμός τεχνικών αποκατάστασης και Συμπεριφορικής Θεραπείας για την αντιμετώπιση της άγχους και των καταστάσεων άγχους.',
     sections: [
@@ -138,7 +138,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     imageUrl: mindfulness,
     generalTitle: 'Γενικές Πληροφορίες για τον Διαλογισμό Mindfulness',
     mainTitle: 'MINDFULNESS ΔΙΑΛΟΓΙΣΜΟΣ',
-    linkTitle: 'Mindfulness διαλογισμός',
+    linkTitle: 'Mindfulness Διαλογισμός',
     startingParagraph:
       'Ψυχολογική τεχνική που επικεντρώνεται στην ανάπτυξη της προσεκτικότητας και της επίγνωσης στην καθημερινότητα.',
     sections: [
@@ -161,7 +161,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     generalTitle:
       'Γενικές Πληροφορίες για τις Καθοδηγούμενες Εικόνες και Οραματισμούς',
     mainTitle: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
-    linkTitle: 'Καθοδηγούμενες εικόνες',
+    linkTitle: 'Καθοδηγούμενες Εικόνες & Οραματισμοί',
     startingParagraph:
       'Ψυχολογική μέθοδος που χρησιμοποιεί την οπτική φαντασία για την αυτογνωσία και την ενίσχυση της θεραπευτικής διαδικασίας.',
     sections: [

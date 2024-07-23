@@ -78,7 +78,7 @@ const therapyTools: therapyTool[] = [
   },
   {
     id: 7,
-    title: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
+    title: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ & ΟΡΑΜΑΤΙΣΜΟΙ',
     nameId: 'guided-imagery',
     image: guidedImagery,
     descriptions: [

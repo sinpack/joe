@@ -10,7 +10,7 @@ interface HolisticCardProps {
   bulletPoints?: string[];
   className?: string;
   shape?: 'circle' | 'triangle';
-  footer?: string
+  footer?: string;
 }
 
 const HolisticCard: React.FC<HolisticCardProps> = ({
@@ -20,7 +20,7 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
   bulletPoints,
   className,
   shape,
-  footer
+  footer,
 }) => {
   return (
     <div className="flex flex-row py-4 px-6 space-x-5">
@@ -34,7 +34,7 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
           {title}
         </TitleCard>
       </div>
-      <div className="w-2/3 flex-grow flex flex-col space-y-10">
+      <div className="w-2/3 flex-grow flex flex-col space-y-2.5">
         {descriptions ? (
           descriptions.map((description, index) => (
             <DescriptionCard
