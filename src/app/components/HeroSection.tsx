@@ -50,9 +50,9 @@ const Hero: React.FC = () => {
           // style={{ clipPath: triangularClipPath }}
         />
       </div>
-      <div className="relative z-10 flex items-center h-full justify-left container mx-auto ">
+      <div className="relative z-10 flex items-center h-full justify-center lg:justify-start ml-0 lg:ml-20 container mx-auto ">
         <h1
-          className={`${handwritingFont.className} italic text-gray-500 text-xl md:text-2xl lg:text-3xl font-bold text-center -ml-20 tracking-tight`}
+          className={`${handwritingFont.className} !italic text-gray-500 text-xl md:text-2xl lg:text-3xl text-center tracking-tight`}
         >
           Η αρμονία επέρχεται όταν εξισορροπήσουμε
           <br /> νου, σώμα, πνεύμα και συναίσθημα
