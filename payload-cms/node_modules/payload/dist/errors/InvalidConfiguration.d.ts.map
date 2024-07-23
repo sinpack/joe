@@ -1,0 +1,1 @@
+{"version":3,"file":"InvalidConfiguration.d.ts","sourceRoot":"","sources":["../../src/errors/InvalidConfiguration.ts"],"names":[],"mappings":"AAEA,OAAO,QAAQ,MAAM,YAAY,CAAA;AAEjC,cAAM,oBAAqB,SAAQ,QAAQ;gBAC7B,OAAO,EAAE,MAAM;CAG5B;AAED,eAAe,oBAAoB,CAAA"}

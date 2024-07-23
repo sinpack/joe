@@ -1,0 +1,30 @@
+import React from 'react';
+import type { FieldTypes } from '..';
+import type { SanitizedCollectionConfig } from '../../../../../collections/config/types';
+import type { FilterOptions, UploadField } from '../../../../../fields/config/types';
+import type { Description } from '../../FieldDescription/types';
+import './index.scss';
+export type UploadInputProps = Omit<UploadField, 'type'> & {
+    Error?: React.ComponentType<any>;
+    Label?: React.ComponentType<any>;
+    api?: string;
+    className?: string;
+    collection?: SanitizedCollectionConfig;
+    description?: Description;
+    errorMessage?: string;
+    fieldTypes?: FieldTypes;
+    filterOptions: FilterOptions;
+    onChange?: (e: any) => void;
+    path: string;
+    placeholder?: string;
+    readOnly?: boolean;
+    required?: boolean;
+    serverURL?: string;
+    showError?: boolean;
+    style?: React.CSSProperties;
+    value?: string;
+    width?: string;
+};
+declare const UploadInput: React.FC<UploadInputProps>;
+export default UploadInput;
+//# sourceMappingURL=Input.d.ts.map

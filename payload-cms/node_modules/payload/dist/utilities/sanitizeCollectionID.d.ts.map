@@ -1,0 +1,1 @@
+{"version":3,"file":"sanitizeCollectionID.d.ts","sourceRoot":"","sources":["../../src/utilities/sanitizeCollectionID.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,IAAI,CAAA;AAIjC,KAAK,IAAI,GAAG;IACV,cAAc,EAAE,MAAM,CAAA;IACtB,EAAE,EAAE,MAAM,CAAA;IACV,OAAO,EAAE,OAAO,CAAA;CACjB,CAAA;AAED,eAAO,MAAM,oBAAoB,oCAAqC,IAAI,KAAG,MAAM,GAAG,MAgBrF,CAAA"}

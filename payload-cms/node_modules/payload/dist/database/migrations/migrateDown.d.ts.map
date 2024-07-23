@@ -1,0 +1,1 @@
+{"version":3,"file":"migrateDown.d.ts","sourceRoot":"","sources":["../../../src/database/migrations/migrateDown.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,mBAAmB,EAAE,MAAM,UAAU,CAAA;AAQnD,wBAAsB,WAAW,CAAC,IAAI,EAAE,mBAAmB,GAAG,OAAO,CAAC,IAAI,CAAC,CAoD1E"}

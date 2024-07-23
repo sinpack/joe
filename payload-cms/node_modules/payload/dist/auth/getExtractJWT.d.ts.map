@@ -1,0 +1,1 @@
+{"version":3,"file":"getExtractJWT.d.ts","sourceRoot":"","sources":["../../src/auth/getExtractJWT.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,SAAS,CAAA;AAEtC,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,iBAAiB,CAAA;AAItD,QAAA,MAAM,aAAa,WACR,eAAe,WAClB,OAAO,KAAG,IAAI,GAAG,MA6BtB,CAAA;AAEH,eAAe,aAAa,CAAA"}

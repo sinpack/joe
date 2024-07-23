@@ -18,9 +18,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"] // Changed to './src/*' to be relative to the tsconfig file
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-sitemap.config.ts",
+    "next-sitemap.config.js"
+  ],
   "exclude": ["node_modules"]
 }

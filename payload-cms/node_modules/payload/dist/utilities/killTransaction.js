@@ -1,0 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "killTransaction", {
+    enumerable: true,
+    get: function() {
+        return killTransaction;
+    }
+});
+async function killTransaction(req) {
+    const { payload, transactionID } = req;
+    if (transactionID && !(transactionID instanceof Promise)) {
+        await payload.db.rollbackTransaction(req.transactionID);
+        delete req.transactionID;
+    }
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy91dGlsaXRpZXMva2lsbFRyYW5zYWN0aW9uLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgUGF5bG9hZFJlcXVlc3QgfSBmcm9tICcuLi9leHByZXNzL3R5cGVzJ1xuXG4vKipcbiAqIFJvbGxiYWNrIHRoZSB0cmFuc2FjdGlvbiBmcm9tIHRoZSByZXEgdXNpbmcgdGhlIGRiIGFkYXB0ZXIgYW5kIHJlbW92ZXMgaXQgZnJvbSB0aGUgcmVxXG4gKi9cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBraWxsVHJhbnNhY3Rpb24ocmVxOiBQYXlsb2FkUmVxdWVzdCk6IFByb21pc2U8dm9pZD4ge1xuICBjb25zdCB7IHBheWxvYWQsIHRyYW5zYWN0aW9uSUQgfSA9IHJlcVxuICBpZiAodHJhbnNhY3Rpb25JRCAmJiAhKHRyYW5zYWN0aW9uSUQgaW5zdGFuY2VvZiBQcm9taXNlKSkge1xuICAgIGF3YWl0IHBheWxvYWQuZGIucm9sbGJhY2tUcmFuc2FjdGlvbihyZXEudHJhbnNhY3Rpb25JRClcbiAgICBkZWxldGUgcmVxLnRyYW5zYWN0aW9uSURcbiAgfVxufVxuIl0sIm5hbWVzIjpbImtpbGxUcmFuc2FjdGlvbiIsInJlcSIsInBheWxvYWQiLCJ0cmFuc2FjdGlvbklEIiwiUHJvbWlzZSIsImRiIiwicm9sbGJhY2tUcmFuc2FjdGlvbiJdLCJyYW5nZU1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7OyIsIm1hcHBpbmdzIjoiOzs7OytCQUtzQkE7OztlQUFBQTs7O0FBQWYsZUFBZUEsZ0JBQWdCQyxHQUFtQjtJQUN2RCxNQUFNLEVBQUVDLE9BQU8sRUFBRUMsYUFBYSxFQUFFLEdBQUdGO0lBQ25DLElBQUlFLGlCQUFpQixDQUFFQSxDQUFBQSx5QkFBeUJDLE9BQU0sR0FBSTtRQUN4RCxNQUFNRixRQUFRRyxFQUFFLENBQUNDLG1CQUFtQixDQUFDTCxJQUFJRSxhQUFhO1FBQ3RELE9BQU9GLElBQUlFLGFBQWE7SUFDMUI7QUFDRiJ9

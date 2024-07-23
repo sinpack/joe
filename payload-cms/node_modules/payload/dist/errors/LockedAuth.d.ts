@@ -1,0 +1,7 @@
+import type { TFunction } from 'i18next';
+import APIError from './APIError';
+declare class LockedAuth extends APIError {
+    constructor(t?: TFunction);
+}
+export default LockedAuth;
+//# sourceMappingURL=LockedAuth.d.ts.map

@@ -1,0 +1,5 @@
+import React from 'react';
+import './index.scss';
+declare const LinkIcon: React.FC;
+export default LinkIcon;
+//# sourceMappingURL=index.d.ts.map

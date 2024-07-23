@@ -1,0 +1,1 @@
+{"version":3,"file":"InvalidFieldName.d.ts","sourceRoot":"","sources":["../../src/errors/InvalidFieldName.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,wBAAwB,CAAA;AAEhE,OAAO,QAAQ,MAAM,YAAY,CAAA;AAEjC,cAAM,gBAAiB,SAAQ,QAAQ;gBACzB,KAAK,EAAE,kBAAkB,EAAE,SAAS,EAAE,MAAM;CAKzD;AAED,eAAe,gBAAgB,CAAA"}

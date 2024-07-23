@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../../src/admin/components/elements/PublishMany/types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,yBAAyB,EAAE,MAAM,sCAAsC,CAAA;AACrF,OAAO,KAAK,EAAE,KAAK,IAAI,SAAS,EAAE,MAAM,oCAAoC,CAAA;AAE5E,MAAM,MAAM,KAAK,GAAG;IAClB,UAAU,EAAE,yBAAyB,CAAA;IACrC,WAAW,EAAE,SAAS,CAAC,aAAa,CAAC,CAAA;CACtC,CAAA"}

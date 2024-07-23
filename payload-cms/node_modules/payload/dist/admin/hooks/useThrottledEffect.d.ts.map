@@ -1,0 +1,1 @@
+{"version":3,"file":"useThrottledEffect.d.ts","sourceRoot":"","sources":["../../../src/admin/hooks/useThrottledEffect.tsx"],"names":[],"mappings":";AAGA,KAAK,kBAAkB,GAAG,CACxB,QAAQ,EAAE,KAAK,CAAC,cAAc,EAC9B,KAAK,EAAE,MAAM,EACb,IAAI,EAAE,KAAK,CAAC,cAAc,KACvB,IAAI,CAAA;AAET,QAAA,MAAM,kBAAkB,EAAE,kBAkBzB,CAAA;AAED,eAAe,kBAAkB,CAAA"}

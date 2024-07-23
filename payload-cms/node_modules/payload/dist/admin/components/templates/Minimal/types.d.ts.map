@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../../src/admin/components/templates/Minimal/types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAA;AAE9B,MAAM,MAAM,KAAK,GAAG;IAClB,QAAQ,CAAC,EAAE,KAAK,CAAC,SAAS,CAAA;IAC1B,SAAS,CAAC,EAAE,MAAM,CAAA;IAClB,KAAK,CAAC,EAAE,KAAK,CAAC,aAAa,CAAA;IAC3B,KAAK,CAAC,EAAE,QAAQ,GAAG,MAAM,CAAA;CAC1B,CAAA"}

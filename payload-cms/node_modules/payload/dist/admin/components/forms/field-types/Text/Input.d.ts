@@ -1,0 +1,32 @@
+import type { ChangeEvent } from 'react';
+import React from 'react';
+import type { TextField } from '../../../../../fields/config/types';
+import type { Option } from '../../../elements/ReactSelect/types';
+import type { Description } from '../../FieldDescription/types';
+import './index.scss';
+export type TextInputProps = Omit<TextField, 'type'> & {
+    Error?: React.ComponentType<any>;
+    Label?: React.ComponentType<any>;
+    afterInput?: React.ComponentType<any>[];
+    beforeInput?: React.ComponentType<any>[];
+    className?: string;
+    description?: Description;
+    errorMessage?: string;
+    hasMany?: boolean;
+    inputRef?: React.MutableRefObject<HTMLInputElement>;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+    path: string;
+    placeholder?: Record<string, string> | string;
+    readOnly?: boolean;
+    required?: boolean;
+    rtl?: boolean;
+    showError?: boolean;
+    style?: React.CSSProperties;
+    value?: string;
+    valueToRender?: Option[];
+    width?: string;
+};
+declare const TextInput: React.FC<TextInputProps>;
+export default TextInput;
+//# sourceMappingURL=Input.d.ts.map

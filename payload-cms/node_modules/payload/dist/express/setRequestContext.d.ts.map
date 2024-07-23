@@ -1,0 +1,1 @@
+{"version":3,"file":"setRequestContext.d.ts","sourceRoot":"","sources":["../../src/express/setRequestContext.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,cAAc,EAAE,cAAc,EAAE,MAAM,SAAS,CAAA;AAE7D;;;GAGG;AACH,wBAAgB,iBAAiB,CAC/B,GAAG,GAAE,cAAoD,EACzD,OAAO,GAAE,cAAmB,QAY7B"}

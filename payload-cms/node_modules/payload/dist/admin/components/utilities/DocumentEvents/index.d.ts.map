@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../../src/admin/components/utilities/DocumentEvents/index.tsx"],"names":[],"mappings":"AAAA,OAAO,KAA8C,MAAM,OAAO,CAAA;AAElE,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,SAAS,CAAA;AAO9C,eAAO,MAAM,sBAAsB,EAAE,KAAK,CAAC,EAAE,CAAC;IAAE,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;CAAE,CAI1E,CAAA;AAED,eAAO,MAAM,iBAAiB;;wBATR,eAAe;CASqB,CAAA"}

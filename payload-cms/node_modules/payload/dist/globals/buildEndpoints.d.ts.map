@@ -1,0 +1,1 @@
+{"version":3,"file":"buildEndpoints.d.ts","sourceRoot":"","sources":["../../src/globals/buildEndpoints.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,iBAAiB,CAAA;AAC/C,OAAO,KAAK,EAAE,qBAAqB,EAAE,MAAM,gBAAgB,CAAA;AAS3D,QAAA,MAAM,cAAc,WAAY,qBAAqB,KAAG,QAAQ,EAgD/D,CAAA;AAED,eAAe,cAAc,CAAA"}
