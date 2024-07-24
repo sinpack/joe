@@ -45,3 +45,6 @@ public/_next-video
 # sitemap
 sitemap*.xml
 
+.env
+
+
