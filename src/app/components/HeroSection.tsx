@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           className={`${handwritingFont.className} !italic text-gray-500 text-xl md:text-2xl lg:text-3xl text-center tracking-tight`}
         >
           Η αρμονία επέρχεται όταν εξισορροπήσουμε
-          <br /> νου, σώμα, πνεύμα και το συναίσθημα
+          <br /> σώμα, νου, πνεύμα και συναίσθημα...
         </h1>
       </div>
     </section>
