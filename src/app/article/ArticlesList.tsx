@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import PhotoCard from '../components/PhotoCard';
 import { Article, ArticlesResponse } from './articleInterface';
@@ -13,17 +13,8 @@ import slugify from 'slugify';
 const ArticlesList = () => {
   const [visibleArticlesCount, setVisibleArticlesCount] = useState(3);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
-  const [sortedArticles, setSortedArticles] = useState<Article[]>([]);
   const [allArticles, setAllArticles] = useState<Article[]>([]);
   const [allVisible, setAllVisible] = useState(false);
-
-  const sortArticles = (articles: Article[]) => {
-    return [...articles].sort((a, b) => {
-      const dateA = new Date(a.attributes.publishedAt).getTime();
-      const dateB = new Date(b.attributes.publishedAt).getTime();
-      return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
-    });
-  };
 
   const queryResult: UseQueryResult<ArticlesResponse> = useQuery({
     queryKey: ['articles'],
@@ -38,38 +29,28 @@ const ArticlesList = () => {
     }
   }, [data]);
 
-  useEffect(() => {
-    const sorted = sortArticles(allArticles);
-    setSortedArticles(sorted.slice(0, visibleArticlesCount));
-  }, [allArticles, sortOrder, visibleArticlesCount]);
+  const sortArticles = useCallback(
+    (articles: Article[], order: 'asc' | 'desc') => {
+      return [...articles].sort((a, b) => {
+        const dateA = new Date(a.attributes.publishedAt).getTime();
+        const dateB = new Date(b.attributes.publishedAt).getTime();
+        return order === 'desc' ? dateB - dateA : dateA - dateB;
+      });
+    },
+    []
+  );
 
-  const handleViewAll = () => {
-    setVisibleArticlesCount(allArticles.length);
-    setAllVisible(true);
-    const sorted = sortArticles(allArticles);
-    setSortedArticles(sorted);
-  };
+  const sortedArticles = useMemo(() => {
+    if (allArticles.length === 0) {
+      return [];
+    }
 
-  const handleSortToggle = () => {
-    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
-  };
+    const sorted = sortArticles(allArticles, sortOrder);
+    return sorted.slice(0, visibleArticlesCount);
+  }, [allArticles, sortOrder, visibleArticlesCount, sortArticles]);
 
-  const shouldShowViewAll =
-    allArticles.length > visibleArticlesCount && !allVisible;
-
-  if (isError) {
-    return (
-      <div className="text-center py-10">
-        <h2 className="text-xl font-bold text-red-600">ERROR</h2>
-        <p className="text-gray-600">
-          Παρουσιάστηκε κάποιο πρόβλημα στη παρουσίαση των άρθρων
-        </p>
-      </div>
-    );
-  }
-
-  const articles = useMemo(() => {
-    const articleMockItem: Article = {
+  const mockArticles = useMemo(() => {
+    const mockArticleItem: Article = {
       id: 0,
       attributes: {
         title: 'Loading Title',
@@ -118,33 +99,52 @@ const ArticlesList = () => {
       },
     };
 
-    const articleMockData: Article[] = new Array(3)
-      .fill(articleMockItem)
-      .map((item, index) => ({
-        ...item,
-        id: index + 1,
-        attributes: {
-          ...item.attributes,
-          image: {
-            ...item.attributes.image,
-            data: {
-              ...item.attributes.image?.data,
-              id: index + 1,
-            },
+    return new Array(3).fill(mockArticleItem).map((item, index) => ({
+      ...item,
+      id: index + 1,
+      attributes: {
+        ...item.attributes,
+        image: {
+          ...item.attributes.image,
+          data: {
+            ...item.attributes.image?.data,
+            id: index + 1,
           },
         },
-      }));
+      },
+    }));
+  }, []);
 
+  const articles = useMemo(() => {
     if (isLoading) {
-      return articleMockData;
+      return mockArticles;
     }
 
-    if (allArticles.length > 0) {
-      return sortedArticles;
-    }
+    return sortedArticles.length > 0 ? sortedArticles : mockArticles;
+  }, [isLoading, sortedArticles, mockArticles]);
 
-    return articleMockData;
-  }, [isLoading, allArticles, sortedArticles]);
+  const handleViewAll = () => {
+    setVisibleArticlesCount(allArticles.length);
+    setAllVisible(true);
+  };
+
+  const handleSortToggle = () => {
+    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  };
+
+  const shouldShowViewAll =
+    allArticles.length > visibleArticlesCount && !allVisible;
+
+  if (isError) {
+    return (
+      <div className="text-center py-10">
+        <h2 className="text-xl font-bold text-red-600">ERROR</h2>
+        <p className="text-gray-600">
+          Παρουσιάστηκε κάποιο πρόβλημα στη παρουσίαση των άρθρων
+        </p>
+      </div>
+    );
+  }
 
   return (
     <section className="mx-auto container px-4 sm:px-6 lg:px-8">
@@ -173,7 +173,7 @@ const ArticlesList = () => {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 ">
-        {articles.slice(0, visibleArticlesCount).map((article) => (
+        {articles.map((article) => (
           <Link
             key={article.id}
             href={`/article/${article.id}/${slugify(article.attributes.title, {

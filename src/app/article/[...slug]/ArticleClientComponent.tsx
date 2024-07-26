@@ -4,9 +4,9 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import NavigationButton from '../../components/Buttons/NavigateButton';
 import LoadingComponent from '@/app/components/LoadingComponent';
-import { useMemo } from 'react';
 import { formatDate } from '../../../utils/formatDate';
 import { Article } from '../articleInterface';
+import { useMemo } from 'react';
 
 const fetchArticleById = async (id: string): Promise<Article | null> => {
   const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
@@ -43,17 +43,6 @@ export default function ArticleClientComponent({
 
   const { data, isLoading, isError } = queryResult;
 
-  if (isError) {
-    return (
-      <div className="text-center py-10">
-        <h2 className="text-xl font-bold text-red-600">ERROR</h2>
-        <p className="text-gray-600">
-          Παρουσιάστηκε κάποιο πρόβλημα στη παρουσίαση του άρθρου
-        </p>
-      </div>
-    );
-  }
-
   const articleData = useMemo(() => {
     const articleMockData = {
       id: 0,
@@ -70,20 +59,18 @@ export default function ArticleClientComponent({
         },
       },
     };
-    if (isLoading) {
-      return articleMockData;
-    }
+
     if (data) {
       return {
-        id: data?.id,
+        id: data.id,
         attributes: {
-          title: data?.attributes?.title,
-          description: data?.attributes?.description,
-          publishedAt: data?.attributes?.publishedAt,
+          title: data.attributes.title,
+          description: data.attributes.description,
+          publishedAt: data.attributes.publishedAt,
           image: {
             data: {
               attributes: {
-                url: data?.attributes?.image?.data?.attributes?.url,
+                url: data.attributes.image?.data?.attributes?.url,
               },
             },
           },
@@ -91,9 +78,19 @@ export default function ArticleClientComponent({
       };
     }
     return articleMockData;
-  }, [isLoading, data]);
+  }, [data]);
 
-  // Provide a fallback UI if no article data is available
+  if (isError) {
+    return (
+      <div className="text-center py-10">
+        <h2 className="text-xl font-bold text-red-600">ERROR</h2>
+        <p className="text-gray-600">
+          Παρουσιάστηκε κάποιο πρόβλημα στη παρουσίαση του άρθρου
+        </p>
+      </div>
+    );
+  }
+
   if (!articleData || !articleData?.attributes?.title) {
     return (
       <div className="text-center py-10">

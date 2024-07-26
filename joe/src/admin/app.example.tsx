@@ -1,3 +1,5 @@
+import { Strapi } from "@strapi/strapi";
+
 export default {
   config: {
     locales: [
@@ -29,7 +31,7 @@ export default {
       // 'zh',
     ],
   },
-  bootstrap(app) {
+  bootstrap(app: Strapi) {
     // console.log(app);
   },
 };
