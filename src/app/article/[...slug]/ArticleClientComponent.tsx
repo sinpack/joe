@@ -21,6 +21,7 @@ const fetchArticleById = async (id: string): Promise<Article | null> => {
         'Content-Type': 'application/json',
       },
     });
+    console.log(res);
     if (!res.ok) {
       throw new Error('Failed to fetch article');
     }
