@@ -9,6 +9,9 @@ interface PhotoCardProps {
   borderClasses?: string;
   onClick?: () => void;
   index?: number;
+  roundClassName?: string;
+  cursor?: string;
+  isTransformed?: boolean;
 }
 
 const PhotoCard: React.FC<PhotoCardProps> = ({
@@ -18,26 +21,31 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
   borderClasses,
   onClick,
   index,
+  roundClassName = 'rounded-full',
+  cursor = 'cursor-default',
+  isTransformed = true,
 }) => {
   return (
     <div
       className={clsx(
-        'flex flex-col items-center space-y-5 cursor-default',
-        borderClasses
+        'flex flex-col items-center space-y-5',
+        borderClasses,
+        cursor
       )}
     >
       <div className="w-64 h-64 relative mt-10">
         <Image
           src={imageUrl}
           alt={title}
-          className={clsx({
-            'object-cover shadow-xl rounded-full hover:scale-110 transition-transform duration-300':
-              true,
+          className={clsx(roundClassName, {
+            'object-cover shadow-xl': true,
             'object-left': index === 1 || index === 4,
+            'hover:scale-110 transition-transform duration-300': isTransformed,
           })}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
           quality={100}
+          priority
         />
       </div>
       <div
@@ -45,7 +53,12 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
         style={{ height: '4rem' }}
       >
         <h3
-          className={`text-center font-medium leading-tight tracking-tight p-2.5 grow ${className} hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-110 cursor-pointer`}
+          className={clsx(className, {
+            'text-center font-medium leading-tight tracking-tight p-2.5 grow cursor-pointer':
+              true,
+            'hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-110':
+              isTransformed,
+          })}
           onClick={onClick}
         >
           {title}

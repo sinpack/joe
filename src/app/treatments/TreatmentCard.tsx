@@ -16,6 +16,8 @@ interface TreatmentCardProps {
   index?: number;
   imgUrl: string | StaticImageData;
   borderClasses?: string;
+  roundClassName?: string;
+  isTransformed?: boolean;
 }
 
 const TreatmentCard: React.FC<TreatmentCardProps> = ({
@@ -28,6 +30,8 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({
   index,
   imgUrl,
   borderClasses,
+  roundClassName,
+  isTransformed = true,
 }) => {
   const router = useRouter();
   const handleNavigate = () => {
@@ -44,6 +48,8 @@ const TreatmentCard: React.FC<TreatmentCardProps> = ({
         borderClasses={borderClasses}
         onClick={handleNavigate}
         index={index}
+        roundClassName={roundClassName}
+        isTransformed={isTransformed}
       />
       <div className="flex flex-col justify-between grow">
         {descriptions ? (

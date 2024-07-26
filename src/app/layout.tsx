@@ -1,5 +1,5 @@
 // src/app/layout.tsx
-
+'use client';
 import './globals.css';
 import Header from './components/Header';
 import CustomFooter from './components/Footer';
@@ -7,10 +7,9 @@ import { Open_Sans, Alegreya, EB_Garamond } from 'next/font/google';
 import PageAnimatePresence from './components/PageAnimatePresence';
 import PageAnimation from './components/PageAnimation';
 import SkeletonWrapper from './components/SkeletonWrapper';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { metadata } from '../utils/metadata';
+import { ReactQueryProvider } from './react-query-provider';
+import { metadata } from './metadata';
 
-const queryClient = new QueryClient();
 
 const font = Open_Sans({
   subsets: ['latin', 'greek'],
@@ -37,7 +36,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <Header />
         {/* <PageAnimatePresence> */}
         {/* <PageAnimation transitionClass="easeInOut" duration={0.3}> */}
-        <SkeletonWrapper> {children}</SkeletonWrapper>
+        <SkeletonWrapper>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </SkeletonWrapper>
         {/* </PageAnimation> */}
         {/* </PageAnimatePresence> */}
         <CustomFooter />

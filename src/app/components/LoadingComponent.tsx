@@ -45,6 +45,7 @@ export default function LoadingComponent({
         'overflow-hidden': overflowHidden,
         'w-full': fullWidth,
       })}
+      suppressHydrationWarning
     >
       {children}
     </div>

@@ -25,8 +25,8 @@ const AboutPage = () => {
               alt="profile"
               className="rounded-3xl shadow-xl"
               width={300}
-              height={300}
               quality={100}
+              priority
             />
           </div>
           <div className="flex flex-col lg:hidden space-y-5">

@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import contactDetails from './ContactDetails';
 import BlueDivider from '../components/BlueDivider';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
+
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
