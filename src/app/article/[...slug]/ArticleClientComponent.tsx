@@ -11,9 +11,10 @@ import { useMemo } from 'react';
 const fetchArticleById = async (id: string): Promise<Article | null> => {
   const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
   const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+  const production_URL = 'https://joe-backend-production.up.railway.app';
 
   try {
-    const res = await fetch(`${STRAPI_API_URL}/api/articles/${id}?populate=*`, {
+    const res = await fetch(`${production_URL}/api/articles/${id}?populate=*`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${STRAPI_API_TOKEN}`,

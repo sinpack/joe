@@ -24,8 +24,9 @@ export async function generateStaticParams(): Promise<
 > {
   const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
   const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+  const production_URL = 'https://joe-backend-production.up.railway.app';
 
-  const res = await fetch(`${STRAPI_API_URL}/api/articles/?populate=*`, {
+  const res = await fetch(`${production_URL}/api/articles/?populate=*`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${STRAPI_API_TOKEN}`,
