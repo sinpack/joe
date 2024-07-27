@@ -193,7 +193,7 @@ const ArticlesList = () => {
               >
                 <PhotoCard
                   title={article.attributes.title}
-                  imageUrl={`${production_URL}/uploads/${article.attributes.image?.data?.attributes?.hash}.jpg`}
+                  imageUrl={`${production_URL}/uploads/${article.attributes.image?.data?.attributes?.hash}${article.attributes.image?.data?.attributes?.ext}`}
                   roundClassName="rounded-lg"
                   cursor="cursor-pointer"
                   isTransformed={false}
