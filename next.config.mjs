@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // enables static exports
+  // Export only when building in GitHub Actions
+  output: process.env.GITHUB_ACTION ? 'export' : undefined,
   reactStrictMode: true,
   images: {
     remotePatterns: [

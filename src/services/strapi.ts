@@ -1,6 +1,6 @@
 // src/services/strapi.ts
 
-import { ArticlesResponse } from '../app/article/articleInterface';
+import { ArticlesResponse } from '../app/articles/articleInterface';
 
 const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;

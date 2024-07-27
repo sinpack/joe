@@ -3,10 +3,11 @@ import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import Image from 'next/image';
 import clsx from 'clsx';
 import NavigationButton from '../../components/Buttons/NavigateButton';
-import LoadingComponent from '@/app/components/LoadingComponent';
+import LoadingComponent from '../../../app/components/LoadingComponent';
 import { formatDate } from '../../../utils/formatDate';
 import { Article } from '../articleInterface';
 import { useMemo } from 'react';
+import React from 'react';
 
 const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
@@ -101,7 +102,7 @@ export default function ArticleClientComponent({
         <p className="text-gray-500">
           Ζητάμε συγνώμη, αλλά το άρθρο που ζητήσατε δεν υπάρχει{' '}
         </p>
-        <NavigationButton text="Back to Articles" link="/article" width={300} />
+        <NavigationButton text="Back to Articles" link="/articles" width={300} />
       </div>
     );
   }
@@ -175,7 +176,7 @@ export default function ArticleClientComponent({
       <div className="flex flex-col items-center justify-center py-20">
         <NavigationButton
           text="ΠΙΣΩ ΣΕ ΟΛΑ ΤΑ ΑΡΘΡΑ"
-          link="/article"
+          link="/articles"
           width={300}
         />
       </div>

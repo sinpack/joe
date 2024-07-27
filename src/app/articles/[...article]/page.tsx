@@ -1,33 +1,19 @@
-// pages/article/[...slug]/page.tsx
+// pages/article/[...article]/page.tsx
 
 import { Article } from '../articleInterface';
 import ArticleClientComponent from './ArticleClientComponent';
 import slugify from 'slugify';
+import React from 'react';
 
-// Component for rendering articles
-export default function ArticlePage({
-  params,
-}: {
-  params: { slug: string[] };
-}) {
-  const [id, ...titleParts] = params.slug;
-  const title = titleParts.join(' ');
+const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+const production_URL = 'https://joe-backend-production.up.railway.app';
 
-  return (
-    <section>
-      <ArticleClientComponent articleId={id} />
-    </section>
-  );
-}
-
-// Generate static params with both ID and slug
+// Correct format for catch-all dynamic route
 export async function generateStaticParams(): Promise<
   { params: { slug: string[] } }[]
 > {
-  const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
-  const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-  const production_URL = 'https://joe-backend-production.up.railway.app';
-
+  // Fetch data
   const res = await fetch(`${production_URL}/api/articles/?populate=*`, {
     method: 'GET',
     headers: {
@@ -43,12 +29,26 @@ export async function generateStaticParams(): Promise<
   const data = await res.json();
   const articles: Article[] = data.data;
 
-  // Generate paths from article slugs
-  return articles.map((article) => {
+  // Generate static paths
+  const paths = articles.map((article) => {
     const slug = [
       article.id.toString(),
       slugify(article.attributes.title, { lower: true }),
     ];
     return { params: { slug } };
   });
+
+  return paths;
+}
+
+// Component for rendering articles
+export default function Page({ params }: { params: { article: string[] } }) {
+  const [id, ...titleParts] = params.article;
+  const title = titleParts.join(' ');
+
+  return (
+    <section>
+      <ArticleClientComponent articleId={id} />
+    </section>
+  );
 }

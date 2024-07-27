@@ -23,7 +23,7 @@ const ClientSideViewAllButton = ({ articles }: { articles: Article[] }) => {
           return (
             <Link
               key={article.id}
-              href={`/article/${id}`}
+              href={`/articles/${id}`}
               className={`flex flex-col border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-gray-400 cursor-pointer ${
                 visibleArticles > 3 && index >= 3 ? 'fade-in' : ''
               }`}

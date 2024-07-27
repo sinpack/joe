@@ -177,7 +177,7 @@ const ArticlesList = () => {
         {articles.map((article) => (
           <Link
             key={article.id}
-            href={`/article/${article.id}/${slugify(article.attributes.title, {
+            href={`/articles/${article.id}/${slugify(article.attributes.title, {
               lower: true,
             })}`}
             className="flex flex-col border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-gray-500 cursor-pointer shadow-lg hover:shadow-2xl"
