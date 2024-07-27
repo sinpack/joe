@@ -21,4 +21,4 @@ const config = {
   // },
 };
 
-module.exports = config; // Use CommonJS export
+export default config; // Use CommonJS export
