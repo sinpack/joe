@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Export only when building in GitHub Actions
-  // output: process.env.GITHUB_ACTION ? 'export' : undefined,
-  // reactStrictMode: true,
+  output: process.env.GITHUB_ACTION ? 'export' : undefined,
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {

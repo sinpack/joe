@@ -50,7 +50,7 @@ const ArticlesList = () => {
     return sorted.slice(0, visibleArticlesCount);
   }, [allArticles, sortOrder, visibleArticlesCount, sortArticles]);
 
-  const mockArticles = useMemo(() => {
+  const mockArticles: Article[] = useMemo(() => {
     const mockArticleItem: Article = {
       id: 0,
       attributes: {
@@ -81,14 +81,14 @@ const ArticlesList = () => {
                   height: 90,
                   size: 2.5,
                   sizeInBytes: 2500,
-                  url: 'https://via.placeholder.com/150',
+                  url: '/uploads/',
                 },
               },
               hash: 'loading',
               ext: '.jpg',
               mime: 'image/jpeg',
               size: 5,
-              url: 'https://via.placeholder.com/500',
+              url: '/uploads/',
               previewUrl: null,
               provider: 'local',
               provider_metadata: null,
@@ -177,9 +177,11 @@ const ArticlesList = () => {
         {articles.map((article) => (
           <Link
             key={article.id}
-            href={`/articles/${article.id}/${slugify(article.attributes.title, {
-              lower: true,
-            })}`}
+            href={`/articles/${encodeURIComponent(
+              slugify(article?.attributes.title, {
+                lower: true,
+              })
+            )}/${encodeURIComponent(article?.id.toString())}`}
             className="flex flex-col border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-gray-500 cursor-pointer shadow-lg hover:shadow-2xl"
           >
             <div className="flex flex-col w-full h-full items-center justify-center">

@@ -2,12 +2,13 @@
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import Image from 'next/image';
 import clsx from 'clsx';
-import NavigationButton from '../../components/Buttons/NavigateButton';
-import LoadingComponent from '../../../app/components/LoadingComponent';
-import { formatDate } from '../../../utils/formatDate';
-import { Article } from '../articleInterface';
 import { useMemo } from 'react';
 import React from 'react';
+import NavigationButton from '../../../../app/components/Buttons/NavigateButton';
+import LoadingComponent from '../../../../app/components/LoadingComponent';
+import { Article } from '../../articleInterface';
+import { formatDate } from '../../../../utils/formatDate';
+import NotArticleFound from './NotArticleFound';
 
 const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
@@ -55,7 +56,7 @@ export default function ArticleClientComponent({
         image: {
           data: {
             attributes: {
-              url: 'https://via.placeholder.com/500',
+              url: '/uploads/',
             },
           },
         },
@@ -83,14 +84,7 @@ export default function ArticleClientComponent({
   }, [data]);
 
   if (isError) {
-    return (
-      <div className="text-center py-10">
-        <h2 className="text-xl font-bold text-red-600">ERROR</h2>
-        <p className="text-gray-600">
-          Παρουσιάστηκε κάποιο πρόβλημα στη παρουσίαση του άρθρου
-        </p>
-      </div>
-    );
+    return <NotArticleFound />;
   }
 
   if (!articleData || !articleData?.attributes?.title) {
@@ -102,7 +96,11 @@ export default function ArticleClientComponent({
         <p className="text-gray-500">
           Ζητάμε συγνώμη, αλλά το άρθρο που ζητήσατε δεν υπάρχει{' '}
         </p>
-        <NavigationButton text="Back to Articles" link="/articles" width={300} />
+        <NavigationButton
+          text="Back to Articles"
+          link="/articles"
+          width={300}
+        />
       </div>
     );
   }
