@@ -53,6 +53,7 @@ export default function ArticleClientComponent({
         title: 'Loading Title...',
         description: 'Loading Description...',
         publishedAt: '2024-07-24T15:57:08.890Z',
+        date: '2024-07-24T15:57:08.890Z',
         image: {
           data: {
             attributes: {
@@ -70,6 +71,7 @@ export default function ArticleClientComponent({
           title: data.attributes.title,
           description: data.attributes.description,
           publishedAt: data.attributes.publishedAt,
+          date: data.attributes.date,
           image: {
             data: {
               attributes: {
@@ -166,7 +168,7 @@ export default function ArticleClientComponent({
               isCentered
               width={200}
             >
-              {formatDate(articleData?.attributes?.publishedAt)}
+              {formatDate(articleData?.attributes?.date)}
             </LoadingComponent>
           </p>
         </div>
