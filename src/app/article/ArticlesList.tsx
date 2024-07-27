@@ -10,6 +10,7 @@ import LoadingComponent from '../components/LoadingComponent';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import slugify from 'slugify';
 
+const production_URL = 'https://joe-backend-production.up.railway.app';
 const ArticlesList = () => {
   const [visibleArticlesCount, setVisibleArticlesCount] = useState(3);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
@@ -190,7 +191,7 @@ const ArticlesList = () => {
               >
                 <PhotoCard
                   title={article.attributes.title}
-                  imageUrl={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/uploads/${article.attributes.image?.data?.attributes?.hash}.jpg`}
+                  imageUrl={`${production_URL}/uploads/${article.attributes.image?.data?.attributes?.hash}.jpg`}
                   roundClassName="rounded-lg"
                   cursor="cursor-pointer"
                   isTransformed={false}

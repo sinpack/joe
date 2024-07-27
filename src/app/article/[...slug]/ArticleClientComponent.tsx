@@ -8,11 +8,10 @@ import { formatDate } from '../../../utils/formatDate';
 import { Article } from '../articleInterface';
 import { useMemo } from 'react';
 
+const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+const production_URL = 'https://joe-backend-production.up.railway.app';
 const fetchArticleById = async (id: string): Promise<Article | null> => {
-  const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
-  const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-  const production_URL = 'https://joe-backend-production.up.railway.app';
-
   try {
     const res = await fetch(`${production_URL}/api/articles/${id}?populate=*`, {
       method: 'GET',
@@ -134,7 +133,7 @@ export default function ArticleClientComponent({
           >
             <div className="flex w-64 h-64 relative">
               <Image
-                src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${articleData?.attributes?.image?.data?.attributes?.url}`}
+                src={`${production_URL}${articleData?.attributes?.image?.data?.attributes?.url}`}
                 alt={articleData?.attributes.title}
                 className={clsx('object-cover shadow-xl rounded-xl')}
                 fill

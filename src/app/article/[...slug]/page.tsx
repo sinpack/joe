@@ -1,8 +1,10 @@
+// pages/article/[...slug]/page.tsx
+
 import { Article } from '../articleInterface';
 import ArticleClientComponent from './ArticleClientComponent';
 import slugify from 'slugify';
 
-// Extract both id and slug from URL
+// Component for rendering articles
 export default function ArticlePage({
   params,
 }: {
@@ -41,6 +43,7 @@ export async function generateStaticParams(): Promise<
   const data = await res.json();
   const articles: Article[] = data.data;
 
+  // Generate paths from article slugs
   return articles.map((article) => {
     const slug = [
       article.id.toString(),

@@ -27,6 +27,11 @@ const nextConfig = {
         hostname: 'example.com', // Replace with your actual hostname
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'joe-backend-production.up.railway.app',
+        pathname: '/uploads/**',
+      },
       // Add more patterns as needed
     ],
   },
