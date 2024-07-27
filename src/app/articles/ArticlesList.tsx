@@ -33,8 +33,8 @@ const ArticlesList = () => {
   const sortArticles = useCallback(
     (articles: Article[], order: 'asc' | 'desc') => {
       return [...articles].sort((a, b) => {
-        const dateA = new Date(a.attributes.publishedAt).getTime();
-        const dateB = new Date(b.attributes.publishedAt).getTime();
+        const dateA = new Date(a.attributes.date).getTime();
+        const dateB = new Date(b.attributes.date).getTime();
         return order === 'desc' ? dateB - dateA : dateA - dateB;
       });
     },
