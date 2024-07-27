@@ -220,7 +220,7 @@ const ArticlesList = () => {
                     isCentered
                     width={100}
                   >
-                    <span>{formatDate(article.attributes.publishedAt)}</span>
+                    <span>{formatDate(article?.attributes?.date)}</span>
                   </LoadingComponent>
                 </div>
               </div>
