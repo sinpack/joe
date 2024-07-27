@@ -8,7 +8,7 @@ export async function fetchArticlesData(): Promise<ArticlesResponse> {
   const production_URL = 'https://joe-backend-production.up.railway.app';
 
   const res = await fetch(
-    `${production_URL}/api/articles/?populate=*&sort=publishedAt:desc`,
+    `${production_URL}/api/articles/?populate=*&sort=date:desc`,
     {
       method: 'GET',
       headers: {
