@@ -5,6 +5,16 @@
   --slide-spacing: 1rem;
   --slide-size: 60%;
 }
+
+/* Styles for screens smaller than 480px (xs) */
+@media (max-width: 768px) {
+  .embla {
+    --slide-height: 19rem; /* Further adjust slide height */
+    --slide-spacing: 1rem; /* Further reduce slide spacing */
+    --slide-size: 100%; /* Slide size to fit the screen */
+  }
+}
+
 .embla__viewport {
   overflow: hidden;
 }
