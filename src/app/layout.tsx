@@ -1,5 +1,4 @@
 // src/app/layout.tsx
-'use client';
 import './globals.css';
 import Header from './components/Header';
 import CustomFooter from './components/Footer';
@@ -9,7 +8,6 @@ import PageAnimation from './components/PageAnimation';
 import SkeletonWrapper from './components/SkeletonWrapper';
 import { ReactQueryProvider } from './react-query-provider';
 import { metadata } from './metadata';
-
 
 const font = Open_Sans({
   subsets: ['latin', 'greek'],

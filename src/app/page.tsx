@@ -7,6 +7,7 @@ import Image from 'next/image';
 import holistic from '../../public/holistic2.jpg';
 import NavigationButton from './components/Buttons/NavigateButton';
 import { useState, useEffect } from 'react';
+import { metadata } from './metadata';
 
 export default function Home() {
   const OPTIONS: EmblaOptionsType = {
@@ -27,7 +28,6 @@ export default function Home() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log(isMobile);
   return (
     <main className="flex min-h-screen flex-col items-center justify-center w-full bg-sky-50">
       <HeroSection />

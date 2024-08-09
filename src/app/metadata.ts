@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     default: 'Γιώργος Αντωνόπουλος - Holistic Coach',
   },
   description: 'Η επίσημη ιστοσελίδα του ψυχολόγου Γιώργου Αντωνόπουλου',
-  metadataBase: new URL('https://sinpack.github.io/joe/'),
+  metadataBase: new URL('https://joe-frontend.vercel.app/'),
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Γιώργος Αντωνόπουλος - Holistic Coach',
     description: 'Η επίσημη ιστοσελίδα του ψυχολόγου Γιώργου Αντωνόπουλου',
-    url: 'https://sinpack.github.io/joe/',
+    url: 'https://joe-frontend.vercel.app/',
     images: [
       {
-        url: 'https://sinpack.github.io/joe/path/to/og-image.jpg',
+        url: 'https://github.com/sinpack/joe/blob/main/public/opengraph-image.jpg',
         width: 1200,
         height: 630,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Η επίσημη ιστοσελίδα του ψυχολόγου Γιώργου Αντωνόπουλου',
     images: [
       {
-        url: 'https://sinpack.github.io/joe/path/to/twitter-image.jpg',
+        url: 'https://github.com/sinpack/joe/blob/main/public/twitter-image.jpg',
         width: 1200,
         height: 675,
       },
