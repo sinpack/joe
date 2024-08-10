@@ -14,7 +14,7 @@ export default function ActiveLink({ name, href, icon }: SideActiveLinkProps) {
   const router = useRouter();
   const pathName = usePathname();
 
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
     router.push(href);
   };
@@ -31,7 +31,7 @@ export default function ActiveLink({ name, href, icon }: SideActiveLinkProps) {
           }
         )}
       >
-        <a
+        <div
           className={clsx(
             'flex items-center space-x-2.5 h-10 default-transition w-full',
             {
@@ -49,7 +49,7 @@ export default function ActiveLink({ name, href, icon }: SideActiveLinkProps) {
           >
             {name}
           </p>
-        </a>
+        </div>
       </div>
     </Link>
   );
