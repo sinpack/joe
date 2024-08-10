@@ -3,6 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import PrimarySolidButton from './PrimarySolidButton';
+import useIsMobile from '@/utils/isMobile';
 
 interface NavigationButtonProps {
   text: string;
@@ -17,16 +18,12 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
   width = 300,
 }) => {
   const router = useRouter();
-
-  const handleClick = () => {
-    router.push(link);
-  };
-
+  const isMobile = useIsMobile();
   return (
     <PrimarySolidButton
       text={text}
       onClick={() => router.push(`${link}`)}
-      width={width}
+      width={isMobile ? 200 : width}
     />
   );
 };

@@ -10,7 +10,7 @@ import NavigationButton from '../components/Buttons/NavigateButton';
 
 export const metadata: Metadata = {
   title:
-    'Υπηρεσίες-Θεραπείες Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+    'Υπηρεσίες-Θεραπείες Γιώργου Αντωνόπουλου',
 };
 
 const Treatments = () => {

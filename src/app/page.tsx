@@ -1,4 +1,3 @@
-'use client';
 import HeroSection from './components/HeroSection';
 import EmblaCarousel from './components/EmblaCarousel/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
@@ -6,7 +5,6 @@ import sliderData from '../utils/sliderData';
 import Image from 'next/image';
 import holistic from '../../public/holistic2.jpg';
 import NavigationButton from './components/Buttons/NavigateButton';
-import { useState, useEffect } from 'react';
 import { metadata } from './metadata';
 
 export default function Home() {
@@ -15,18 +13,6 @@ export default function Home() {
     align: 'center',
     watchResize: true,
   };
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 480);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center w-full bg-sky-50">
@@ -96,11 +82,7 @@ export default function Home() {
           </h3>
           <EmblaCarousel slides={sliderData} options={OPTIONS} />
           <div className="flex place-self-center pt-10">
-            <NavigationButton
-              text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ"
-              link="/contact"
-              width={isMobile ? 200 : undefined}
-            />
+            <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
           </div>
         </div>
       </section>

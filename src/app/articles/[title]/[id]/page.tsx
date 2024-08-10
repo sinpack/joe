@@ -1,5 +1,10 @@
 import { Article } from '../../articleInterface';
 import ArticleClientComponent from './ArticleClientComponent';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Άρθρα Γιώργου Αντωνόπουλου',
+};
 
 // Component for rendering articles
 export default function ArticlePage({

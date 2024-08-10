@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Holistic Coaching Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+    'Holistic Coaching Γιώργου Αντωνόπουλου',
 };
 
 const HolisticPage = () => {

@@ -8,8 +8,7 @@ import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title:
-    'Βιογραφικό Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+  title: 'Βιογραφικό Γιώργου Αντωνόπουλου',
 };
 const AboutPage = () => {
   return (

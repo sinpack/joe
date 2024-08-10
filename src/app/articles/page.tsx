@@ -2,6 +2,11 @@
 
 import { fetchArticlesData } from './ArticlesData';
 import ArticlesList from './ArticlesList';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Άρθρα Γιώργου Αντωνόπουλου',
+};
 
 const ArticlesPage = async () => {
   const data = await fetchArticlesData();

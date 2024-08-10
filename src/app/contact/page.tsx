@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Επικοινωνία Γιώργου Αντωνόπουλου | Γιώργος Αντωνόπουλος - Holistic Coach',
+    'Επικοινωνία Γιώργου Αντωνόπουλου',
 };
 
 export default function Contact() {
