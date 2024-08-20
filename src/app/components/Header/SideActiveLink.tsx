@@ -24,18 +24,16 @@ export default function ActiveLink({ name, href, icon }: SideActiveLinkProps) {
   return (
     <Link href={href} passHref legacyBehavior>
       <div
-        className={clsx(
-          'group flex default-transition w-full cursor-pointer hover:bg-neutral-200',
-          {
-            'cursor-default bg-neutral-300': isActive,
-          }
-        )}
+        className={clsx('group flex default-transition w-full cursor-pointer', {
+          'cursor-default bg-gray-300 rounded': isActive,
+          'transition-500 hover:bg-gray-200 hover:rounded': !isActive,
+        })}
       >
         <div
           className={clsx(
-            'flex items-center space-x-2.5 h-10 default-transition w-full',
+            'flex items-center space-x-2.5 h-10 default-transition w-full px-2.5',
             {
-              'hover:bg-neutral-200 hover:shadow-sm': !isActive,
+              'hover:bg-gray-200 hover:shadow-sm hover:rounded': !isActive,
             }
           )}
           onClick={handleClick}
@@ -43,7 +41,7 @@ export default function ActiveLink({ name, href, icon }: SideActiveLinkProps) {
           {icon && <div className="flex items-center">{icon}</div>}
           <p
             className={clsx('default-transition', {
-              'group-hover:text-green-800': !isActive,
+              'transition-500 group-hover:text-dark': !isActive,
               'text-orange-700': isActive,
             })}
           >

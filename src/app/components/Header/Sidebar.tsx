@@ -39,7 +39,9 @@ const Sidebar = ({
       >
         <div className="flex-start top-0 left-0 px-2.5 w-[320px] bg-neutral-100 shadow-xl drop-shadow-xl z-60">
           <div className="flex items-center px-2.5 w-full h-[50px] justify-between">
-            <h2 className="tracking-tight leading-tight">Mental Health Joe</h2>
+            <h3 className="tracking-tight leading-tight">
+              ΓΙΩΡΓΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ
+            </h3>
             <div
               className="flex items-center h-full cursor-pointer"
               onClick={toggleSidebar}
@@ -59,7 +61,7 @@ const Sidebar = ({
           <div className="flex items-center mt-5 w-full">
             <div
               className="flex flex-col w-full space-y-2.5 overflow-y-auto"
-              style={{ height: 'calc(100vh - 100px)' }}
+              style={{ height: 'calc(100vh - 50px)' }}
             >
               {linkItems.map(renderSideBarItem)}
             </div>

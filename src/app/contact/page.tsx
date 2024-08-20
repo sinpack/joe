@@ -16,23 +16,22 @@ export default function Contact() {
   });
 
   return (
-    <div className="bg-sky-50">
-      <section className="flex flex-col items-center py-20 px-20 lg:px-60 md:px-40 sm:px-30">
+    <section className="bg-sky-50 py-20 px-2.5 container mx-auto">
+      <div className="flex flex-col items-center">
         <main className="flex flex-col w-full max-w-3xl">
           <div className="flex flex-col items-center py-10 bg-sky-50 space-y-20">
             <h1 className="flex w-fit justify-center items-center text-4xl tracking-widest font-bold whitespace-normal">
               Επικοινωνία
             </h1>
-            <p className="text-center text-lg whitespace-normal">
+            <h4 className="text-center text-balance">
               Για να κλείσετε ραντεβού ή για περαιτέρω πληροφορίες, μπορείτε να
               επικοινωνήστε μαζί μου μέσω τηλεφώνου στο 6976629913 ή μέσω e-mail
               στο georgios_antonopoulos@hotmail.com
-            </p>
+            </h4>
           </div>
         </main>
-      </section>
+      </div>
       <BlueDivider polygon={false} />
-      <section className=" px-40">
         <div className="items-center w-full py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactDetails.map((detail, index) => (
@@ -54,11 +53,10 @@ export default function Contact() {
             ))}
           </div>
         </div>
-      </section>
-      <div className="flex flex-col w-full z-10 container mx-auto py-20 px-20">
+      <div className="flex flex-col w-full z-10 container mx-auto py-20 px-2.5">
         <DynamicMap />
       </div>
       <ScrollToTopButton />
-    </div>
+    </section>
   );
 }

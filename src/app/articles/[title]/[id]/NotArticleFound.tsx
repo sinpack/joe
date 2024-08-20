@@ -1,4 +1,4 @@
-import NavigationButton from '../../../../app/components/Buttons/NavigateButton';
+import NavigationButton from '../../../../app/components/Buttons/NavigationButton';
 import Image from 'next/image';
 import notFound from '/public/404limbo.jpg';
 

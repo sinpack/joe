@@ -51,7 +51,7 @@ export default function BaseButton({
       data-cy="btn-test"
       onClick={(event: MouseEvent<HTMLElement>) => onClick && onClick(event)}
       className={clsx(colorClass, {
-        'btn-base': true,
+        'btn-base h-fit w-fit': true,
         [pressedClass]: onView,
         'w-[136px] p-0': fixedWIdth,
         [disabledClass]: disabled || isLoading,
@@ -59,7 +59,7 @@ export default function BaseButton({
       type="submit"
       form="form"
       disabled={disabled || isLoading}
-      style={{ width: `${width}px` }}
+      // style={{ width: `${width}px` }}
     >
       {!isLoading ? (
         <DefaultMotionDiv divKey="button-text">

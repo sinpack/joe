@@ -4,27 +4,36 @@ import BlueDivider from '../components/BlueDivider';
 import holisticData from '../../utils/holisticData';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
+import TherapyToolCard from '../treatments/TherapyToolCard';
 
 export const metadata: Metadata = {
-  title:
-    'Holistic Coaching Γιώργου Αντωνόπουλου',
+  title: 'Holistic Coaching Γιώργου Αντωνόπουλου',
 };
 
 const HolisticPage = () => {
   return (
-    <section className="bg-sky-50">
-      <div className="flex flex-col items-center bg-sky-50 py-28 px-20 lg:px-60 md:px-40 sm:px-30">
-        <main className="flex flex-col w-full max-w-3xl">
-          <div className="flex flex-col items-center py-10 bg-sky-50 space-y-10">
-            <h1 className="flex w-fit justify-center items-center tracking-normal whitespace-nowrap">
-              Holistic - Integrative Coaching
-            </h1>
-          </div>
-        </main>
+    <section className="bg-sky-50 ">
+      <div className="flex flex-col items-center justify-center tracking-normal lg:whitespace-nowrap py-20 mx-auto px-5 sm:px-28 header:px-60 container">
+        <h1 className="flex w-fit justify-center items-center text-center">
+          Holistic - Integrative Coaching
+        </h1>
       </div>
       <BlueDivider polygon />
-      <div className="py-10 bg-sky-50 container mx-auto px-10 sm:px-28 header:px-60">
-        <div className="flex flex-col space-y-5">
+      <div className="flex justify-center py-10 bg-sky-50 container mx-auto px-5 sm:px-28 header:px-60">
+        <div className="flex flex-col lg:hidden space-y-5">
+          {holisticData.map((item, index) => (
+            <TherapyToolCard
+              key={index}
+              title={item.title}
+              descriptions={item.descriptions}
+              backgroundColor={item.color}
+              titleCardClassName="!text-center !min-w-[300px] max-w-[400px]"
+              descriptionCardClassName="!min-w-[300px] max-w-[400px]"
+              button={false}
+            />
+          ))}
+        </div>
+        <div className="hidden lg:flex flex-col space-y-5">
           {holisticData.map((item, index) => (
             <HolisticCard
               key={index}

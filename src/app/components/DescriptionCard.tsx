@@ -91,7 +91,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
       variants={variants}
       className={clsx(
         className,
-        'text-sm text-start justify-center leading-tight p-5 border-[1px] space-y-5 border-[#758694] h-full',
+        'text-sm text-start justify-center leading-tight p-2.5 border-[1px] space-y-5 border-[#758694]',
         {
           'rounded-b-xl': vertical,
           'rounded-r-xl': !vertical,

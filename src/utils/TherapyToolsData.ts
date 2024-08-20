@@ -5,6 +5,7 @@ import positivePsychology from '../../public/images/positive-psychology.jpg';
 import cbt from '../../public/images/cbt.jpg';
 import mindfulness from '../../public/images/mindfulness.jpg';
 import guidedImagery from '../../public/images/guided-imagery.jpg';
+import focusing from '../../public/images/focusing.jpg';
 import { StaticImageData } from 'next/image';
 
 export interface therapyTool {
@@ -83,6 +84,16 @@ const therapyTools: therapyTool[] = [
     image: guidedImagery,
     descriptions: [
       'Μέθοδος που χρησιμοποιεί την οπτική φαντασία για την αυτογνωσία και την ενίσχυση της θεραπευτικής διαδικασίας.',
+    ],
+    color: '#B3A394',
+  },
+  {
+    id: 8,
+    title: 'FOCUSING',
+    nameId: 'focusing',
+    image: focusing,
+    descriptions: [
+      'Mέθοδος εσωτερικής εστίασης που βοηθά τα άτομα να αναγνωρίζουν και να κατανοούν βαθύτερα τα συναισθήματά τους μέσω της σύνδεσης με τις σωματικές τους αισθήσεις.',
     ],
     color: '#B3A394',
   },

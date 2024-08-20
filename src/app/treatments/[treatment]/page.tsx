@@ -31,7 +31,7 @@ const TherapyToolPage: React.FC<TherapyToolPageProps> = ({ params }) => {
   );
 
   if (!therapyTool) {
-    return <div>Therapy tool not found.</div>;
+    return <div>Δεν βρέθηκε η θεραπεία</div>;
   }
 
   return <TherapyToolContent therapyTool={therapyTool} />;

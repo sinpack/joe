@@ -6,6 +6,7 @@ import Divider from '../../components/Divider';
 import PrimarySolidButton from '../../components/Buttons/PrimarySolidButton';
 import { useRouter, usePathname } from 'next/navigation';
 import therapyToolsAnalysis from '../../../utils/TherapyToolsAnalysis';
+import NavigationButton from '../../components/Buttons/NavigationButton';
 
 interface TherapyTool {
   nameId: string;
@@ -61,10 +62,10 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
           </div>
         </div>
       </div>
-      <div className="mt-10 flex flex-col-reverse md:flex-row gap-5">
-        <div className="md:w-1/6 space-y-5">
+      <div className="mt-20 gap-10 flex flex-col-reverse md:flex-row md:gap-2.5">
+        <div className="md:w-3/12 space-y-5">
           <div className="flex flex-col">
-            <h4 className="flex items-center h-10 font-bold justify-center lg:justify-start">
+            <h4 className="flex items-center h-5 font-bold justify-center lg:justify-start">
               ΑΛΛΕΣ ΥΠΗΡΕΣΙΕΣ
             </h4>
             {therapyToolsAnalysis.map((tool: TherapyTool) => {
@@ -90,9 +91,9 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
             })}
           </div>
         </div>
-        <div className="md:w-5/6 space-y-5">
+        <div className="md:w-9/12 space-y-10">
           {therapyTool.sections?.map((section, index) => (
-            <div key={index} className="flex flex-col space-y-2.5">
+            <div key={index} className="flex flex-col space-y-5">
               <h2 className="font-semibold text-center lg:text-start">
                 {section.title}
               </h2>
@@ -102,19 +103,14 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
         </div>
       </div>
       <div className="flex flex-col w-full space-y-20">
-        <div className="flex place-self-start">
-          <PrimarySolidButton
+        <div className="flex place-self-center md:place-self-start">
+          <NavigationButton
             text="ΠΙΣΩ ΣΤΙΣ ΥΠΗΡΕΣΙΕΣ - ΘΕΡΑΠΕΙΕΣ"
-            onClick={() => router.push('/treatments')}
-            width={300}
+            link="/treatments"
           />
         </div>
         <div className="flex place-self-center">
-          <PrimarySolidButton
-            text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ"
-            onClick={() => router.push('/contact')}
-            width={300}
-          />
+          <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
         </div>
       </div>
     </div>

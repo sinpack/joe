@@ -40,15 +40,15 @@ const Map = () => {
 
   return (
     <div className="flex flex-col space-y-10 bg-sky-50 items-center w-full">
-      <div className="flex flex-col space-y-10 items-center px-40 justify-center lg:justify-between lg:flex-row sm:space-y-10 sm:items-center md:space-y-5 lg:space-y-0">
+      <div className="flex flex-col space-y-10 items-center justify-center lg:justify-between lg:flex-row sm:space-y-10 sm:items-center md:space-y-5 lg:space-y-0">
         <GetOfficeLocation onLocation={handleLocationFound} />
       </div>
-      <MapContainer
+      <div className="w-[280px] h-[280px] sm:w-[80vw] sm:h-[60vh] sm:max-w-[800px] sm:max-h-[500px] lg:w-[70vw] lg:h-[50vh] lg:max-w-[900px] lg:max-h-[600px]"><MapContainer
         ref={mapRef}
         center={coord}
-        zoom={20}
+        zoom={18}
         scrollWheelZoom={false}
-        className="w-[700px] h-[700px] shadow-xl rounded-xl"
+        className="h-full w-full shadow-xl rounded-xl"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -70,7 +70,8 @@ const Map = () => {
         >
           <Popup>ΓΡΑΦΕΙΟ</Popup>
         </Marker>
-      </MapContainer>
+      </MapContainer></div>
+      
     </div>
   );
 };

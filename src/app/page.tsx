@@ -4,7 +4,7 @@ import { EmblaOptionsType } from 'embla-carousel';
 import sliderData from '../utils/sliderData';
 import Image from 'next/image';
 import holistic from '../../public/holistic2.jpg';
-import NavigationButton from './components/Buttons/NavigateButton';
+import NavigationButton from './components/Buttons/NavigationButton';
 import { metadata } from './metadata';
 
 export default function Home() {

@@ -6,7 +6,7 @@ import Divider from '../components/Divider';
 import clsx from 'clsx';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
-import NavigationButton from '../components/Buttons/NavigateButton';
+import NavigationButton from '../components/Buttons/NavigationButton';
 
 export const metadata: Metadata = {
   title:
@@ -19,9 +19,6 @@ const Treatments = () => {
       <section>
         <div className="flex flex-col items-center justify-start bg-sky-50 py-20 px-20 lg:px-60 md:px-40 sm:px-30 w-full">
           <div className="flex flex-col items-center gap-5 h-auto max-w-xl w-full">
-            {/* <div className="flex flex-col justify-start w-full">
-              <h1 className="text-center">ΥΠΗΡΕΣΙΕΣ - ΘΕΡΑΠΕΙΕΣ</h1>
-            </div> */}
             <div className="flex flex-col justify-start w-full">
               <p className="text-center whitespace-normal">
                 Ως holistic - integrative coach, προσφέρω μια σειρά υπηρεσιών
@@ -40,17 +37,20 @@ const Treatments = () => {
           <h1 className="text-center py-10 text-nowrap">ΥΠΗΡΕΣΙΕΣ-ΘΕΡΑΠΕΙΕΣ</h1>
           <Divider className="border-gray-400 border" />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6">
           {therapyTools.map((treatment, index) => {
             return (
               <div
                 key={index}
                 className={clsx({
-                  'col-span-full lg:col-span-1 lg:px-0 lg:mx-0 lg:col-start-2 lg:-ml-0.5 sm:col-[1_/_span_2] sm:px-40 sm:mx-40 flex justify-center':
+                  "lg:col-span-2":true,
+                  'lg:col-span-1 lg:col-start-2':
                     index === 6,
-                  ' lg:first:border-gray-400 lg:first:border-r-2 lg:first:border-b-2 lg:[&:nth-child(2)]:border-gray-400 lg:[&:nth-child(2)]:border-b-2 lg:[&:nth-child(2)]:border-r-2 lg:[&:nth-child(3)]:border-gray-400 lg:[&:nth-child(3)]:border-b-2 lg:[&:nth-child(3)]:border-r-0 lg:[&:nth-child(4)]:border-gray-400 lg:[&:nth-child(4)]:border-b-2 lg:[&:nth-child(4)]:border-r-2 lg:[&:nth-child(5)]:border-gray-400 lg:[&:nth-child(5)]:border-b-2 lg:[&:nth-child(5)]:border-r-2 lg:[&:nth-child(6)]:border-gray-400 lg:[&:nth-child(6)]:border-b-2 lg:[&:nth-child(7)]:border-gray-400 lg:[&:nth-child(7)]:border-l-2 lg:[&:nth-child(7)]:border-r-2':
+                    'lg:col-span-1 lg:col-start-4':
+                    index === 7,
+                  ' lg:first:border-gray-400 lg:first:border-r-2 lg:first:border-b-2 lg:[&:nth-child(2)]:border-gray-400 lg:[&:nth-child(2)]:border-b-2 lg:[&:nth-child(2)]:border-r-2 lg:[&:nth-child(3)]:border-gray-400 lg:[&:nth-child(3)]:border-b-2 lg:[&:nth-child(3)]:border-r-0 lg:[&:nth-child(4)]:border-gray-400 lg:[&:nth-child(4)]:border-b-2 lg:[&:nth-child(4)]:border-r-2 lg:[&:nth-child(5)]:border-gray-400 lg:[&:nth-child(5)]:border-b-2 lg:[&:nth-child(5)]:border-r-2 lg:[&:nth-child(6)]:border-gray-400 lg:[&:nth-child(6)]:border-b-2 lg:[&:nth-child(7)]:border-gray-400 lg:[&:nth-child(7)]:border-r-2':
                     true,
-                  'sm:first:border-gray-400 sm:first:border-r-2 sm:first:border-b-2 sm:[&:nth-child(2)]:border-gray-400 sm:[&:nth-child(2)]:border-b-2 sm:[&:nth-child(3)]:border-gray-400 sm:[&:nth-child(3)]:border-b-2 sm:[&:nth-child(3)]:border-r-2 sm:[&:nth-child(4)]:border-gray-400 sm:[&:nth-child(4)]:border-b-2 sm:[&:nth-child(5)]:border-gray-400 sm:[&:nth-child(5)]:border-b-2 sm:[&:nth-child(5)]:border-r-2 sm:[&:nth-child(6)]:border-gray-400 sm:[&:nth-child(6)]:border-b-2 sm:[&:nth-child(7)]:border-gray-400 sm:[&:nth-child(7)]:border-l-2 sm:[&:nth-child(7)]:border-r-2':
+                  'sm:first:border-gray-400 sm:first:border-r-2 sm:first:border-b-2 sm:[&:nth-child(2)]:border-gray-400 sm:[&:nth-child(2)]:border-b-2 sm:[&:nth-child(3)]:border-gray-400 sm:[&:nth-child(3)]:border-b-2 sm:[&:nth-child(3)]:border-r-2 sm:[&:nth-child(4)]:border-gray-400 sm:[&:nth-child(4)]:border-b-2 sm:[&:nth-child(5)]:border-gray-400 sm:[&:nth-child(5)]:border-b-2 sm:[&:nth-child(5)]:border-r-2 sm:[&:nth-child(6)]:border-gray-400 sm:[&:nth-child(6)]:border-b-2 sm:[&:nth-child(7)]:border-gray-400 sm:[&:nth-child(7)]:border-r-2':
                     true,
                 })}
               >
@@ -60,6 +60,7 @@ const Treatments = () => {
                   descriptions={treatment.descriptions}
                   link={`/treatments/${treatment.nameId}`}
                   index={index}
+                  descriptionCardClassName= "h-full"
                 />
               </div>
             );

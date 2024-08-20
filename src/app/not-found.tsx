@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import notFound from '../../public/cat404.jpg';
 import PhotoCard from './components/PhotoCard';
-import NavigationButton from './components/Buttons/NavigateButton';
+import NavigationButton from './components/Buttons/NavigationButton';
 
 export default function NotFound() {
   return (

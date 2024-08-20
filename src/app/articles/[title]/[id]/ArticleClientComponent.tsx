@@ -4,7 +4,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import { useMemo } from 'react';
 import React from 'react';
-import NavigationButton from '../../../../app/components/Buttons/NavigateButton';
+import NavigationButton from '../../../../app/components/Buttons/NavigationButton';
 import LoadingComponent from '../../../../app/components/LoadingComponent';
 import { Article } from '../../articleInterface';
 import { formatDate } from '../../../../utils/formatDate';

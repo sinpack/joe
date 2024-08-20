@@ -48,7 +48,7 @@ const TitleCard: React.FC<TitleCardProps> = ({
     <Component
       className={clsx(
         className,
-        'text-start text-xl font-bold leading-tight h-52 w-full p-5 z-10 grow'
+        'text-start content-center text-xl font-bold leading-tight h-52 w-full p-5 z-10 grow'
       )}
       style={style}
     >
