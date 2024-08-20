@@ -37,7 +37,7 @@ const Sidebar = ({
           sideNavOpen: isOpen,
         })}
       >
-        <div className="flex-start top-0 left-0 px-2.5 w-[320px] bg-neutral-100 shadow-xl drop-shadow-xl z-60">
+        <div className="flex-start top-0 left-0 px-2.5 w-[320px] bg-sky-100 shadow-xl drop-shadow-xl z-60">
           <div className="flex items-center px-2.5 w-full h-[50px] justify-between">
             <h3 className="tracking-tight leading-tight">
               ΓΙΩΡΓΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ

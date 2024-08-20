@@ -42,7 +42,7 @@ export default function ActiveLink({ name, href, icon }: SideActiveLinkProps) {
           <p
             className={clsx('default-transition', {
               'transition-500 group-hover:text-dark': !isActive,
-              'text-orange-700': isActive,
+              'text-blue-500': isActive,
             })}
           >
             {name}
