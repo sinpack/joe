@@ -20,7 +20,7 @@ const CustomFooter = () => {
             className="flex flex-col items-center justify-center gap-4 py-4 sm:flex-row sm:gap-8"
           >
             {linkItems.map((item) => (
-              <li role="listitem" key={item.name}>
+              <li role="listitem" key={item.name} className="flex text-center">
                 <ActiveLink name={item.name} href={item.href} />
               </li>
             ))}

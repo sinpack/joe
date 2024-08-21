@@ -5,6 +5,7 @@ import ActiveLink from './ActiveLink';
 import { BurgerButton } from './BurgerButton';
 import logo from '../../../../public/logo.jpg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type LinkItem = {
   name: string;
@@ -40,13 +41,15 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
       <div className="w-full py-5 container mx-auto px-10 justify-center flex flex-row sm:px-28 header:flex-row header:px-60 items-center gap-10 min-w-fit">
         <div className="flex flex-row gap-5 w-full items-center justify-end md:justify-between">
           <div className="flex flex-row w-full items-center justify-center sm:justify-end lg:justify-start">
-            <Image
-              src={logo}
-              alt="logo"
-              className="rounded-xl"
-              width={40} 
-              height={40}
-            />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="logo"
+                className="rounded-xl"
+                width={40}
+                height={40}
+              />
+            </Link>
             <div className="flex flex-col ml-2">
               <h4 className="flex items-center font-bold text-gray-600 tracking-tight whitespace-break-spaces">
                 ΓΙΩΡΓΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ

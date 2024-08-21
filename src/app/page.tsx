@@ -19,17 +19,15 @@ export default function Home() {
       <HeroSection />
       <section className="container mx-auto py-40 bg-sky-50 ">
         <div className="flex flex-col justify-center text-center px-2.5 md:px-40 lg:px-60">
-          <h2 className="mt-5">
+          <h2 className="mt-5 text-balance">
             Ονομάζομαι Γεώργιος Αντωνόπουλος και είμαι πιστοποιημένος Ολιστικός
             Coach, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις Επιστήμες.
             <br className="lg:hidden" />
-            <a href="/bio" className="text-blue-600 text-base ml-2.5">
+            <a href="/about" className="text-blue-600 text-base ml-2.5">
               Διαβάστε περισσότερα
             </a>
           </h2>
-          <div className="flex place-self-center mt-20">
-            {/* <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" /> */}
-          </div>
+          <div className="flex place-self-center mt-20"></div>
         </div>
       </section>
       <section className="relative w-full h-[80vh] overflow-hidden">
@@ -51,7 +49,7 @@ export default function Home() {
             <h1 className="font-bold text-grey-600 mt-5 tracking-normal">
               Holistic Coaching{' '}
             </h1>
-            <h3 className="mb-10 text-grey-600 font-semibold">
+            <h3 className="mb-10 text-grey-600 font-semibold text-balance">
               Το holistic coaching εστιάζει στην ισορροπία μεταξύ σώματος, νου,
               συναισθήματος και πνεύματος, προσφέροντας μια σφαιρική προσέγγιση
               για την αντιμετώπιση των προκλήσεων και την επίτευξη προσωπικών
@@ -72,10 +70,11 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold underline">
             Υπηρεσίες - Θεραπείες{' '}
           </h2>
-          <h3 className="mb-10">
+          <h3 className="mb-10 text-pretty">
             Ως holistic - integrative coach, προσφέρω μια σειρά υπηρεσιών
             προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους. Μαζί,
             μπορούμε να εργαστούμε για την ευημερία σας.
+            <br className="lg:hidden" />
             <a href="/treatments" className="text-blue-600 text-base ml-2.5">
               Διαβάστε περισσότερα
             </a>
