@@ -46,9 +46,7 @@ export async function generateStaticParams() {
   const articles: Article[] = data.data;
 
   // Generate paths from article titles and IDs
-  return articles.map((article) => {
-    const title = article.attributes.title;
-    const id = article.id.toString();
-    return { params: { title, id } };
-  });
+  return articles.map((article) => ({
+    params: { title: article.attributes.title, id: article.id.toString() },
+  }));
 }
