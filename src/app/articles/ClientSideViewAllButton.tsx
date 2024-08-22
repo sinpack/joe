@@ -18,8 +18,6 @@ const ClientSideViewAllButton = ({ articles }: { articles: Article[] }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mx-auto container px-4 sm:px-6 lg:px-8">
         {articles.slice(0, visibleArticles).map((article, index) => {
           const id = slugify(article.attributes.title);
-          console.log(`Article ID: ${article.id}, Slug: ${id}`); // Debug log for IDs and slugs
-
           return (
             <Link
               key={article.id}
