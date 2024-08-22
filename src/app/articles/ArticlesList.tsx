@@ -10,13 +10,12 @@ import LoadingComponent from '../components/LoadingComponent';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import slugify from 'slugify';
 
-const production_URL = 'https://joe-backend-production.up.railway.app';
+const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const ArticlesList = () => {
   const [visibleArticlesCount, setVisibleArticlesCount] = useState(3);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [allArticles, setAllArticles] = useState<Article[]>([]);
   const [allVisible, setAllVisible] = useState(false);
-
   const queryResult: UseQueryResult<ArticlesResponse> = useQuery({
     queryKey: ['articles'],
     queryFn: () => fetchArticlesData(),
@@ -193,7 +192,7 @@ const ArticlesList = () => {
               >
                 <PhotoCard
                   title={article.attributes.title}
-                  imageUrl={`${production_URL}/uploads/${article.attributes.image?.data?.attributes?.hash}${article.attributes.image?.data?.attributes?.ext}`}
+                  imageUrl={`${STRAPI_API_URL}/uploads/${article.attributes.image?.data?.attributes?.hash}${article.attributes.image?.data?.attributes?.ext}`}
                   roundClassName="rounded-lg"
                   cursor="cursor-pointer"
                   isTransformed={false}

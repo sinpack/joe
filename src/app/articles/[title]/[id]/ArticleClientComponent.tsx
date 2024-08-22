@@ -12,10 +12,10 @@ import NotArticleFound from './NotArticleFound';
 
 const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-const production_URL = 'https://joe-backend-production.up.railway.app';
+// const production_URL = 'https://joe-backend-production.up.railway.app';
 const fetchArticleById = async (id: string): Promise<Article | null> => {
   try {
-    const res = await fetch(`${production_URL}/api/articles/${id}?populate=*`, {
+    const res = await fetch(`${STRAPI_API_URL}/api/articles/${id}?populate=*`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${STRAPI_API_TOKEN}`,
@@ -44,7 +44,6 @@ export default function ArticleClientComponent({
   });
 
   const { data, isLoading, isError } = queryResult;
-
   const articleData = useMemo(() => {
     const articleMockData = {
       id: 0,
@@ -133,7 +132,7 @@ export default function ArticleClientComponent({
           >
             <div className="flex w-64 h-64 relative">
               <Image
-                src={`${production_URL}${articleData?.attributes?.image?.data?.attributes?.url}`}
+                src={`${STRAPI_API_URL}${articleData?.attributes?.image?.data?.attributes?.url}`}
                 alt={articleData?.attributes.title}
                 className={clsx('object-cover shadow-xl rounded-xl')}
                 fill

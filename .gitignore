@@ -47,5 +47,6 @@ sitemap*.xml
 
 .env
 .env.local
+.env.production
 
 

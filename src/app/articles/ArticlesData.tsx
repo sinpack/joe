@@ -5,10 +5,10 @@ import { ArticlesResponse } from './articleInterface';
 export async function fetchArticlesData(): Promise<ArticlesResponse> {
   const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
   const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-  const production_URL = 'https://joe-backend-production.up.railway.app';
+  // const production_URL = 'https://joe-backend-production.up.railway.app';
 
   const res = await fetch(
-    `${production_URL}/api/articles/?populate=*&sort=date:desc`,
+    `${STRAPI_API_URL}/api/articles/?populate=*&sort=date:desc`,
     {
       method: 'GET',
       headers: {
