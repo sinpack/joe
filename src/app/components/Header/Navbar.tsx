@@ -52,11 +52,10 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
             </Link>
             <div className="flex flex-col ml-2">
               <h4 className="flex items-center font-bold text-gray-600 tracking-tight whitespace-break-spaces">
-                ΓΙΩΡΓΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ
+                ΓΕΩΡΓΙΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ
               </h4>
               <p className="flex items-center tracking-tight text-xs">
-                {' '}
-                Ολιστικός Coach - Ψυχολογίας Dip HC{' '}
+                Holistic - Integrative Coaching Psychology
               </p>
             </div>
           </div>
