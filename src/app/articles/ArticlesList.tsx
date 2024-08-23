@@ -9,6 +9,7 @@ import { fetchArticlesData } from './ArticlesData';
 import LoadingComponent from '../components/LoadingComponent';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import slugify from 'slugify';
+import ServerError from './ServerError';
 
 const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const ArticlesList = () => {
@@ -136,14 +137,7 @@ const ArticlesList = () => {
     allArticles.length > visibleArticlesCount && !allVisible;
 
   if (isError) {
-    return (
-      <div className="text-center py-10">
-        <h2 className="text-xl font-bold text-red-600">ERROR</h2>
-        <p className="text-gray-600">
-          Παρουσιάστηκε κάποιο πρόβλημα στη παρουσίαση των άρθρων
-        </p>
-      </div>
-    );
+    return <ServerError />;
   }
 
   return (

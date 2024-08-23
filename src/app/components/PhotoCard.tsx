@@ -40,7 +40,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
           className={clsx(roundClassName, {
             'object-cover shadow-xl': true,
             'object-left': index === 1 || index === 4,
-            'object-top': index === 7,
+            'object-scale-down bg-white': index === 7,
             'hover:scale-110 transition-transform duration-300': isTransformed,
           })}
           fill

@@ -27,8 +27,7 @@ interface TherapyToolContentProps {
 const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
   therapyTool,
 }) => {
-  const router = useRouter();
-  const pathname = usePathname(); // Use this to get the current path
+  const pathname = usePathname();
 
   return (
     <div className="py-20 bg-sky-50 container mx-auto px-10 sm:px-28 header:px-60 items-center flex flex-col space-y-10">
@@ -77,7 +76,7 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
                 >
                   <Link
                     href={`/treatments/${tool.nameId}`}
-                    className={`flex flex-col text-gray-500 whitespace-break-spaces items-center w-fit py-2.5 text-sm font-bold text-start rounded-lg ${
+                    className={`flex flex-col text-gray-500 whitespace-break-spaces items-center w-fit py-2.5 text-sm font-bold  text-center md:text-start sm:text-center rounded-lg ${
                       isActive
                         ? '!text-blue-500 cursor-default'
                         : 'hover:bg-primary-800 hover:underline'
@@ -97,7 +96,9 @@ const TherapyToolContent: React.FC<TherapyToolContentProps> = ({
               <h2 className="font-semibold text-center lg:text-start">
                 {section.title}
               </h2>
-              <p className="text-center lg:text-start">{section.paragraph}</p>
+              <p className="text-center md:text-start text-pretty">
+                {section.paragraph}
+              </p>
             </div>
           ))}
         </div>

@@ -47,7 +47,7 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
       {descriptions ? (
         descriptions.map((description, index) => (
           <DescriptionCard
-            key={`description-${index}`} // Add unique key
+            key={`description-${index}`}
             index={index}
             vertical={true}
             className={descriptionCardClassName}
@@ -57,7 +57,7 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
         ))
       ) : (
         <DescriptionCard
-          key={`description-${index}`} // Add unique key
+          key={`description-${index}`}
           index={index}
           vertical={true}
           className={descriptionCardClassName}
@@ -85,7 +85,7 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
               />
             </svg>
           }
-          iconPosition="end" // Specify the icon position
+          iconPosition="end"
           className="mt-4"
         >
           Δείτε περισσότερα

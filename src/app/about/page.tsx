@@ -50,7 +50,7 @@ const AboutPage = () => {
                 descriptions={item.descriptions}
                 backgroundColor={item.color}
                 bulletPoints={item.bulletPoints}
-                className="bg-sky-50"
+                className="bg-sky-50 h-full"
               />
             ))}
           </div>

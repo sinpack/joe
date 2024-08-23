@@ -40,7 +40,7 @@ const HolisticPage = () => {
               title={item.title}
               descriptions={item.descriptions}
               backgroundColor={item.color}
-              className="bg-gray-300"
+              className="bg-gray-300 h-full"
               shape="triangle"
               footer={item.footer}
             />

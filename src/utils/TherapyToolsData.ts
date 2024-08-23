@@ -43,7 +43,7 @@ const therapyTools: therapyTool[] = [
     nameId: 'transpersonal-coaching',
     image: transpersonalCoaching,
     descriptions: [
-      'Θεραπευτική μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της προσωπικής αυτογνωσίας και της αντιμετώπισης προβλημάτων.',
+      'Θεραπευτική μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της αυτογνωσίας και της αντιμετώπισης προβλημάτων.',
     ],
     color: '#A8C3A7',
   },

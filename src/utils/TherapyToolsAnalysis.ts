@@ -6,7 +6,7 @@ import positivePsychology from '../../public/images/positive-psychology.jpg';
 import cbt from '../../public/images/cbt.jpg';
 import mindfulness from '../../public/images/mindfulness.jpg';
 import guidedImagery from '../../public/images/guided-imagery.jpg';
-import focusing from "../../public/images/focusing.jpg";
+import focusing from '../../public/images/focusing.jpg';
 
 export interface TherapyToolAnalysis {
   id: number;
@@ -75,7 +75,7 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     mainTitle: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
     linkTitle: 'Transpersonal Coaching',
     startingParagraph:
-      'Θεραπευτική μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της προσωπικής αυτογνωσίας και της αντιμετώπισης προβλημάτων.',
+      'Θεραπευτική μέθοδος coaching που επικεντρώνεται στην ανάπτυξη της αυτογνωσίας και της αντιμετώπισης προβλημάτων.',
     sections: [
       {
         title: 'Τι είναι το Υπερπροσωπικό Coaching;',
