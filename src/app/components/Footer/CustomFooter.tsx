@@ -26,7 +26,7 @@ const CustomFooter = () => {
             ))}
           </ul>
           <div className="m-auto flex w-max items-center justify-between space-x-4">
-            <Link href="tel:+243996660436" aria-label="call">
+            <Link href="tel:+306976629913" aria-label="call">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -39,7 +39,10 @@ const CustomFooter = () => {
                 ></path>
               </svg>
             </Link>
-            <Link href="mailto:hello@mail.com" aria-label="send mail">
+            <Link
+              href="mailto:georgios_antonopoulos@hotmail.com"
+              aria-label="send mail"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
