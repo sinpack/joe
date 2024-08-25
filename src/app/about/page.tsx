@@ -6,14 +6,16 @@ import HolisticCard from '../holistic-coaching/HolisticCard';
 import profilePic from '../../../public/images/profile-joe.png';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
+import officeImage from '../../../public/office.jpeg';
+import BlueDivider from '../components/BlueDivider';
 
 export const metadata: Metadata = {
   title: 'Βιογραφικό Γιώργου Αντωνόπουλου',
 };
 const AboutPage = () => {
   return (
-    <div className="bg-sky-50 container mx-auto px-10 sm:px-28 header:px-60">
-      <section className="py-20">
+    <div className="bg-sky-50">
+      <section className="py-10 container mx-auto px-10 sm:px-28 header:px-60">
         <div className="flex flex-col items-center ">
           <h1 className="text-center font-bold mb-10 tracking-widest">
             ΠΡΟΦΙΛ
@@ -56,6 +58,31 @@ const AboutPage = () => {
           </div>
         </div>
       </section>{' '}
+      <BlueDivider polygon={false} />
+      <section className="flex flex-col w-full mt-10">
+        <div className="flex flex-col items-center justify-center text-center px-4 space-y-10">
+          <div className="container mx-auto px-10 sm:px-28 header:px-60 space-y-5">
+            <h1 className="text-center font-bold tracking-widest">
+              Ο ΧΩΡΟΣ ΜΟΥ
+            </h1>
+            <p className="text-balance">
+              Στο θεραπευτικό γραφείο, έχω δημιουργήσει έναν ζεστό και φιλόξενο
+              χώρο όπου ο καθένας μπορεί να βρει ηρεμία και ασφάλεια. Εδώ,
+              μπορείτε να χαλαρώσετε και να αφεθείτε, γνωρίζοντας ότι βρίσκεστε
+              σε ένα περιβάλλον γεμάτο κατανόηση και υποστήριξη, με στόχο την
+              προώθηση της ολιστικής σας ευεξίας και ισορροπίας.
+            </p>
+          </div>
+
+          <Image
+            src={officeImage}
+            alt="Background"
+            layout="cover"
+            objectFit="responsive"
+            quality={100}
+          />
+        </div>
+      </section>
       <ScrollToTopButton />
     </div>
   );
