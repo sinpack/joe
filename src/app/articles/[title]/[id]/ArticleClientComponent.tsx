@@ -12,7 +12,6 @@ import NotArticleFound from './NotArticleFound';
 
 const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-// const production_URL = 'https://joe-backend-production.up.railway.app';
 const fetchArticleById = async (id: string): Promise<Article | null> => {
   try {
     const res = await fetch(`${STRAPI_API_URL}/api/articles/${id}?populate=*`, {

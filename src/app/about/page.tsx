@@ -60,8 +60,8 @@ const AboutPage = () => {
       </section>{' '}
       <BlueDivider polygon={false} />
       <section className="flex flex-col w-full mt-10">
-        <div className="flex flex-col items-center justify-center text-center px-4 space-y-10">
-          <div className="container mx-auto px-10 sm:px-28 header:px-60 space-y-5">
+        <div className="flex flex-col items-center justify-center text-center space-y-10">
+          <div className="container mx-auto px-10 sm:px-28 header:px-60 space-y-10">
             <h1 className="text-center font-bold tracking-widest">
               Ο ΧΩΡΟΣ ΜΟΥ
             </h1>
