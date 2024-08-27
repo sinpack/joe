@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: 'Άρθρα Γιώργου Αντωνόπουλου',
 };
 
+// export const dynamic = 'force-static';
+
 // Component for rendering articles
 export default function ArticlePage({
   params,
@@ -47,6 +49,6 @@ export async function generateStaticParams() {
   return articles.map((article) => {
     const title = article.attributes.title;
     const id = article.id.toString();
-    return { params: { title, id } };
+    return { title: title, id: id };
   });
 }
