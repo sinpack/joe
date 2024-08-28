@@ -3,6 +3,8 @@ const nextConfig = {
   // Export only when building in GitHub Actions
   output: process.env.GITHUB_ACTION ? 'export' : undefined,
   reactStrictMode: true,
+  basePath: '/joe', // Set this to the repository name in the GitHub Pages URL
+  assetPrefix: '/joe', // Set this to the same as basePath
   images: {
     remotePatterns: [
       {
