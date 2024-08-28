@@ -47,8 +47,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        # with:
-        #   static_site_generator: next
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -69,12 +67,11 @@ jobs:
           NEXT_PUBLIC_STRAPI_API_TOKEN: ${{ secrets.NEXT_PUBLIC_STRAPI_API_TOKEN }}
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} next build
-          ${{ steps.detect-package-manager.outputs.runner }} next export  # Add this line to export statically
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out # Ensure this points to the 'out' directory from next export
+          path: ./out # This remains as the 'out' directory should be produced by the 'output: export' setting
 
   deploy:
     environment:
