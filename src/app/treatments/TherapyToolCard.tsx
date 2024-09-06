@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Button from '../components/Buttons/Button';
 import { useRouter } from 'next/navigation';
 import { TertiaryButton } from '../components/Buttons';
@@ -16,6 +16,7 @@ interface TherapyToolCardProps {
   descriptionCardClassName?: string;
   bulletPoints?: string[];
   index?: number;
+  footer?: string | ReactNode;
 }
 
 const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
@@ -28,6 +29,7 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
   descriptionCardClassName,
   bulletPoints,
   index,
+  footer,
 }) => {
   const router = useRouter();
   const handleNavigate = () => {
@@ -53,6 +55,7 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
             className={descriptionCardClassName}
             description={description}
             bulletPoints={bulletPoints}
+            footer={footer}
           />
         ))
       ) : (
@@ -63,6 +66,7 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
           className={descriptionCardClassName}
           description={descriptions}
           bulletPoints={bulletPoints}
+          footer={footer}
         />
       )}
       {button && (

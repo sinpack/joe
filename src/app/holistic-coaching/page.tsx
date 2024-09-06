@@ -5,6 +5,8 @@ import holisticData from '../../utils/holisticData';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
 import TherapyToolCard from '../treatments/TherapyToolCard';
+import CategoryList from '../treatments/CategoryList';
+import NavigationButton from '../components/Buttons/NavigationButton';
 
 export const metadata: Metadata = {
   title: 'Holistic Coaching Γιώργου Αντωνόπουλου',
@@ -29,7 +31,9 @@ const HolisticPage = () => {
               backgroundColor={item.color}
               titleCardClassName="!text-center !min-w-[300px] max-w-[400px]"
               descriptionCardClassName="!min-w-[300px] max-w-[400px]"
+              bulletPoints={item.bulletPoints}
               button={false}
+              footer={item.footer}
             />
           ))}
         </div>
@@ -43,6 +47,7 @@ const HolisticPage = () => {
               className="bg-gray-300 h-full"
               shape="triangle"
               footer={item.footer}
+              bulletPoints={item.bulletPoints}
             />
           ))}
         </div>

@@ -26,7 +26,6 @@ const Treatments = () => {
                 μπορούμε να εργαστούμε για την ευημερία σας.
               </p>
             </div>
-            <CategoryList />
           </div>
         </div>
       </section>

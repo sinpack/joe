@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { ReactNode, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { motion, useAnimation } from 'framer-motion';
 import Link from 'next/link';
@@ -19,7 +19,7 @@ interface DescriptionCardProps {
   vertical: boolean;
   bulletPoints?: string[];
   index?: number;
-  footer?: string;
+  footer?: string | ReactNode;
 }
 
 const DescriptionCard: React.FC<DescriptionCardProps> = ({

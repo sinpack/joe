@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import TitleCard from '../components/TitleCard';
 import DescriptionCard from '../components/DescriptionCard';
 
@@ -10,7 +10,7 @@ interface HolisticCardProps {
   bulletPoints?: string[];
   className?: string;
   shape?: 'circle' | 'triangle';
-  footer?: string;
+  footer?: string | ReactNode;
 }
 
 const HolisticCard: React.FC<HolisticCardProps> = ({
