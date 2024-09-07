@@ -142,7 +142,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
 
               <p
                 className={clsx({
-                  'underline decoration-stone-700 decoration-2 underline-offset-4':
+                  'underline decoration-stone-700 decoration-1 underline-offset-auto':
                     hasDecoration,
                 })}
               >
