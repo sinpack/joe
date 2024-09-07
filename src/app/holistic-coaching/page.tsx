@@ -5,8 +5,8 @@ import holisticData from '../../utils/holisticData';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
 import TherapyToolCard from '../treatments/TherapyToolCard';
-import CategoryList from '../treatments/CategoryList';
-import NavigationButton from '../components/Buttons/NavigationButton';
+import bulletPoint4 from '../../../public/bullet4.png';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Holistic Coaching Γιώργου Αντωνόπουλου',
@@ -30,10 +30,20 @@ const HolisticPage = () => {
               descriptions={item.descriptions}
               backgroundColor={item.color}
               titleCardClassName="!text-center !min-w-[300px] max-w-[400px]"
-              descriptionCardClassName="!min-w-[300px] max-w-[400px]"
+              descriptionCardClassName="!min-w-[300px] max-w-[400px] !tracking-tighter !leading-normal !text-justify"
               bulletPoints={item.bulletPoints}
               button={false}
               footer={item.footer}
+              hasDecoration
+              customBulletPoint={
+                <Image
+                  src={bulletPoint4}
+                  alt="custom bullet point"
+                  width={18}
+                  height={18}
+                  className="w-4 h-4"
+                />
+              }
             />
           ))}
         </div>
@@ -44,10 +54,20 @@ const HolisticPage = () => {
               title={item.title}
               descriptions={item.descriptions}
               backgroundColor={item.color}
-              className="bg-gray-300 h-full"
+              className="bg-gray-300 h-full !tracking-tighter !leading-normal !text-justify"
               shape="triangle"
               footer={item.footer}
               bulletPoints={item.bulletPoints}
+              hasDecoration
+              customBulletPoint={
+                <Image
+                  src={bulletPoint4}
+                  alt="custom bullet point"
+                  width={18}
+                  height={18}
+                  className="w-4 h-4"
+                />
+              }
             />
           ))}
         </div>

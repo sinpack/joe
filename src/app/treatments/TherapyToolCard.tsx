@@ -17,6 +17,8 @@ interface TherapyToolCardProps {
   bulletPoints?: string[];
   index?: number;
   footer?: string | ReactNode;
+  customBulletPoint?: ReactNode;
+  hasDecoration?: boolean;
 }
 
 const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
@@ -30,6 +32,8 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
   bulletPoints,
   index,
   footer,
+  customBulletPoint,
+  hasDecoration,
 }) => {
   const router = useRouter();
   const handleNavigate = () => {
@@ -56,6 +60,8 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
             description={description}
             bulletPoints={bulletPoints}
             footer={footer}
+            customBulletPoint={customBulletPoint}
+            hasDecoration={hasDecoration}
           />
         ))
       ) : (
@@ -67,6 +73,8 @@ const TherapyToolCard: React.FC<TherapyToolCardProps> = ({
           description={descriptions}
           bulletPoints={bulletPoints}
           footer={footer}
+          customBulletPoint={customBulletPoint}
+          hasDecoration={hasDecoration}
         />
       )}
       {button && (

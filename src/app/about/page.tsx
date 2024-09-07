@@ -39,7 +39,7 @@ const AboutPage = () => {
                 backgroundColor={tool.color}
                 bulletPoints={tool.bulletPoints}
                 titleCardClassName="!text-center !min-w-[300px] max-w-[400px]"
-                descriptionCardClassName="!min-w-[300px] max-w-[400px]"
+                descriptionCardClassName="!min-w-[300px] max-w-[400px] !text-justify !tracking-tighter !leading-normal"
                 button={false}
               />
             ))}
@@ -52,7 +52,7 @@ const AboutPage = () => {
                 descriptions={item.descriptions}
                 backgroundColor={item.color}
                 bulletPoints={item.bulletPoints}
-                className="bg-sky-50 h-full"
+                className="bg-sky-50 h-full !text-justify !tracking-tighter !leading-normal"
               />
             ))}
           </div>

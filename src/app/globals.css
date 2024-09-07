@@ -44,7 +44,8 @@
   h3,
   h4,
   a,
-  p {
+  p,
+  span {
     font-family: var(--font-webfont);
     ;
     
@@ -63,7 +64,7 @@
 
  /* FONT COLORS */
 
- h1,h2,h3,h4,h5,p {
+ h1,h2,h3,h4,h5,p,span {
   @apply text-gray-600 
  }
 
@@ -124,8 +125,18 @@
     @apply text-sm
   }
 
+  .span {
+    @apply text-sm
+  }
+
   @screen md {
     p {
+      @apply text-base; 
+    }
+  }
+
+  @screen md {
+    span {
       @apply text-base; 
     }
   }

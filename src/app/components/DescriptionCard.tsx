@@ -20,6 +20,8 @@ interface DescriptionCardProps {
   bulletPoints?: string[];
   index?: number;
   footer?: string | ReactNode;
+  customBulletPoint?: ReactNode;
+  hasDecoration?: boolean;
 }
 
 const DescriptionCard: React.FC<DescriptionCardProps> = ({
@@ -29,6 +31,8 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
   bulletPoints,
   index,
   footer,
+  customBulletPoint,
+  hasDecoration,
 }) => {
   const controls = useAnimation();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -74,13 +78,23 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
   };
 
   const renderDescription = (desc: string) => {
-    return desc.split('{SKYPE_LINK}').map((part, index) => (
-      <React.Fragment key={index}>
-        {part}
-        {index < desc.split('{SKYPE_LINK}').length - 1 && <SkypeLink />}
-      </React.Fragment>
-    ));
+    const wordsArray = desc.split('{SKYPE_LINK}');
+    const newString = wordsArray.map((stringPart, index) => {
+      return (
+        <React.Fragment key={index}>
+          {stringPart}
+          {index < wordsArray.length - 1 && <SkypeLink />}
+        </React.Fragment>
+      );
+    });
+    return newString;
   };
+  // return desc.split('{SKYPE_LINK}').map((part, index) => (
+  //   <React.Fragment key={index}>
+  //     {part}
+  //     {index < desc.split('{SKYPE_LINK}').length - 1 && <SkypeLink />}
+  //   </React.Fragment>
+  // ));
 
   return (
     <motion.div
@@ -91,7 +105,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
       variants={variants}
       className={clsx(
         className,
-        'text-sm text-start justify-center leading-tight p-2.5 border-[1px] space-y-5 border-[#758694]',
+        'text-sm text-start justify-center leading-tight tracking-normal p-2.5 border-[1px] space-y-5 border-[#758694]',
         {
           'rounded-b-xl': vertical,
           'rounded-r-xl': !vertical,
@@ -106,27 +120,43 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
               key={index}
               className="flex items-center space-x-2.5 rtl:space-x-reverse"
             >
-              <svg
-                className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 16 12"
+              {customBulletPoint ? (
+                customBulletPoint
+              ) : (
+                <svg
+                  className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 16 12"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M1 5.917 5.724 10.5 15 1.5"
+                  />
+                </svg>
+              )}
+
+              <p
+                className={clsx({
+                  'underline decoration-stone-700 decoration-2 underline-offset-4':
+                    hasDecoration,
+                })}
               >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 5.917 5.724 10.5 15 1.5"
-                />
-              </svg>
-              <p>{point}</p>
+                {point}
+              </p>
             </li>
           ))}
         </ul>
       )}
-      {footer && <p className="mt-4 pt-4 border-t text-sm">{footer}</p>}
+      {footer && (
+        <span className="flex mt-4 pt-4 border-t text-sm text-center sm:text-left text-pretty">
+          {footer}
+        </span>
+      )}
     </motion.div>
   );
 };

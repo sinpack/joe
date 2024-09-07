@@ -11,6 +11,8 @@ interface HolisticCardProps {
   className?: string;
   shape?: 'circle' | 'triangle';
   footer?: string | ReactNode;
+  customBulletPoint?: ReactNode;
+  hasDecoration?: boolean;
 }
 
 const HolisticCard: React.FC<HolisticCardProps> = ({
@@ -21,6 +23,8 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
   className,
   shape,
   footer,
+  customBulletPoint,
+  hasDecoration,
 }) => {
   return (
     <div className="flex flex-row py-4 px-6 space-x-5">
@@ -45,6 +49,8 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
               description={description}
               bulletPoints={bulletPoints}
               footer={footer}
+              customBulletPoint={customBulletPoint}
+              hasDecoration={hasDecoration}
             />
           ))
         ) : (
@@ -53,6 +59,8 @@ const HolisticCard: React.FC<HolisticCardProps> = ({
             className={className}
             bulletPoints={bulletPoints}
             footer={footer}
+            customBulletPoint={customBulletPoint}
+            hasDecoration={hasDecoration}
           />
         )}
       </div>

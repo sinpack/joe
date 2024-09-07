@@ -27,11 +27,11 @@ const holisticData: HolisticDataProps[] = [
     title: 'ΤΙ ΜΠΟΡΟΥΜΕ ΝΑ ΔΟΥΛΕΨΟΥΜΕ',
     color: '#F1DEC6',
     bulletPoints: [
-      'Μείωση του αγχους',
+      'Μείωση του άγχους',
       'Διακοπή καπνίσματος (1 συνεδρία)',
       'Απώλεια βάρους',
       'Επίτευξη προσωπικών / επαγγελματικών στόχων',
-      'Θέματα σχέσεων (επαγγελματικές, διαπροσωπικές, κτλ.)',
+      'Θέματα σχέσεων (επαγγελματικές, διαπροσωπικές, ερωτικές κτλ.)',
       'Αύξηση αυτοπεποίθησης – αυτοεκτίμησης',
       'Αλλαγή καριέρας',
       'Αυτοβελτίωση – προσωπική εξέλιξη',
@@ -41,8 +41,8 @@ const holisticData: HolisticDataProps[] = [
       'Εύρεση εσωτερικού σκοπού',
     ],
     footer: (
-      <div className="flex items-center justify-center">
-        <CustomLink text="ΠΕΡΙΣΣΟΤΕΡΑ ΓΙΑ ΤΙΣ ΘΕΡΑΠΕΙΕΣ" url="/treatments" />
+      <div className="flex items-center w-full justify-center">
+        <CustomLink text="Δείτε περισσότερα" url="/treatments" />
       </div>
     ),
   },
