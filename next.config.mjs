@@ -27,7 +27,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'example.com', // Replace with your actual hostname
+        hostname: 'joe-backend.onrender.com', // Add this entry
         pathname: '/uploads/**',
       },
       {
