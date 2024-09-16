@@ -35,6 +35,11 @@ const nextConfig = {
         hostname: 'joe-backend-production.up.railway.app',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'similar-starfish-afterhoursdev-38e98811.koyeb.app',
+        pathname: '/uploads/**',
+      },
       // Add more patterns as needed
     ],
   },
