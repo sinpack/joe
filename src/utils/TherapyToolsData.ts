@@ -19,7 +19,7 @@ export interface therapyTool {
 const therapyTools: therapyTool[] = [
   {
     id: 1,
-    title: 'ART THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
+    title: 'EXPRESSIVE ARTS THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     nameId: 'art-therapy',
     image: artTherapy,
     descriptions: [

@@ -34,7 +34,7 @@ const Treatments = () => {
       <section className="flex flex-col container mx-auto px-5 lg:px-20 py-10 bg-sky-50">
         <div className="flex flex-row items-center justify-center space-x-5">
           <Divider className="border-gray-400 border" />
-          <h1 className="text-center py-10 text-nowrap">
+          <h1 className="text-center py-10 text-nowrap tracking-wider">
             ΥΠΗΡΕΣΙΕΣ - ΘΕΡΑΠΕΙΕΣ
           </h1>
           <Divider className="border-gray-400 border" />

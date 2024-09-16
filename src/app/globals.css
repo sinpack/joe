@@ -155,8 +155,6 @@
 }
 
 @layer components {
-  header {}
-
   .filter-grey {
     filter: invert(31%) sepia(7%) saturate(1031%) hue-rotate(175deg) brightness(100%) contrast(92%); 
   }

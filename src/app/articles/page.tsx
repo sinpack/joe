@@ -14,9 +14,9 @@ const ArticlesPage = async () => {
 
   return (
     <section className="py-24">
-      <h2 className="text-4xl font-bold text-center mb-14 mx-auto container px-4 sm:px-6 lg:px-8">
+      <h1 className="text-center mb-14 mx-auto container px-4 sm:px-6 lg:px-8 tracking-wider">
         ΑΡΘΡΑ
-      </h2>
+      </h1>
       <ArticlesList />
     </section>
   );

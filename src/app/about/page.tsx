@@ -15,11 +15,9 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <div className="bg-sky-50">
-      <section className="py-10 container mx-auto px-10 sm:px-28 header:px-60">
+      <section className="py-20 container mx-auto px-10 sm:px-28 header:px-60">
         <div className="flex flex-col items-center ">
-          <h1 className="text-center font-bold mb-10 tracking-widest">
-            ΠΡΟΦΙΛ
-          </h1>
+          <h1 className="text-center font-bold mb-10 tracking-wider">ΠΡΟΦΙΛ</h1>
           <div className="flex justify-center mb-8">
             <Image
               src={profilePic}
@@ -58,7 +56,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>{' '}
-      <BlueDivider polygon={false} />
+      {/* <BlueDivider polygon={false} />
       <section className="flex flex-col w-full mt-10">
         <div className="flex flex-col items-center justify-center text-center space-y-10">
           <div className="container mx-auto px-10 sm:px-28 header:px-60 space-y-10">
@@ -82,7 +80,7 @@ const AboutPage = () => {
             quality={100}
           />
         </div>
-      </section>
+      </section> */}
       <ScrollToTopButton />
     </div>
   );

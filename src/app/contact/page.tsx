@@ -18,14 +18,14 @@ export default function Contact() {
     <section className="bg-sky-50 py-20">
       <div className="flex flex-col items-center px-2.5 container mx-auto">
         <main className="flex flex-col w-full max-w-3xl">
-          <div className="flex flex-col items-center py-10 bg-sky-50 space-y-20">
-            <h1 className="flex w-fit justify-center items-center text-4xl tracking-widest font-bold whitespace-normal">
-              Επικοινωνία
+          <div className="flex flex-col items-center py-10 bg-sky-50 space-y-10">
+            <h1 className="flex w-fit justify-center items-center tracking-widest whitespace-normal underline decoration-2 underline-offset-2">
+              ΕΠΙΚΟΙΝΩΝΙΑ
             </h1>
             <h4 className="text-center text-balance">
               Για να κλείσετε ραντεβού ή για περαιτέρω πληροφορίες, μπορείτε να
-              επικοινωνήστε μαζί μου μέσω τηλεφώνου στο 6976629913 ή μέσω e-mail
-              στο georgios_antonopoulos@hotmail.com
+              επικοινωνήσετε μαζί μου μέσω τηλεφώνου στο 6976629913 ή μέσω
+              e-mail στο georgios_antonopoulos@hotmail.com
             </h4>
           </div>
         </main>

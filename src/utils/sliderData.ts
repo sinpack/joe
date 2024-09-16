@@ -5,6 +5,7 @@ import positivePsychology from '../../public/images/positive-psychology.jpg';
 import cbt from '../../public/images/cbt.jpg';
 import mindfulness from '../../public/images/mindfulness.jpg';
 import guidedImagery from '../../public/images/guided-imagery.jpg';
+import focusing from '../../public/images/focusing.jpg';
 import { StaticImageData } from 'next/image';
 
 export type SliderDataType = {
@@ -16,7 +17,7 @@ export type SliderDataType = {
 const sliderData: SliderDataType[] = [
   {
     id: 1,
-    title: 'ART THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
+    title: 'EXPRESSIVE ARTS THERAPY/ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     url: artTherapy,
   },
 
@@ -49,6 +50,11 @@ const sliderData: SliderDataType[] = [
     id: 7,
     title: 'ΚΑΘΟΔΗΓΟΥΜΕΝΕΣ ΕΙΚΟΝΕΣ ΚΑΙ ΟΡΑΜΑΤΙΣΜΟΙ',
     url: guidedImagery,
+  },
+  {
+    id: 8,
+    title: 'FOCUSING',
+    url: focusing,
   },
 ];
 

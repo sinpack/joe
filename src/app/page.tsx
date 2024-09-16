@@ -20,7 +20,8 @@ export default function Home() {
         <div className="flex flex-col justify-center text-center px-2.5 md:px-40 lg:px-60">
           <h2 className="mt-5 text-balance">
             Ονομάζομαι Γεώργιος Αντωνόπουλος και είμαι πιστοποιημένος Ολιστικός
-            Coach, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις Επιστήμες.
+            - Συνθετικός Coach, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις
+            Επιστήμες.
             <br className="lg:hidden" />
             <a href="/about" className="text-blue-600 text-base ml-2.5">
               Διαβάστε περισσότερα
@@ -46,13 +47,13 @@ export default function Home() {
         <div className="flex flex-col items-center justify-between text-center container mx-auto  space-y-5 relative z-10 h-full">
           <div className="flex flex-col space-y-5 px-2.5 md:px-40 lg:px-60 lg:mt-10">
             <h1 className="font-bold text-grey-600 mt-5 tracking-normal">
-              Holistic Coaching{' '}
+              Holistic - Integrative Coaching{' '}
             </h1>
             <h3 className="mb-10 text-grey-600 font-semibold text-balance">
-              Το holistic coaching εστιάζει στην ισορροπία μεταξύ σώματος, νου,
-              συναισθήματος και πνεύματος, προσφέροντας μια σφαιρική προσέγγιση
-              για την αντιμετώπιση των προκλήσεων και την επίτευξη προσωπικών
-              στόχων.
+              Το holistic - integrative coaching εστιάζει στην ισορροπία μεταξύ
+              σώματος, νου, συναισθήματος και πνεύματος, προσφέροντας μια
+              σφαιρική προσέγγιση για την αντιμετώπιση των προκλήσεων και την
+              επίτευξη προσωπικών/επαγγελματικών στόχων.
               <br className="lg:hidden" />
               <a
                 href="/holistic-coaching"

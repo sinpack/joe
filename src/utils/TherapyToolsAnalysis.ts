@@ -28,10 +28,10 @@ const therapyToolsAnalysis: TherapyToolAnalysis[] = [
     imageUrl: artTherapy,
     generalTitle: 'Γενικές Πληροφορίες για την Τέχνη',
     nameId: 'art-therapy',
-    mainTitle: 'ART THERAPY / ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
+    mainTitle: 'EXPRESSIVE ARTS THERAPY / ΘΕΡΑΠΕΙΑ ΜΕΣΩ ΤΕΧΝΗΣ',
     startingParagraph:
       'Μέθοδος θεραπείας που χρησιμοποιεί την τέχνη ως μέσο για την επίτευξη εσωτερικής αλλαγής και αυτογνωσίας.',
-    linkTitle: 'Art Therapy',
+    linkTitle: 'Expressive Arts Therapy',
     sections: [
       {
         title: 'Τι είναι η Θεραπεία Μέσω Τέχνης;',
