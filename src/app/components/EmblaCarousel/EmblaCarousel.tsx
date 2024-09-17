@@ -12,6 +12,7 @@ import {
   NextButton,
 } from './EmlaCarouselArrowButton';
 import { SliderDataType } from '../../../utils/sliderData';
+import clsx from 'clsx';
 
 type PropType = {
   slides: SliderDataType[];
@@ -46,7 +47,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   <Image
                     src={sliderItem.url}
                     alt={sliderItem.title}
-                    className="object-cover shadow-xl rounded-2xl"
+                    className={clsx('object-cover shadow-xl rounded-2xl', {
+                      'object-cover': true,
+                      'object-left': index === 1 || index === 4,
+                      'object-scale-down bg-white': index === 7,
+                    })}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                     quality={100}
