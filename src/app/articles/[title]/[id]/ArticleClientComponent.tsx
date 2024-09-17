@@ -107,7 +107,10 @@ export default function ArticleClientComponent({
   return (
     <section className="flex flex-col container mx-auto px-5 sm:px-28 lg:px-60 py-10 bg-sky-50">
       <div className="flex flex-col justify-center items-center mb-10 space-y-5">
-        <h1 className="text-2xl font-bold py-10" suppressHydrationWarning>
+        <h1
+          className="text-2xl font-bold py-10 tracking-normal"
+          suppressHydrationWarning
+        >
           <LoadingComponent
             isLoading={isLoading}
             height={50}
