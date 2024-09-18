@@ -2,12 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import bioData from '../../utils/BioData';
 import TherapyToolCard from '../treatments/TherapyToolCard';
-import HolisticCard from '../holistic-coaching/HolisticCard';
 import profilePic from '../../../public/images/profile-ai.png';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
-import officeImage from '../../../public/office.jpeg';
-import BlueDivider from '../components/BlueDivider';
+import HolisticCard from '../holistic-integrative-coaching/HolisticCard';
 
 export const metadata: Metadata = {
   title: 'Βιογραφικό Γιώργου Αντωνόπουλου',
