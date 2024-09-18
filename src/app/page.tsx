@@ -56,7 +56,7 @@ export default function Home() {
               επίτευξη προσωπικών/επαγγελματικών στόχων.
               <br className="lg:hidden" />
               <a
-                href="/holistic-coaching"
+                href="/holistic-integrative-coaching"
                 className="text-blue-600 text-base ml-2.5"
               >
                 Διαβάστε περισσότερα
