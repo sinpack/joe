@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   },
   description:
     'Η επίσημη ιστοσελίδα του Ηolistic - Ιntegrative Coach Ψυχολογίας Γεώργιου Αντωνόπουλου',
-  metadataBase: new URL('https://joe-frontend.vercel.app/'),
+  metadataBase: new URL('https://www.georgiosantonopoulos.gr'),
   icons: {
     icon: faviconIcon.src,
     apple: '/apple-touch-icon.png',
   },
   verification: {
-    google: 'NRLCkQAyXdUltIT0IL44-nl3xi9BQVaz1l_IiVUmCas',
+    google: 'FI8LwNzh5aRiAd-2qZbc39gmN7iStGTbN4i4ld5w8L0',
   },
   keywords: [
     // English keywords
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: 'Γεώργιος Αντωνόπουλος - Holistic Coach',
     description:
       'Η επίσημη ιστοσελίδα του Ηolistic - Ιntegrative Coach Ψυχολογίας Γεώργιου Αντωνόπουλου',
-    url: 'https://joe-frontend.vercel.app/',
+    url: 'https://www.georgiosantonopoulos.gr',
     images: [
       {
         url: 'https://github.com/sinpack/joe/blob/main/public/opengraph-image.jpg',
