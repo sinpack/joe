@@ -57,6 +57,7 @@ const CustomFooter = () => {
               title="facebook"
               target="_blank"
               aria-label="facebook"
+              rel="noopener noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,6 +73,7 @@ const CustomFooter = () => {
               title="instagram"
               target="_blank"
               aria-label="instagram"
+              rel="noopener noreferrer"
             >
               <svg
                 viewBox="0 0 24 24"

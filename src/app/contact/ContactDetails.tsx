@@ -62,6 +62,7 @@ const contactDetails: ContactDetail[] = [
           title="facebook"
           target="_blank"
           aria-label="facebook"
+          rel="noopener noreferrer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +79,7 @@ const contactDetails: ContactDetail[] = [
           target="_blank"
           aria-label="instagram"
           className="filter-grey"
+          rel="noopener noreferrer"
         >
           <svg
             version="1.1"
