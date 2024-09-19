@@ -26,8 +26,12 @@ export const metadata: Metadata = {
   },
   keywords: [
     // English keywords
-    'holistic coaching',
+    'holistic',
+    'coaching',
+    'holistic - integrative coaching',
     'georgios antonopoulos',
+    'GEORGIOS ANTONOPOULOS',
+    'Holistic Coach',
     'psychology',
     'life coaching',
     'mental health',
@@ -48,6 +52,7 @@ export const metadata: Metadata = {
     // Greek keywords
     'ολιστική καθοδήγηση',
     'γεώργιος αντωνόπουλος',
+    'ΓΕΩΡΓΙΟΣ ΑΝΤΩΝΟΠΟΥΛΟΣ',
     'ψυχολογία',
     'προσωπική ανάπτυξη',
     'καθοδήγηση ζωής',
