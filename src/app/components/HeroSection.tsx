@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import introPhoto from '../../../public/intro5.webp';
+import introPhoto from '../../../public/intro5.jpg';
 import { handwritingFont } from './../layout';
 
 const Hero: React.FC = () => {
