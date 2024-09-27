@@ -16,9 +16,9 @@ const Hero: React.FC = () => {
             quality={100}
             placeholder="blur"
             priority
-            sizes="(max-width: 768px) 100vw, 
-                 (max-width: 1024px) 50vw, 
-                 33vw" // Responsive image sizes
+            // sizes="(max-width: 768px) 100vw,
+            //      (max-width: 1024px) 50vw,
+            //      33vw" // Responsive image sizes
             loading="eager"
           />
         </div>
