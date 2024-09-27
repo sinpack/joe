@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import introPhoto from '../../../public/intro5.jpg';
+import introPhoto from '../../../public/intro5.webp';
 import { handwritingFont } from './../layout';
 
 const Hero: React.FC = () => {
@@ -20,6 +20,7 @@ const Hero: React.FC = () => {
             //      (max-width: 1024px) 50vw,
             //      33vw" // Responsive image sizes
             loading="eager"
+            fetchPriority="high"
           />
         </div>
         <div className="relative z-10 flex items-center h-full justify-center lg:justify-start ml-0 lg:ml-20 container mx-auto ">

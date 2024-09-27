@@ -41,7 +41,7 @@ export default function Home() {
               objectFit: 'cover',
             }}
             quality={100}
-            priority
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col items-center justify-between text-center container mx-auto  space-y-5 relative z-10 h-full">
