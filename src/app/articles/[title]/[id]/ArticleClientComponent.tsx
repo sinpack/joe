@@ -142,6 +142,7 @@ export default function ArticleClientComponent({
                 quality={100}
                 priority
                 fetchPriority="high"
+                placeholder="blur"
               />
             </div>
           </LoadingComponent>
