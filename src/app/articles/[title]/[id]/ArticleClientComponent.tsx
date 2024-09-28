@@ -54,7 +54,7 @@ export default function ArticleClientComponent({
         image: {
           data: {
             attributes: {
-              url: '/uploads/',
+              url: 'https://via.placeholder.com/200',
             },
           },
         },
