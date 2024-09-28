@@ -19,7 +19,6 @@ const Hero: React.FC = () => {
             // sizes="(max-width: 768px) 100vw,
             //      (max-width: 1024px) 50vw,
             //      33vw" // Responsive image sizes
-            loading="eager"
             fetchPriority="high"
           />
         </div>
