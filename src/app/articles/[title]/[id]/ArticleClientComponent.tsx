@@ -140,6 +140,8 @@ export default function ArticleClientComponent({
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 quality={100}
+                priority
+                fetchPriority="high"
               />
             </div>
           </LoadingComponent>
