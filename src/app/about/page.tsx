@@ -56,7 +56,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>{' '}
-      <BlueDivider polygon={false} />
+      {/* <BlueDivider polygon={false} />
       <section className="flex flex-col w-full mt-10">
         <div className="flex flex-col items-center justify-center text-center space-y-10">
           <div className="container mx-auto px-10 sm:px-28 header:px-60 space-y-10">
@@ -80,7 +80,7 @@ const AboutPage = () => {
             quality={100}
           />
         </div>
-      </section>
+      </section> */}
       <ScrollToTopButton />
     </div>
   );
