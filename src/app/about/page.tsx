@@ -56,7 +56,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>{' '}
-      {/* <BlueDivider polygon={false} />
+      <BlueDivider polygon={false} />
       <section className="flex flex-col w-full mt-10">
         <div className="flex flex-col items-center justify-center text-center space-y-10">
           <div className="container mx-auto px-10 sm:px-28 header:px-60 space-y-10">
@@ -64,11 +64,11 @@ const AboutPage = () => {
               Ο ΧΩΡΟΣ ΜΟΥ
             </h1>
             <p className="text-balance">
-              Στο θεραπευτικό γραφείο, έχω δημιουργήσει έναν ζεστό και φιλόξενο
-              χώρο όπου ο καθένας μπορεί να βρει ηρεμία και ασφάλεια. Εδώ,
-              μπορείτε να χαλαρώσετε και να αφεθείτε, γνωρίζοντας ότι βρίσκεστε
-              σε ένα περιβάλλον γεμάτο κατανόηση και υποστήριξη, με στόχο την
-              προώθηση της ολιστικής σας ευεξίας και ισορροπίας.
+              Ο στόχος μου ήταν να δημιουργήσω έναν απλό, ζεστό και φιλόξενο
+              χώρο, όπου ο κάθε άνθρωπος να μπορεί να νιώσει ηρεμία και
+              ασφάλεια. Παράλληλα, μέσα σε ένα περιβάλλον κατανόησης και
+              υποστήριξης, μπορούμε να ασχοληθούμε με ό,τι είναι σημαντικό για
+              εσάς.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ const AboutPage = () => {
             quality={100}
           />
         </div>
-      </section> */}
+      </section>
       <ScrollToTopButton />
     </div>
   );
