@@ -28,7 +28,7 @@ const sliderData: SliderDataType[] = [
   },
   {
     id: 3,
-    title: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
+    title: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚH ΣΥΜΒΟΥΛΕΥΤΙΚΗ',
     url: transpersonalCoaching,
   },
   {

@@ -39,7 +39,7 @@ const therapyTools: therapyTool[] = [
   },
   {
     id: 3,
-    title: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΟ COACHING',
+    title: 'TRANSPERSONAL COACHING/ΥΠΕΡΠΡΟΣΩΠΙΚΗ ΣΥΜΒΟΥΛΕΥΤΙΚΗ',
     nameId: 'transpersonal-coaching',
     image: transpersonalCoaching,
     descriptions: [

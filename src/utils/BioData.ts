@@ -25,7 +25,7 @@ const bioData: BioDataItem[] = [
   {
     title: 'Η ΙΔΙΟΤΗΤΑ ΜΟΥ',
     descriptions: [
-      'Ολιστικός Coach - Ψυχολογίας Dip HC (Diploma in Holistic – Integrative Coaching Psychology). Πιστοποιημένος από δύο παγκόσμιους οργανισμούς, την International Society for Coaching Psychology (ISCP) και την International Association of Coaches, Therapists & Mentors (IACTM). Είναι μια εκπαίδευση βασισμένη πρωτίστως στην προπονητική ψυχολογία (coaching psychology), ένας σχετικά νέος κλάδος της ακαδημαϊκής μεταπτυχιακής ψυχολογίας. Επιπλέον, διαθέτω τις πιστοποιήσεις «Holistic Counseling & Coaching Skills with Mindfulness & Expressive Arts Therapy» και «Foundation Level Hypnotherapy».',
+      'Ολιστικός - Συνθετικός Coach Ψυχολογίας Dip HC (Diploma in Holistic – Integrative Coaching Psychology). Πιστοποιημένος από δύο παγκόσμιους οργανισμούς, την International Society for Coaching Psychology (ISCP) και την International Association of Coaches, Therapists & Mentors (IACTM). Είναι μια εκπαίδευση βασισμένη πρωτίστως στην προπονητική ψυχολογία (coaching psychology), ένας σχετικά νέος κλάδος της ακαδημαϊκής μεταπτυχιακής ψυχολογίας. Επιπλέον, διαθέτω τις πιστοποιήσεις «Holistic Counseling & Coaching Skills with Mindfulness & Expressive Arts Therapy» και «Foundation Level Hypnotherapy».',
     ],
     color: '#A8C3A7',
   },
