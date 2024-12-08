@@ -34,11 +34,10 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
 
   return (
     <header
-      className={`items-center h-full bg-sky-100 sticky top-0 z-[1990] transition-shadow duration-200 ${
-        isScrolled ? 'shadow-xl' : 'shadow-none'
-      }`}
+      className={`items-center h-full bg-sky-100 sticky top-0 z-[1990] transition-shadow duration-200 ${isScrolled ? 'shadow-xl' : 'shadow-none'
+        }`}
     >
-      <div className="w-full py-5 container mx-auto px-10 justify-center flex flex-row sm:px-28 header:flex-row header:px-60 items-center gap-10 min-w-fit">
+      <div className="py-5 w-full px-10 justify-center flex flex-row sm:px-28 header:px-60 items-center gap-10">
         <div className="flex flex-row gap-5 w-full items-center justify-end md:justify-between">
           <div className="flex flex-row w-full items-center justify-center sm:justify-end lg:justify-start">
             <Link href="/">
@@ -70,9 +69,8 @@ const Navbar = ({ linkItems, toggleSideBar, isOpen }: NavBarProps) => {
           </ul>
         </nav>
         <div
-          className={`flex items-center lg:hidden default-transition ${
-            isOpen ? 'hidden' : 'visible'
-          }`}
+          className={`flex items-center lg:hidden default-transition ${isOpen ? 'hidden' : 'visible'
+            }`}
         >
           <BurgerButton
             isOpen={isOpen}

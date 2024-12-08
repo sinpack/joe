@@ -5,12 +5,71 @@ import sliderData from '../utils/sliderData';
 import Image from 'next/image';
 import holistic from '../../public/holistic2.jpg';
 import NavigationButton from './components/Buttons/NavigationButton';
+import {
+  FiHeart,
+  FiHelpCircle,
+  FiUsers,
+  FiTrendingUp,
+  FiUnlock,
+  FiCompass,
+} from "react-icons/fi";
+import {
+  FaSmileBeam,
+  FaBriefcase,
+  FaRegGrinBeamSweat,
+} from "react-icons/fa";
+import { HiOutlineCheckCircle } from "react-icons/hi";
+import { FcApproval } from "react-icons/fc";
+import { FaWeightScale } from "react-icons/fa6";
+import { GiSmokingFinger } from "react-icons/gi";
+
 
 export default function Home() {
   const OPTIONS: EmblaOptionsType = {
     dragFree: true,
     align: 'center',
     watchResize: true,
+  };
+
+  const items = [
+    { title: "Μείωση του άγχους", icon: <FiHeart /> },
+    { title: "Διακοπή καπνίσματος", icon: <GiSmokingFinger size="30" color='gray' /> },
+    { title: "Απώλεια βάρους", icon: <FaWeightScale size="30" color='gray' /> },
+    { title: "Επίτευξη προσωπικών / επαγγελματικών στόχων", icon: <HiOutlineCheckCircle /> },
+    { title: "Αντιμετώπιση προβλημάτων", icon: <FiHelpCircle /> },
+    { title: "Θέματα σχέσεων", icon: <FiUsers /> },
+    { title: "Αύξηση αυτοπεποίθησης – αυτοεκτίμησης", icon: <FaSmileBeam /> },
+    { title: "Αλλαγή καριέρας", icon: <FaBriefcase /> },
+    { title: "Αυτοβελτίωση – προσωπική εξέλιξη", icon: <FiTrendingUp /> },
+    { title: "Περιοριστικές πεποιθήσεις", icon: <FiUnlock /> },
+    { title: "Συναισθηματική διαχείριση", icon: <FaRegGrinBeamSweat /> },
+    { title: "Εύρεση εσωτερικού σκοπού", icon: <FiCompass /> },
+  ];
+
+  const FeaturesSection = () => {
+    return (
+      <section className="w-full py-20 bg-gradient-to-b from-sky-50 to-slate-300  ">
+        <div className='flex flex-col'>
+          <div className="text-center mb-24">
+            <h1 className="font-bold text-grey-600 tracking-normal">
+              Με τι μπορούμε να ασχοληθούμε
+            </h1>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 md:px-20 lg:px-20 xl:px-60">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <div className='flex w-fit items-center justify-center'>
+                  <FcApproval size="30" />
+                </div>
+                <h4 className='text-gray-600 font-semibold'>{item.title}</h4>
+              </div>
+            ))}
+          </div></div>
+      </section>
+    );
   };
 
   return (
@@ -65,7 +124,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto py-40 px-4">
+      <FeaturesSection />
+      <section className="w-full py-40 px-4 bg-gradient-to-b from-slate-300 to-sky-50">
         <div className="flex flex-col justify-center text-center px-2.5 md:px-40 lg:px-60 space-y-5">
           <h2 className="text-2xl md:text-3xl font-bold underline">
             Υπηρεσίες - Θεραπείες{' '}
