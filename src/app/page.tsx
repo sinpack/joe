@@ -48,12 +48,11 @@ export default function Home() {
 
   const FeaturesSection = () => {
     return (
-      <section className="w-full py-20 bg-gradient-to-b from-sky-50 to-slate-300  ">
+      <section className="w-full py-20 bg-[#FEEBE7] ">
         <div className='flex flex-col'>
           <div className="text-center mb-24">
-            <h1 className="font-bold text-grey-600 tracking-normal">
-              Με τι μπορούμε να ασχοληθούμε
-            </h1>
+            <h1 className="font-bold text-grey-600 tracking-wide underline">
+              ΜΕ ΤΙ ΜΠΟΡΟΥΜΕ ΝΑ ΑΣΧΟΛΗΘΟΥΜΕ            </h1>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 md:px-20 lg:px-20 xl:px-60">
             {items.map((item, index) => (
@@ -125,7 +124,7 @@ export default function Home() {
         </div>
       </section>
       <FeaturesSection />
-      <section className="w-full py-40 px-4 bg-gradient-to-b from-slate-300 to-sky-50">
+      <section className="w-full py-40 px-4 bg-gradient-to-b from-[#FEEBE7] to-sky-50">
         <div className="flex flex-col justify-center text-center px-2.5 md:px-40 lg:px-60 space-y-5">
           <h2 className="text-2xl md:text-3xl font-bold underline">
             Υπηρεσίες - Θεραπείες{' '}
