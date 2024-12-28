@@ -7,7 +7,7 @@ import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
 import HolisticCard from '../holistic-integrative-coaching/HolisticCard';
 import BlueDivider from '../components/BlueDivider';
-import officeImage from '../../../public/images/office_image.webp';
+import officeImage from '../../../public/images/office_joe.webp';
 
 export const metadata: Metadata = {
   title: 'Βιογραφικό Γιώργου Αντωνόπουλου',
@@ -56,8 +56,8 @@ const AboutPage = () => {
           </div>
         </div>
       </section>{' '}
-      {/* <BlueDivider polygon={false} />
-      <section className="flex flex-col w-full mt-10">
+      <BlueDivider polygon={false} />
+      <section className="flex flex-col w-full mt-20">
         <div className="flex flex-col items-center justify-center text-center space-y-10">
           <div className="container mx-auto px-10 sm:px-28 header:px-60 space-y-10">
             <h1 className="text-center font-bold tracking-widest">
@@ -71,16 +71,16 @@ const AboutPage = () => {
               εσάς.
             </p>
           </div>
-
           <Image
             src={officeImage}
             alt="Background"
             layout="cover"
             objectFit="responsive"
             quality={100}
+            className='rounded-sm'
           />
         </div>
-      </section> */}
+      </section>
       <ScrollToTopButton />
     </div>
   );
