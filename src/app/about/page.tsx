@@ -74,10 +74,8 @@ const AboutPage = () => {
           <Image
             src={officeImage}
             alt="Background"
-            layout="cover"
-            objectFit="responsive"
             quality={100}
-            className='rounded-sm'
+            className='rounded-sm w-[70%] max-w-[70%] mx-auto'
           />
         </div>
       </section>
