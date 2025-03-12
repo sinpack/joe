@@ -196,7 +196,7 @@ const ArticlesList = () => {
               </LoadingComponent>
               <div className="flex flex-col mt-4 w-full justify-between flex-grow">
                 <p
-                  className="text-gray-700 mb-4 break-words first-letter:text-7xl first-letter:font-bold first-letter:uppercase"
+                  className="text-gray-700 mb-4 break-words text-justify first-letter:text-7xl first-letter:font-bold first-letter:uppercase"
                 >
                   {article.preview}
                 </p>

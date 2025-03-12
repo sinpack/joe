@@ -109,7 +109,7 @@ export default function ArticleClientComponent({
     <section className="flex flex-col container mx-auto px-5 sm:px-28 lg:px-60 py-10 bg-sky-50">
       <div className="flex flex-col justify-center items-center mb-10 space-y-5">
         <h1
-          className="text-2xl font-bold py-10 tracking-normal"
+          className="text-sm text-center md:text-balance md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold py-10 tracking-normal"
           suppressHydrationWarning
         >
 
@@ -137,7 +137,7 @@ export default function ArticleClientComponent({
           </div>
         </div>
 
-        <p className="text-gray-700 mb-4">
+        <p className="text-gray-700 mb-4 text-justify">
 
           {articleData?.description}
         </p>
