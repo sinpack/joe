@@ -1,4 +1,4 @@
-import { Article } from '../../articleInterface';
+import { Article, articles, HardCodedArticle } from '../../articleInterface';
 import ArticleClientComponent from './ArticleClientComponent';
 import { Metadata } from 'next';
 
@@ -12,43 +12,42 @@ export const metadata: Metadata = {
 export default function ArticlePage({
   params,
 }: {
-  params: { title: string; id: string };
+  params: { title: string, id: string };
 }) {
-  const { title, id } = params;
 
+  const articleData = articles.find(article => article.id.toString() === params.id)
   return (
     <section>
-      <ArticleClientComponent articleId={id} />
+      <ArticleClientComponent articleData={articleData} />
     </section>
   );
 }
 
 // Generate static params for both title and id
 export async function generateStaticParams() {
-  const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
-  const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-  const res = await fetch(
-    `${STRAPI_API_URL}/api/articles/?populate=*&sort=publishedAt:desc`,
-    {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  // const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+  // const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+  // const res = await fetch(
+  //   `${STRAPI_API_URL}/api/articles/?populate=*&sort=publishedAt:desc`,
+  //   {
+  //     method: 'GET',
+  //     headers: {
+  //       Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+  //       'Content-Type': 'application/json',
+  //     },
+  //   }
+  // );
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch articles');
-  }
+  // if (!res.ok) {
+  //   throw new Error('Failed to fetch articles');
+  // }
 
-  const data = await res.json();
-  const articles: Article[] = data.data;
+  // const data = await res.json();
+  // const articles: Article[] = data.data;
 
   // Generate paths from article titles and IDs
-  return articles.map((article) => {
-    const title = article.attributes.title;
-    const id = article.id.toString();
-    return { title: title, id: id };
+  return articles.map((article: HardCodedArticle) => {
+    const { title, id } = article;
+    return { title: title, id: id.toString() };
   });
 }

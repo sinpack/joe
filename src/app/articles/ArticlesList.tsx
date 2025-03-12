@@ -2,10 +2,10 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import PhotoCard from '../components/PhotoCard';
-import { Article, ArticlesResponse } from './articleInterface';
+import { Article, articles, ArticlesResponse, HardCodedArticle } from './articleInterface';
 import { formatDate } from '../../utils/formatDate';
 import { UseQueryResult, useQuery } from '@tanstack/react-query';
-import { fetchArticlesData } from './ArticlesData';
+// import { fetchArticlesData } from './ArticlesData';
 import LoadingComponent from '../components/LoadingComponent';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import slugify from 'slugify';
@@ -15,26 +15,26 @@ const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const ArticlesList = () => {
   const [visibleArticlesCount, setVisibleArticlesCount] = useState(3);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
-  const [allArticles, setAllArticles] = useState<Article[]>([]);
+  const [allArticles, setAllArticles] = useState<HardCodedArticle[]>([]);
   const [allVisible, setAllVisible] = useState(false);
-  const queryResult: UseQueryResult<ArticlesResponse> = useQuery({
-    queryKey: ['articles'],
-    queryFn: () => fetchArticlesData(),
-  });
+  // const queryResult: UseQueryResult<ArticlesResponse> = useQuery({
+  //   queryKey: ['articles'],
+  //   queryFn: () => fetchArticlesData(),
+  // });
 
-  const { data, isLoading, isError } = queryResult;
+  // const { data, isLoading, isError } = queryResult;
 
-  useEffect(() => {
-    if (data && data.data) {
-      setAllArticles(data.data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data && data.data) {
+  //     setAllArticles(data.data);
+  //   }
+  // }, [data]);
 
   const sortArticles = useCallback(
-    (articles: Article[], order: 'asc' | 'desc') => {
+    (articles: HardCodedArticle[], order: 'asc' | 'desc') => {
       return [...articles].sort((a, b) => {
-        const dateA = new Date(a.attributes.date).getTime();
-        const dateB = new Date(b.attributes.date).getTime();
+        const dateA = new Date(a.publishedAt).getTime();
+        const dateB = new Date(b.publishedAt).getTime();
         return order === 'desc' ? dateB - dateA : dateA - dateB;
       });
     },
@@ -42,90 +42,90 @@ const ArticlesList = () => {
   );
 
   const sortedArticles = useMemo(() => {
-    if (allArticles.length === 0) {
-      return [];
-    }
+    // if (allArticles.length === 0) {
+    //   return [];
+    // }
 
-    const sorted = sortArticles(allArticles, sortOrder);
+    const sorted = sortArticles(articles, sortOrder);
     return sorted.slice(0, visibleArticlesCount);
-  }, [allArticles, sortOrder, visibleArticlesCount, sortArticles]);
+  }, [sortOrder, visibleArticlesCount, sortArticles]);
 
-  const mockArticles: Article[] = useMemo(() => {
-    const mockArticleItem: Article = {
-      id: 0,
-      attributes: {
-        title: 'Loading Title',
-        description: 'Loading Description',
-        date: '2024-07-24T15:57:08.890Z',
-        createdAt: '2024-07-24T15:57:08.890Z',
-        updatedAt: '2024-07-24T15:57:08.890Z',
-        publishedAt: '2024-07-24T15:57:08.890Z',
-        preview: 'Loading Preview',
-        image: {
-          data: {
-            id: 0,
-            attributes: {
-              name: 'loading.jpg',
-              alternativeText: null,
-              caption: null,
-              width: 500,
-              height: 300,
-              formats: {
-                thumbnail: {
-                  name: 'thumbnail_loading.jpg',
-                  hash: 'thumbnail_loading',
-                  ext: '.jpg',
-                  mime: 'image/jpeg',
-                  path: null,
-                  width: 150,
-                  height: 90,
-                  size: 2.5,
-                  sizeInBytes: 2500,
-                  url: '/uploads/',
-                },
-              },
-              hash: 'loading',
-              ext: '.jpg',
-              mime: 'image/jpeg',
-              size: 5,
-              url: '/uploads/',
-              previewUrl: null,
-              provider: 'local',
-              provider_metadata: null,
-              createdAt: '2024-07-24T15:57:08.890Z',
-              updatedAt: '2024-07-24T15:57:08.890Z',
-            },
-          },
-        },
-      },
-    };
+  // const mockArticles: Article[] = useMemo(() => {
+  //   const mockArticleItem: Article = {
+  //     id: 0,
+  //     attributes: {
+  //       title: 'Loading Title',
+  //       description: 'Loading Description',
+  //       date: '2024-07-24T15:57:08.890Z',
+  //       createdAt: '2024-07-24T15:57:08.890Z',
+  //       updatedAt: '2024-07-24T15:57:08.890Z',
+  //       publishedAt: '2024-07-24T15:57:08.890Z',
+  //       preview: 'Loading Preview',
+  //       image: {
+  //         data: {
+  //           id: 0,
+  //           attributes: {
+  //             name: 'loading.jpg',
+  //             alternativeText: null,
+  //             caption: null,
+  //             width: 500,
+  //             height: 300,
+  //             formats: {
+  //               thumbnail: {
+  //                 name: 'thumbnail_loading.jpg',
+  //                 hash: 'thumbnail_loading',
+  //                 ext: '.jpg',
+  //                 mime: 'image/jpeg',
+  //                 path: null,
+  //                 width: 150,
+  //                 height: 90,
+  //                 size: 2.5,
+  //                 sizeInBytes: 2500,
+  //                 url: '/uploads/',
+  //               },
+  //             },
+  //             hash: 'loading',
+  //             ext: '.jpg',
+  //             mime: 'image/jpeg',
+  //             size: 5,
+  //             url: '/uploads/',
+  //             previewUrl: null,
+  //             provider: 'local',
+  //             provider_metadata: null,
+  //             createdAt: '2024-07-24T15:57:08.890Z',
+  //             updatedAt: '2024-07-24T15:57:08.890Z',
+  //           },
+  //         },
+  //       },
+  //     },
+  //   };
 
-    return new Array(3).fill(mockArticleItem).map((item, index) => ({
-      ...item,
-      id: index + 1,
-      attributes: {
-        ...item.attributes,
-        image: {
-          ...item.attributes.image,
-          data: {
-            ...item.attributes.image?.data,
-            id: index + 1,
-          },
-        },
-      },
-    }));
-  }, []);
+  //   return new Array(3).fill(mockArticleItem).map((item, index) => ({
+  //     ...item,
+  //     id: index + 1,
+  //     attributes: {
+  //       ...item.attributes,
+  //       image: {
+  //         ...item.attributes.image,
+  //         data: {
+  //           ...item.attributes.image?.data,
+  //           id: index + 1,
+  //         },
+  //       },
+  //     },
+  //   }));
+  // }, []);
 
-  const articles = useMemo(() => {
-    if (isLoading) {
-      return mockArticles;
-    }
+  // const articles = useMemo(() => {
+  //   if (isLoading) {
+  //     return mockArticles;
+  //   }
 
-    return sortedArticles.length > 0 ? sortedArticles : mockArticles;
-  }, [isLoading, sortedArticles, mockArticles]);
+  //   return sortedArticles.length > 0 ? sortedArticles : mockArticles;
+  // }, [isLoading, sortedArticles, mockArticles]);
 
   const handleViewAll = () => {
-    setVisibleArticlesCount(allArticles.length);
+    setVisibleArticlesCount(articles.length);
     setAllVisible(true);
   };
 
@@ -134,11 +134,13 @@ const ArticlesList = () => {
   };
 
   const shouldShowViewAll =
-    allArticles.length > visibleArticlesCount && !allVisible;
+    articles.length > visibleArticlesCount && !allVisible;
 
-  if (isError) {
-    return <ServerError />;
-  }
+  // if (isError) {
+  //   return <ServerError />;
+  // }
+
+
 
   return (
     <section className="mx-auto container px-4 sm:px-6 lg:px-8">
@@ -167,11 +169,11 @@ const ArticlesList = () => {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 ">
-        {articles.map((article) => (
+        {sortedArticles.map((article) => (
           <Link
             key={article.id}
             href={`/articles/${encodeURIComponent(
-              slugify(article?.attributes.title, {
+              slugify(article.title, {
                 lower: true,
               })
             )}/${encodeURIComponent(article?.id.toString())}`}
@@ -179,14 +181,14 @@ const ArticlesList = () => {
           >
             <div className="flex flex-col w-full h-full items-center justify-center">
               <LoadingComponent
-                isLoading={isLoading}
+                isLoading={false}
                 height={200}
                 width={200}
                 isCentered
               >
                 <PhotoCard
-                  title={article.attributes.title}
-                  imageUrl={`${STRAPI_API_URL}/uploads/${article.attributes.image?.data?.attributes?.hash}${article.attributes.image?.data?.attributes?.ext}`}
+                  title={article.title}
+                  imageUrl={article.imageUrl}
                   roundClassName="rounded-lg"
                   cursor="cursor-pointer"
                   isTransformed={false}
@@ -195,25 +197,17 @@ const ArticlesList = () => {
               <div className="flex flex-col mt-4 w-full justify-between flex-grow">
                 <p
                   className="text-gray-700 mb-4 break-words first-letter:text-7xl first-letter:font-bold first-letter:uppercase"
-                  suppressHydrationWarning={true}
                 >
-                  <LoadingComponent
-                    isLoading={isLoading}
-                    height={50}
-                    isCentered
-                    width={200}
-                  >
-                    {article.attributes.preview}
-                  </LoadingComponent>
+                  {article.preview}
                 </p>
                 <div className="flex items-center justify-end text-sm text-gray-500">
                   <LoadingComponent
-                    isLoading={isLoading}
+                    isLoading={false}
                     height={20}
                     isCentered
                     width={100}
                   >
-                    <span>{formatDate(article?.attributes?.date)}</span>
+                    <span>{formatDate(article.publishedAt)}</span>
                   </LoadingComponent>
                 </div>
               </div>
@@ -222,7 +216,7 @@ const ArticlesList = () => {
         ))}
       </div>
 
-      {shouldShowViewAll && !isLoading && (
+      {shouldShowViewAll && (
         <div className="text-center mt-12">
           <button
             onClick={handleViewAll}
