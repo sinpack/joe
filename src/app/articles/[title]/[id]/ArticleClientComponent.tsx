@@ -137,14 +137,18 @@ export default function ArticleClientComponent({
           </div>
         </div>
 
-        <p className="text-gray-700 mb-4 text-justify">
 
-          {articleData?.description}
-        </p>
+        {articleData?.description.map((paragraph, index) => (
+          <p key={index} className="text-gray-700 mb-4 text-justify place-self-start">
+            {paragraph}
+            <br />
+          </p>
+        ))}
+
         <div className="flex flex-row w-full items-center justify-end space-x-2.5">
           <p className="tracking-tight"> Δημοσιεύτηκε στις </p>
           <p
-            className=" text-sm text-gray-500 font-bold tracking-tight underline"
+            className=" text-md text-gray-500 font-bold tracking-tight"
           >
 
             {formatDate(articleData?.publishedAt)}
