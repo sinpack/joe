@@ -69,7 +69,7 @@ const CustomFooter = () => {
               </svg>
             </Link>
             <Link
-              href="https://www.instagram.com/georgios_antonopoulos_holistic/"
+              href="https://www.instagram.com/g.antonop_coaching_psychology/"
               title="instagram"
               target="_blank"
               aria-label="instagram"
