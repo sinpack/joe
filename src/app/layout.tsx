@@ -8,6 +8,8 @@ import { ReactQueryProvider } from './react-query-provider';
 import { Metadata } from 'next';
 import faviconIcon from '../app/icon.ico';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
+
 
 export const metadata: Metadata = {
   title: {
@@ -155,6 +157,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
           <ReactQueryProvider>{children}</ReactQueryProvider>
         </SkeletonWrapper>
         <CustomFooter />
+        <Analytics />
       </body>
     </html>
   );
