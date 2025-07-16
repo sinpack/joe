@@ -43,7 +43,6 @@ export default function Home() {
     { title: "Αυτοβελτίωση – προσωπική εξέλιξη", icon: <FiTrendingUp /> },
     { title: "Περιοριστικές πεποιθήσεις", icon: <FiUnlock /> },
     { title: "Συναισθηματική διαχείριση", icon: <FaRegGrinBeamSweat /> },
-    { title: "Εύρεση εσωτερικού σκοπού", icon: <FiCompass /> },
   ];
 
   const FeaturesSection = () => {
@@ -105,10 +104,10 @@ export default function Home() {
         <div className="flex flex-col items-center justify-between text-center container mx-auto  space-y-5 relative z-10 h-full">
           <div className="flex flex-col space-y-5 px-2.5 md:px-40 lg:px-60 lg:mt-10">
             <h1 className="font-bold text-grey-600 mt-5 tracking-normal">
-              Holistic - Integrative Coaching{' '}
+              Holistic - Integrative Coaching Psychology{' '}
             </h1>
             <h3 className="mb-10 text-grey-600 font-semibold text-balance">
-              Το holistic - integrative coaching εστιάζει στην ισορροπία μεταξύ
+              Το holistic - integrative coaching psychology εστιάζει στην ισορροπία μεταξύ
               σώματος, νου, συναισθήματος και πνεύματος, προσφέροντας μια
               σφαιρική προσέγγιση για την αντιμετώπιση των προκλήσεων και την
               επίτευξη προσωπικών/επαγγελματικών στόχων.
@@ -130,7 +129,7 @@ export default function Home() {
             Υπηρεσίες - Θεραπείες{' '}
           </h2>
           <h3 className="mb-10 text-pretty">
-            Ως holistic - integrative coach, προσφέρω μια σειρά υπηρεσιών
+            Ως holistic - integrative psychology coach, προσφέρω μια σειρά υπηρεσιών
             προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους. Μαζί,
             μπορούμε να εργαστούμε για την ευημερία σας.
             <br className="lg:hidden" />

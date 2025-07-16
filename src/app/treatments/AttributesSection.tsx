@@ -39,12 +39,12 @@ const AttributesSection = () => {
             <div
               key={index}
               className={clsx({
-                'sm:border-b-0 sm:border-r-0 md:border-r-2 lg:border-r-2':
+                'sm:border-b-0 sm:border-r-0 md:border-r-1':
                   index === 0,
-                'lg:border-l-0 md:border-x-0 md:border-b-0 sm:-ml-[1px]':
+                'lg:border-l-0 md:border-x-0 md:border-b-0 sm:-ml-[1px] md:ml-0':
                   index === 1,
-                'lg:border-x-0': index === 2,
-                'md:col-span-1 md:col-start-2 lg:col-start-4 md:-mx-[1px] md:-mt-[1px] sm:border-l-0 sm:border-t-0':
+                'lg:border-x-0 sm:-mt-[1px] md:mt-0': index === 2,
+                'md:col-span-1 md:col-start-2 lg:col-start-4 md:-mx-[1px] md:-mt-[1px] lg:mt-0 sm:border-l-0 sm:border-t-0':
                   index === 3,
                 'border-gray-300 md:border sm:border lg:border': true,
               })}

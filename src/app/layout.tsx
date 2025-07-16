@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     // English keywords
     'holistic',
     'coaching',
-    'holistic - integrative coaching',
+    'holistic - integrative coaching psychology',
     'georgios antonopoulos',
     'giorgos antonopoulos',
     'GEORGIOS ANTONOPOULOS',

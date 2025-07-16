@@ -18,9 +18,8 @@ const TitleCard: React.FC<TitleCardProps> = ({
   vertical,
   shape = 'circle',
 }) => {
-  const circularClipPath = `radial-gradient(circle at ${
-    vertical ? 'center bottom' : 'center right'
-  }, transparent 10%, black 10%)`;
+  const circularClipPath = `radial-gradient(circle at ${vertical ? 'center bottom' : 'center right'
+    }, transparent 10%, black 10%)`;
 
   const triangularClipPath = vertical
     ? 'polygon(50% 0%, 100% 0, 100% 100%, 70% 100%, 50% 95%, 30% 100%, 0 100%, 0% 43%, 0 0)'
@@ -29,15 +28,15 @@ const TitleCard: React.FC<TitleCardProps> = ({
   const clipPathStyle =
     shape === 'circle'
       ? {
-          WebkitMask: circularClipPath,
-          WebkitMaskComposite: 'xor' as const,
-          mask: circularClipPath,
-          maskComposite: 'xor' as const,
-        }
+        WebkitMask: circularClipPath,
+        WebkitMaskComposite: 'xor' as const,
+        mask: circularClipPath,
+        maskComposite: 'xor' as const,
+      }
       : {
-          WebkitClipPath: triangularClipPath,
-          clipPath: triangularClipPath,
-        };
+        WebkitClipPath: triangularClipPath,
+        clipPath: triangularClipPath,
+      };
 
   const style = {
     backgroundColor: backgroundColor || 'transparent',

@@ -21,7 +21,7 @@ const Treatments = () => {
           <div className="flex flex-col items-center gap-5 h-auto max-w-xl w-full">
             <div className="flex flex-col justify-start w-full">
               <p className="text-center whitespace-normal">
-                Ως holistic - integrative coach, προσφέρω μια σειρά υπηρεσιών
+                Ως holistic - integrative psychology coach, προσφέρω μια σειρά υπηρεσιών
                 προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους. Μαζί,
                 μπορούμε να εργαστούμε για την ευημερία σας.
               </p>

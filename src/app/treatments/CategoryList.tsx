@@ -17,7 +17,6 @@ const categories = [
   'Περιοριστικές πεποιθήσεις',
   'Συναισθηματική διαχείριση',
   'Αντιμετώπιση προβλημάτων',
-  'Εύρεση εσωτερικού σκοπού',
 ];
 
 const CategoryList: React.FC = () => {
@@ -34,7 +33,7 @@ const CategoryList: React.FC = () => {
             key={index}
             className="flex px-2.5 py-4 min-w-fit bg-sky-100 first:rounded-t-xl border-b last:rounded-b-xl border-b-gray-300 items-center"
           >
-            {}
+            { }
             <div className="flex-shrink-0">
               <Image
                 src={bulletImage4}
