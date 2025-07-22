@@ -9,7 +9,7 @@ import bulletPoint4 from '../../../public/bullet4.png';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Holistic Coaching Γιώργου Αντωνόπουλου',
+  title: 'Holistic - Integrative Coaching Psychology Γιώργου Αντωνόπουλου',
 };
 
 const HolisticPage = () => {
