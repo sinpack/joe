@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 const Treatments = () => {
   return (
     <>
-      <section className="py-10 bg-sky-50 mb-5">
-        <div className="flex mb-10 place-self-center lg:place-self-end mt-10 lg:mr-40">
+      <section className="flex flex-col py-10 bg-sky-50 mb-5">
+        <div className="flex w-fit mb-10 place-self-center lg:place-self-end mt-10 lg:mr-40">
           <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
         </div>
         <div className="flex flex-col items-center justify-start space-y-5 container mx-auto px-5 lg:px-20">

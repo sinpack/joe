@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const HolisticPage = () => {
   return (
-    <section className="bg-sky-50 ">
+    <section className="bg-sky-50 flex flex-col">
       <div className="flex place-self-center lg:place-self-end lg:mr-40 mt-20">
         <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
       </div>
