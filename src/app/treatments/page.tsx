@@ -16,10 +16,13 @@ export const metadata: Metadata = {
 const Treatments = () => {
   return (
     <>
-      <section className="container mx-auto px-5 lg:px-20 py-10 bg-sky-50 mb-5">
-        <div className="flex flex-col items-center justify-start space-y-5">
+      <section className="py-10 bg-sky-50 mb-5">
+        <div className="flex mb-10 place-self-center lg:place-self-end mt-10 lg:mr-40">
+          <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
+        </div>
+        <div className="flex flex-col items-center justify-start space-y-5 container mx-auto px-5 lg:px-20">
           <div className="flex flex-col items-center gap-5 h-auto max-w-xl w-full">
-            <div className="flex flex-col justify-start w-full">
+            <div className="flex flex- lg:flex-col justify-start w-fit">
               <p className="text-center whitespace-normal">
                 Ως holistic - integrative psychology coach, προσφέρω μια σειρά υπηρεσιών
                 προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους. Μαζί,

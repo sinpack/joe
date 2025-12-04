@@ -8,6 +8,7 @@ import { Metadata } from 'next';
 import HolisticCard from '../holistic-integrative-coaching/HolisticCard';
 import BlueDivider from '../components/BlueDivider';
 import officeImage from '../../../public/images/office_joe.webp';
+import NavigationButton from '../components/Buttons/NavigationButton';
 
 export const metadata: Metadata = {
   title: 'Βιογραφικό Γιώργου Αντωνόπουλου',
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <div className="bg-sky-50">
+      <div className="flex place-self-center lg:place-self-end lg:mr-40 mt-20">
+        <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
+      </div>
       <section className="py-20 container mx-auto px-10 sm:px-28 header:px-60">
         <div className="flex flex-col items-center ">
           <h1 className="text-center font-bold mb-10 tracking-wider">ΠΡΟΦΙΛ</h1>

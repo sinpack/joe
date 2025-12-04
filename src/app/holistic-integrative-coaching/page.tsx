@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 import TherapyToolCard from '../treatments/TherapyToolCard';
 import bulletPoint4 from '../../../public/bullet4.png';
 import Image from 'next/image';
+import NavigationButton from '../components/Buttons/NavigationButton';
 
 export const metadata: Metadata = {
   title: 'Holistic - Integrative Coaching Psychology Γιώργου Αντωνόπουλου',
@@ -15,10 +16,14 @@ export const metadata: Metadata = {
 const HolisticPage = () => {
   return (
     <section className="bg-sky-50 ">
+      <div className="flex place-self-center lg:place-self-end lg:mr-40 mt-20">
+        <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
+      </div>
       <div className="flex flex-col items-center justify-center lg:whitespace-nowrap py-20 mx-auto px-5 sm:px-28 header:px-60 container">
         <h1 className="flex w-fit justify-center items-center text-center tracking-wider">
           HOLISTIC - INTEGRATIVE COACHING PSYCHOLOGY
         </h1>
+
       </div>
       <BlueDivider polygon />
       <div className="flex justify-center py-10 bg-sky-50 container mx-auto px-5 sm:px-28 header:px-60">

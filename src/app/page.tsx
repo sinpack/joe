@@ -73,8 +73,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center w-full bg-sky-50">
       <HeroSection />
-      <section className="container mx-auto py-40 bg-sky-50 ">
+      <section className="container mx-auto pb-40 pt-20 bg-sky-50 ">
         <div className="flex flex-col justify-center text-center px-2.5 md:px-40 lg:px-60">
+          <div className="flex place-self-center pb-20">
+            <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
+          </div>
           <h2 className="mt-5 text-balance">
             Ονομάζομαι Γεώργιος Αντωνόπουλος και είμαι πιστοποιημένος Ολιστικός
             - Συνθετικός Coach, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις
