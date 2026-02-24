@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import bioData from '../../utils/BioData';
 import TherapyToolCard from '../treatments/TherapyToolCard';
-import profilePic from '../../../public/images/profile-ai.png';
+import profilePic from '../../../public/images/logo_new.webp';
 import ScrollToTopButton from '../components/Buttons/ScrollToTopButton';
 import { Metadata } from 'next';
 import HolisticCard from '../holistic-integrative-coaching/HolisticCard';
@@ -22,11 +22,12 @@ const AboutPage = () => {
       <section className="py-20 container mx-auto px-10 sm:px-28 header:px-60">
         <div className="flex flex-col items-center ">
           <h1 className="text-center font-bold mb-10 tracking-wider">ΠΡΟΦΙΛ</h1>
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center items-center rounded-full mb-8">
             <Image
               src={profilePic}
               alt="profile"
-              className="rounded-3xl shadow-xl"
+              className="rounded-full place-self-center  "
+              style={{ clipPath: 'circle(43% at 51% 50%)' }}
               width={300}
               quality={100}
               priority
