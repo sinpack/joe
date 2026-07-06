@@ -39,12 +39,12 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
           <div className="mb-20 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
-              Με τι μπορούμε να ασχοληθούμε
+            <p className="text-sm font-semibold tracking-[0.24em] text-amber-700">
+              ΜΕ ΤΙ ΜΠΟΡΟΥΜΕ ΝΑ ΑΣΧΟΛΗΘΟΥΜΕ
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-800 md:text-4xl">
-              Περιοχές υποστήριξης
+              Τομείς Υποστήριξης
             </h2>
           </div>
 
@@ -78,7 +78,7 @@ export default function Home() {
 
           <h2 className="text-balance text-xl leading-9 text-slate-700 md:text-2xl">
             Ονομάζομαι Γεώργιος Αντωνόπουλος και είμαι πιστοποιημένος Ολιστικός
-            - Συνθετικός Coach, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις
+            - Συνθετικός Coach Ψυχολογίας, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις
             Επιστήμες.
             <br className="lg:hidden" />
             <a href="/about" className="ml-2.5 text-base font-semibold text-blue-600">
@@ -136,8 +136,8 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col justify-center space-y-5 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
-            Υπηρεσίες
+          <p className="text-sm font-semibold tracking-[0.24em] text-amber-700">
+            ΥΠΗΡΕΣΙΕΣ
           </p>
 
           <h2 className="text-3xl font-semibold tracking-tight text-slate-800 md:text-4xl">

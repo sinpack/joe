@@ -59,12 +59,15 @@ export default function Contact() {
           ))}
         </div>
       </div>
-
+      <TestimonialsCarousel
+        compact
+        className="bg-sky-50"
+      />
       <div className="container mx-auto z-10 flex w-full flex-col px-2.5 py-20">
         <DynamicMap />
       </div>
 
-      <TestimonialsCarousel className="bg-sky-50" />
+     
       <ScrollToTopButton />
     </section>
   )

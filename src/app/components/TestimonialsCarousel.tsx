@@ -14,6 +14,7 @@ type Testimonial = {
 
 type TestimonialsCarouselProps = {
     className?: string
+    compact?: boolean
 }
 
 const testimonials: Testimonial[] = [
@@ -69,11 +70,7 @@ const testimonials: Testimonial[] = [
     }
 ]
 
-function cn(...classes: Array<string | false | null | undefined>) {
-    return classes.filter(Boolean).join(' ')
-}
-
-function Stars({ rating }: { rating: number }) {
+function Stars({ rating, compact = false }: { rating: number; compact?: boolean }) {
     return (
         <div className="flex items-center gap-0.5">
             {Array.from({ length: 5 }).map((_, index) => (
@@ -81,8 +78,8 @@ function Stars({ rating }: { rating: number }) {
                     key={index}
                     icon="material-symbols:star-rounded"
                     className={index < rating ? 'text-amber-400' : 'text-neutral-200'}
-                    width={22}
-                    height={22}
+                    width={compact ? 18 : 22}
+                    height={compact ? 18 : 22}
                 />
             ))}
         </div>
@@ -100,7 +97,8 @@ function getInitials(name: string) {
 }
 
 export default function TestimonialsCarousel({
-    className
+    className,
+    compact = false
 }: TestimonialsCarouselProps) {
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
@@ -116,7 +114,7 @@ export default function TestimonialsCarousel({
                 delay: 6000,
                 stopOnInteraction: true,
                 stopOnMouseEnter: true,
-                stopOnFocusIn: true,
+                stopOnFocusIn: true
             })
         ]
     )
@@ -159,80 +157,120 @@ export default function TestimonialsCarousel({
     return (
         <section
             className={clsx(
-                'relative w-full overflow-hidden py-28',
+                'relative w-full overflow-hidden',
+                compact ? 'py-12' : 'py-28',
                 className
             )}
         >
-            <div className="pointer-events-none absolute inset-0 overflow-hidden ">
-                <div className="absolute left-1/2 top-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-amber-100/35 blur-[150px]" />
-                <div className="absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-white/45 blur-[150px]" />
-                <div className="absolute -right-40 top-24 h-[420px] w-[420px] rounded-full bg-sky-100/35 blur-[150px]" />
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                <div className="absolute left-1/2 top-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-amber-100/30 blur-[170px]" />
+                <div className="absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-white/35 blur-[170px]" />
+                <div className="absolute -right-40 top-24 h-[420px] w-[420px] rounded-full bg-sky-100/30 blur-[170px]" />
             </div>
 
-            <div className="relative z-10 mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
+            <div
+                className={clsx(
+                    'relative z-10 mx-auto w-full px-4 sm:px-6 lg:px-8',
+                    compact ? 'max-w-[1080px]' : 'max-w-[1180px]'
+                )}
+            >
                 <div className="mx-auto max-w-3xl text-center">
-                    <h2 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">
+                    <h2
+                        className={clsx(
+                            'font-semibold tracking-tight text-neutral-700',
+                            compact ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'
+                        )}
+                    >
                         Κριτικές Πελατών
                     </h2>
 
-                    <p className="mx-auto mt-5 text-base leading-7 text-neutral-600 md:text-lg">
+                    {!compact && (<p
+                        className={clsx(
+                            'mx-auto text-neutral-600',
+                            compact
+                                ? 'mt-3 text-sm leading-6 md:text-base'
+                                : 'mt-5 text-base leading-7 md:text-lg'
+                        )}
+                    >
                         Σχόλια ανθρώπων που δουλέψαμε μαζί και μοιράστηκαν την προσωπική
                         τους εμπειρία.
-                    </p>
+                    </p>)}
                 </div>
 
-                <div className="relative mt-14">
-                    <div
-                        ref={emblaRef}
-                        className="overflow-hidden py-6"
-                    >
-                        <div className="-ml-5 flex">
+                <div className={clsx('relative', compact ? 'mt-8' : 'mt-14')}>
+                    <div ref={emblaRef} className="overflow-hidden py-5">
+                        <div className={clsx('flex', compact ? '-ml-4' : '-ml-5')}>
                             {testimonials.map((testimonial) => (
                                 <div
                                     key={testimonial.name}
-                                    className={`min-w-0 flex-[0_0_100%] pl-5 md:flex-[0_0_50%] xl:flex-[0_0_33.333%]`}
+                                    className={clsx(
+                                        'min-w-0 flex-[0_0_100%] md:flex-[0_0_50%] xl:flex-[0_0_33.333%]',
+                                        compact ? 'pl-4' : 'pl-5'
+                                    )}
                                 >
                                     <article
-                                        className="
-        group
-        flex
-        h-full
-        min-h-[320px]
-        flex-col
-        rounded-[2rem]
-        bg-white/95
-        border
-        border-white/70
-        p-7
-        shadow-[0_10px_30px_rgba(15,23,42,0.06)]
-        transition-all
-        duration-300
-        hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]
-    "
+                                        className={clsx(
+                                            'group flex h-full flex-col rounded-[2rem] border border-white/70 bg-white/95 transition-all duration-300',
+                                            compact
+                                                ? 'min-h-[245px] p-5 shadow-[0_8px_22px_rgba(15,23,42,0.045)] hover:shadow-[0_12px_28px_rgba(15,23,42,0.055)]'
+                                                : 'min-h-[320px] p-7 shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]'
+                                        )}
                                     >
                                         <div className="flex items-center justify-between gap-4">
-                                            <Stars rating={testimonial.rating} />
+                                            <Stars rating={testimonial.rating} compact={compact} />
 
-                                            <div className="rounded-full border border-neutral-200 bg-white/80 px-3 py-1 text-xs font-medium text-neutral-500">
+                                            <div
+                                                className={clsx(
+                                                    'rounded-full border border-neutral-200 bg-white/80 font-medium text-neutral-500',
+                                                    compact ? 'px-2.5 py-0.5 text-[10px]' : 'px-3 py-1 text-xs'
+                                                )}
+                                            >
                                                 Google
                                             </div>
                                         </div>
 
-                                        <p className="mt-6 flex-1 text-base leading-8 text-neutral-700">
+                                        <p
+                                            className={clsx(
+                                                'flex-1 text-neutral-700',
+                                                compact
+                                                    ? 'mt-4 text-[14px] leading-6'
+                                                    : 'mt-6 text-base leading-8'
+                                            )}
+                                        >
                                             “{testimonial.text}”
                                         </p>
 
-                                        <div className="mt-8 flex items-center gap-4 border-t border-neutral-200/70 pt-6">
-                                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-semibold text-amber-800 ring-1 ring-amber-200/70">
+                                        <div
+                                            className={clsx(
+                                                'flex items-center gap-4 border-t border-neutral-200/70',
+                                                compact ? 'mt-5 pt-4' : 'mt-8 pt-6'
+                                            )}
+                                        >
+                                            <div
+                                                className={clsx(
+                                                    'flex shrink-0 items-center justify-center rounded-full bg-amber-100 font-semibold text-amber-800 ring-1 ring-amber-200/70',
+                                                    compact ? 'h-10 w-10 text-xs' : 'h-12 w-12 text-sm'
+                                                )}
+                                            >
                                                 {getInitials(testimonial.name)}
                                             </div>
 
                                             <div>
-                                                <p className="font-semibold text-neutral-950">
+                                                <p
+                                                    className={clsx(
+                                                        'font-semibold text-neutral-950',
+                                                        compact ? 'text-[15px]' : 'text-base'
+                                                    )}
+                                                >
                                                     {testimonial.name}
                                                 </p>
 
-                                                <p className="mt-1 text-sm text-neutral-500">
+                                                <p
+                                                    className={clsx(
+                                                        'text-neutral-500',
+                                                        compact ? 'mt-0.5 text-xs' : 'mt-1 text-sm'
+                                                    )}
+                                                >
                                                     Google Review
                                                 </p>
                                             </div>
@@ -247,22 +285,32 @@ export default function TestimonialsCarousel({
                         type="button"
                         onClick={scrollPrev}
                         aria-label="Previous testimonial"
-                        className="absolute -left-4 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/90 text-neutral-700 shadow-md shadow-black/10 backdrop-blur transition duration-300 hover:-translate-x-0.5 hover:bg-white md:flex"
+                        className={clsx(
+                            'absolute -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/90 text-neutral-700 shadow-md shadow-black/10 backdrop-blur transition duration-300 hover:-translate-x-0.5 hover:bg-white md:flex',
+                            compact
+                                ? '-left-3 top-1/2 hidden h-10 w-10'
+                                : '-left-4 top-1/2 hidden h-12 w-12'
+                        )}
                     >
-                        <Icon icon="material-symbols:arrow-back-rounded" width={24} />
+                        <Icon icon="material-symbols:arrow-back-rounded" width={compact ? 21 : 24} />
                     </button>
 
                     <button
                         type="button"
                         onClick={scrollNext}
                         aria-label="Next testimonial"
-                        className="absolute -right-4 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/90 text-neutral-700 shadow-md shadow-black/10 backdrop-blur transition duration-300 hover:translate-x-0.5 hover:bg-white md:flex"
+                        className={clsx(
+                            'absolute -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/90 text-neutral-700 shadow-md shadow-black/10 backdrop-blur transition duration-300 hover:translate-x-0.5 hover:bg-white md:flex',
+                            compact
+                                ? '-right-3 top-1/2 hidden h-10 w-10'
+                                : '-right-4 top-1/2 hidden h-12 w-12'
+                        )}
                     >
-                        <Icon icon="material-symbols:arrow-forward-rounded" width={24} />
+                        <Icon icon="material-symbols:arrow-forward-rounded" width={compact ? 21 : 24} />
                     </button>
                 </div>
 
-                <div className="mt-9 flex items-center justify-center gap-2">
+                <div className={clsx('flex items-center justify-center gap-2', compact ? 'mt-5' : 'mt-9')}>
                     {scrollSnaps.map((_, index) => (
                         <button
                             key={index}
@@ -270,26 +318,30 @@ export default function TestimonialsCarousel({
                             onClick={() => scrollTo(index)}
                             aria-label={`Go to testimonial ${index + 1}`}
                             className={clsx(
-                                'h-2.5 rounded-full transition-300',
+                                'h-2.5 rounded-full transition-all duration-300',
                                 index === selectedIndex
-                                    ? 'w-8 bg-amber-600'
+                                    ? compact
+                                        ? 'w-6 bg-amber-600'
+                                        : 'w-8 bg-amber-600'
                                     : 'w-2.5 bg-neutral-300 hover:bg-neutral-400'
                             )}
                         />
                     ))}
                 </div>
 
-                <div className="mt-10 text-center">
-                    <a
-                        href="https://www.google.com/search?q=%CE%93%CE%B5%CF%8E%CF%81%CE%B3%CE%B9%CE%BF%CF%82+%CE%91%CE%BD%CF%84%CF%89%CE%BD%CF%8C%CF%80%CE%BF%CF%85%CE%BB%CE%BF%CF%82+Holistic+-+Integrative+Coaching+Psychology+%CE%A0%CE%AC%CF%84%CF%81%CE%B1+%CE%A5%CF%80%CE%B7%CF%81%CE%B5%CF%83%CE%AF%CE%B5%CF%82+%CE%A3%CF%85%CE%BC%CE%B2%CE%BF%CF%85%CE%BB%CE%B5%CF%85%CF%84%CE%B9%CE%BA%CE%AE%CF%82&sca_esv=b1849c266fe4f382&sxsrf=APpeQns_xiunqbrN87XYzkM_TpNROlFZVQ%3A1783318128664&ei=cEZLavLxJ72O9u8P6PmegQ8&biw=2133&bih=1050&ved=0ahUKEwjy6dHcsb2VAxU9h_0HHei8J_AQ4dUDCBA&uact=5&oq=%CE%93%CE%B5%CF%8E%CF%81%CE%B3%CE%B9%CE%BF%CF%82+%CE%91%CE%BD%CF%84%CF%89%CE%BD%CF%8C%CF%80%CE%BF%CF%85%CE%BB%CE%BF%CF%82+Holistic+-+Integrative+Coaching+Psychology+%CE%A0%CE%AC%CF%84%CF%81%CE%B1+%CE%A5%CF%80%CE%B7%CF%81%CE%B5%CF%83%CE%AF%CE%B5%CF%82+%CE%A3%CF%85%CE%BC%CE%B2%CE%BF%CF%85%CE%BB%CE%B5%CF%85%CF%84%CE%B9%CE%BA%CE%AE%CF%82&gs_lp=Egxnd3Mtd2l6LXNlcnAijwHOk861z47Pgc6zzrnOv8-CIM6Rzr3PhM-Jzr3PjM-Azr_Phc67zr_PgiBIb2xpc3RpYyAtIEludGVncmF0aXZlIENvYWNoaW5nIFBzeWNob2xvZ3kgzqDOrM-Ez4HOsSDOpc-AzrfPgc61z4POr861z4IgzqPPhc68zrLOv8-FzrvOtc-Fz4TOuc66zq7PgjIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwA0jWCVCxA1ixA3ABeAGQAQCYAQCgAQCqAQC4AQPIAQD4AQL4AQGYAgGgAgiYAwCIBgGQBgiSBwExoAcAsgcAuAcAwgcDMi0xyAcFgAgB&sclient=gws-wiz-serp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full btn-gray px-6 py-3 text-sm text-dark shadow-md shadow-black/10  transition duration-300"
-                    >
-                        Δείτε όλες τις αξιολογήσεις στο Google
-                        <Icon icon="material-symbols:arrow-forward-rounded" width={20} />
-                    </a>
-                </div>
+                {!compact && (
+                    <div className="mt-10 text-center">
+                        <a
+                            href="https://www.google.com/search?q=%CE%93%CE%B5%CF%8E%CF%81%CE%B3%CE%B9%CE%BF%CF%82+%CE%91%CE%BD%CF%84%CF%89%CE%BD%CF%8C%CF%80%CE%BF%CF%85%CE%BB%CE%BF%CF%82+Holistic+-+Integrative+Coaching+Psychology+%CE%A0%CE%AC%CF%84%CF%81%CE%B1+reviews"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full btn-gray px-6 py-3 text-sm text-dark shadow-md shadow-black/10 transition duration-300"
+                        >
+                            Δείτε όλες τις αξιολογήσεις στο Google
+                            <Icon icon="material-symbols:arrow-forward-rounded" width={20} />
+                        </a>
+                    </div>
+                )}
             </div>
         </section>
     )
