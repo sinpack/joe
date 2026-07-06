@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="relative z-10 flex items-center h-full justify-center lg:justify-start ml-0 lg:ml-20 container mx-auto">
           <h1
-            className={`${handwritingFont.className} !italic text-gray-500 text-xl md:text-2xl lg:text-3xl text-center tracking-tight`}
+            className={`${handwritingFont.className} !italic text-slate-600 text-xl md:text-2xl lg:text-3xl text-center tracking-tight`}
           >
             Η αρμονία επέρχεται όταν εξισορροπήσουμε
             <br /> σώμα, νου, πνεύμα και συναίσθημα...

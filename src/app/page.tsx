@@ -1,115 +1,114 @@
-import HeroSection from './components/HeroSection';
-import EmblaCarousel from './components/EmblaCarousel/EmblaCarousel';
-import { EmblaOptionsType } from 'embla-carousel';
-import sliderData from '../utils/sliderData';
-import Image from 'next/image';
-import holistic from '../../public/holistic2.jpg';
-import NavigationButton from './components/Buttons/NavigationButton';
-import {
-  FiHeart,
-  FiHelpCircle,
-  FiUsers,
-  FiTrendingUp,
-  FiUnlock,
-  FiCompass,
-} from "react-icons/fi";
-import {
-  FaSmileBeam,
-  FaBriefcase,
-  FaRegGrinBeamSweat,
-} from "react-icons/fa";
-import { HiOutlineCheckCircle } from "react-icons/hi";
-import { FcApproval } from "react-icons/fc";
-import { FaWeightScale } from "react-icons/fa6";
-import { GiSmokingFinger } from "react-icons/gi";
-
+import HeroSection from './components/HeroSection'
+import EmblaCarousel from './components/EmblaCarousel/EmblaCarousel'
+import type { EmblaOptionsType } from 'embla-carousel'
+import sliderData from '../utils/sliderData'
+import Image from 'next/image'
+import holistic from '../../public/holistic2.jpg'
+import NavigationButton from './components/Buttons/NavigationButton'
+import TestimonialsCarousel from './components/TestimonialsCarousel'
+import { FcApproval } from 'react-icons/fc'
 
 export default function Home() {
   const OPTIONS: EmblaOptionsType = {
     dragFree: true,
     align: 'center',
-    watchResize: true,
-  };
+    watchResize: true
+  }
 
   const items = [
-    { title: "Μείωση του άγχους", icon: <FiHeart /> },
-    { title: "Διακοπή καπνίσματος", icon: <GiSmokingFinger size="30" color='gray' /> },
-    { title: "Απώλεια βάρους", icon: <FaWeightScale size="30" color='gray' /> },
-    { title: "Επίτευξη προσωπικών / επαγγελματικών στόχων", icon: <HiOutlineCheckCircle /> },
-    { title: "Αντιμετώπιση προβλημάτων", icon: <FiHelpCircle /> },
-    { title: "Θέματα σχέσεων", icon: <FiUsers /> },
-    { title: "Αύξηση αυτοπεποίθησης – αυτοεκτίμησης", icon: <FaSmileBeam /> },
-    { title: "Αλλαγή καριέρας", icon: <FaBriefcase /> },
-    { title: "Αυτοβελτίωση – προσωπική εξέλιξη", icon: <FiTrendingUp /> },
-    { title: "Περιοριστικές πεποιθήσεις", icon: <FiUnlock /> },
-    { title: "Συναισθηματική διαχείριση", icon: <FaRegGrinBeamSweat /> },
-  ];
+    'Μείωση του άγχους',
+    'Διακοπή καπνίσματος',
+    'Απώλεια βάρους',
+    'Επίτευξη προσωπικών / επαγγελματικών στόχων',
+    'Αντιμετώπιση προβλημάτων',
+    'Θέματα σχέσεων',
+    'Αύξηση αυτοπεποίθησης – αυτοεκτίμησης',
+    'Αλλαγή καριέρας',
+    'Αυτοβελτίωση – προσωπική εξέλιξη',
+    'Περιοριστικές πεποιθήσεις',
+    'Συναισθηματική διαχείριση'
+  ]
 
   const FeaturesSection = () => {
     return (
-      <section className="w-full py-20 bg-[#FEEBE7] ">
-        <div className='flex flex-col'>
-          <div className="text-center mb-24">
-            <h1 className="font-bold text-grey-600 tracking-wide underline">
-              ΜΕ ΤΙ ΜΠΟΡΟΥΜΕ ΝΑ ΑΣΧΟΛΗΘΟΥΜΕ            </h1>
+      <section className="relative w-full overflow-hidden bg-[#FEEBE7] py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-white/50 blur-[140px]" />
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-orange-100/50 blur-[150px]" />
+        </div>
+
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
+          <div className="mb-20 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
+              Με τι μπορούμε να ασχοληθούμε
+            </p>
+
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-800 md:text-4xl">
+              Περιοχές υποστήριξης
+            </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 md:px-20 lg:px-20 xl:px-60">
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <div className='flex w-fit items-center justify-center'>
+
+          <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((title) => (
+              <div key={title} className="flex flex-col items-center text-center">
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/70 shadow-sm ring-1 ring-white/80">
                   <FcApproval size="30" />
                 </div>
-                <h4 className='text-gray-600 font-semibold'>{item.title}</h4>
+
+                <h4 className="max-w-xs text-base font-semibold leading-7 text-slate-700">
+                  {title}
+                </h4>
               </div>
             ))}
-          </div></div>
+          </div>
+        </div>
       </section>
-    );
-  };
+    )
+  }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center w-full bg-sky-50">
+    <main className="flex min-h-screen w-full flex-col items-center bg-[#F7FAFD] text-slate-700">
       <HeroSection />
-      <section className="container mx-auto pb-40 pt-20 bg-sky-50 ">
-        <div className="flex flex-col justify-center text-center px-2.5 md:px-40 lg:px-60">
+
+      <section className="w-full bg-[#F7FAFD] px-4 pb-32 pt-20">
+        <div className="mx-auto flex max-w-4xl flex-col justify-center text-center">
           <div className="flex place-self-center pb-20">
             <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
           </div>
-          <h2 className="mt-5 text-balance">
+
+          <h2 className="text-balance text-xl leading-9 text-slate-700 md:text-2xl">
             Ονομάζομαι Γεώργιος Αντωνόπουλος και είμαι πιστοποιημένος Ολιστικός
             - Συνθετικός Coach, διαθέτοντας πλούσιο υπόβαθρο στις Τέχνες και τις
             Επιστήμες.
             <br className="lg:hidden" />
-            <a href="/about" className="text-blue-600 text-base ml-2.5">
+            <a href="/about" className="ml-2.5 text-base font-semibold text-blue-600">
               Διαβάστε περισσότερα
             </a>
           </h2>
-          <div className="flex place-self-center mt-20"></div>
         </div>
       </section>
-      <section className="relative w-full h-[80vh] overflow-hidden">
-        {/* Background image */}
+
+      <section className="relative h-[80vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={holistic}
             alt="holistic"
             fill
-            style={{
-              objectFit: 'cover',
-            }}
+            className="object-cover"
             quality={100}
             loading="lazy"
           />
         </div>
-        <div className="flex flex-col items-center justify-between text-center container mx-auto  space-y-5 relative z-10 h-full">
-          <div className="flex flex-col space-y-5 px-2.5 md:px-40 lg:px-60 lg:mt-10">
-            <h1 className="font-bold text-grey-600 mt-5 tracking-normal">
-              Holistic - Integrative Coaching Psychology{' '}
+
+        <div className="absolute inset-0 bg-white/10" />
+
+        <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-between text-center">
+          <div className="flex flex-col space-y-5 px-2.5 md:px-40 lg:mt-10 lg:px-60">
+            <h1 className="mt-5 font-bold tracking-normal text-slate-700">
+              Holistic - Integrative Coaching Psychology
             </h1>
-            <h3 className="mb-10 text-grey-600 font-semibold text-balance">
+
+            <h3 className="mb-10 text-balance font-semibold text-slate-700">
               Το holistic - integrative coaching psychology εστιάζει στην ισορροπία μεταξύ
               σώματος, νου, συναισθήματος και πνεύματος, προσφέροντας μια
               σφαιρική προσέγγιση για την αντιμετώπιση των προκλήσεων και την
@@ -117,7 +116,7 @@ export default function Home() {
               <br className="lg:hidden" />
               <a
                 href="/holistic-integrative-coaching"
-                className="text-blue-600 text-base ml-2.5"
+                className="ml-2.5 text-base font-semibold text-blue-600"
               >
                 Διαβάστε περισσότερα
               </a>
@@ -125,27 +124,43 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <FeaturesSection />
-      <section className="w-full py-40 px-4 bg-gradient-to-b from-[#FEEBE7] to-sky-50">
-        <div className="flex flex-col justify-center text-center px-2.5 md:px-40 lg:px-60 space-y-5">
-          <h2 className="text-2xl md:text-3xl font-bold underline">
-            Υπηρεσίες - Θεραπείες{' '}
+
+      <TestimonialsCarousel className="bg-gradient-to-b from-[#FEEBE7] via-[#FDF8F5] to-[#F7FAFD]" />
+
+      <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F7FAFD] via-white to-[#FEEBE7] px-4 py-40">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-32 top-24 h-96 w-96 rounded-full bg-white/70 blur-[140px]" />
+          <div className="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-orange-100/50 blur-[160px]" />
+        </div>
+
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col justify-center space-y-5 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
+            Υπηρεσίες
+          </p>
+
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-800 md:text-4xl">
+            Υπηρεσίες - Θεραπείες
           </h2>
-          <h3 className="mb-10 text-pretty">
+
+          <h3 className="mx-auto mb-10 max-w-3xl text-pretty text-lg leading-8 text-slate-700">
             Ως holistic - integrative psychology coach, προσφέρω μια σειρά υπηρεσιών
             προσαρμοσμένων στις μοναδικές σας ανάγκες και στόχους. Μαζί,
             μπορούμε να εργαστούμε για την ευημερία σας.
             <br className="lg:hidden" />
-            <a href="/treatments" className="text-blue-600 text-base ml-2.5">
+            <a href="/treatments" className="ml-2.5 text-base font-semibold text-blue-600">
               Διαβάστε περισσότερα
             </a>
           </h3>
+
           <EmblaCarousel slides={sliderData} options={OPTIONS} />
+
           <div className="flex place-self-center pt-10">
             <NavigationButton text="ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ" link="/contact" />
           </div>
         </div>
       </section>
     </main>
-  );
+  )
 }
